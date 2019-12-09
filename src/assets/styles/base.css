@@ -1,0 +1,305 @@
+body,
+dl,
+dd,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+input,
+textarea,
+p,
+hr,
+thead,
+tbody,
+tfoot,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+html {
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  line-height: 1.5;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  color: #454545;
+  margin: 0;
+  overflow-y: scroll;
+  background: #f2f2f2;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+img {
+  border: 0 none;
+  width: auto\9;
+  max-width: 100%;
+  vertical-align: top;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+select[size],
+select[multiple],
+select[size][multiple] {
+  border: 1px solid #AAA;
+  padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video,
+progress {
+  display: inline-block;
+}
+
+input::-webkit-input-speech-button {
+  display: none
+}
+
+button,
+input,
+textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.section {
+  width: 1280px !important;
+  height: 100%;
+  margin: 0 auto;
+}
+.min1280 {
+  min-width: 1280px;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left!important;
+}
+.text-color-white {
+  color: #cccccc;
+}
+.f-fl {
+  float: left;
+}
+.f-fr {
+  float: right;
+}
+.center{
+  text-align: center;
+}
+.situations{
+  width: 1200px;
+  margin: 0 auto;
+}
+.bcs-btn-red {
+  color: #fafafa !important;
+  background-color: #d84643 !important;
+  border: none !important;
+}
+.bcs-btn-first {
+  display: inline-block;
+  font-size: 18px !important;
+  height: 36px !important;
+  line-height: 38px !important;
+  padding: 0 24px !important;
+  border-radius: 4px !important;
+  width: auto !important;
+}
+.bcs-title-first {
+  font-size: 18px !important;
+  color: #333 !important;
+  background-color: #f2f2f2 !important;
+  height: 60px !important;
+  line-height: 60px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.bcs-btn-large {
+  display: inline-block;
+  font-size: 18px !important;
+  height: 46px !important;
+  line-height: 48px !important;
+  width: auto !important;
+  min-width: 160px !important;
+  padding: 0px 24px !important;
+  border-radius: 4px !important;
+}
+.bcs-btn-grey {
+  color: #333 !important;
+  background-color: #d5d5d5 !important;
+  border: none !important;
+}
+.bcs-a-red, .bcs-a-red:visited {
+  color: #d84643 !important;
+  font-size: 16px !important;
+}
+.text-red{
+  color: #D5282A
+}
+.clear-a-color {
+  color: #333;
+}
+
+/*     分割线部分的样式开始 */
+.lineT {
+	height: 150px;
+	width: 100%;
+	padding: 35px 0 0;
+}
+
+.lineT .linebox {
+	width: 566px;
+	height: 26px;
+	margin: 0 auto;
+	height: 30px;
+	text-align: center;
+	font-size: 0;
+}
+
+.linebox .leftline {
+	width: 140px;
+	height: 1px;
+	display: inline-block;
+	background-color: #999;
+	float: left;
+	margin-top: 12.5px;
+}
+
+.linebox .rightline {
+	width: 140px;
+	height: 1px;
+	display: inline-block;
+	background-color: #999;
+	float: right;
+	margin-top: 12.5px;
+}
+
+.linebox .centerP {
+  height: 26px;
+  font-size: 26px;
+  color: #3b3b3c;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0;
+}
+.line-box {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.line-box>div {
+    border-top: 3px solid #D5282A;
+    width: 50px;
+    margin: -2px auto;
+}
+.linebox .subtitle{
+	font-size: 16px;
+    margin-top: 10px;
+}
+/*    分割线部分的样式结束 */

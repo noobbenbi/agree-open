@@ -1,0 +1,95 @@
+.ivu-input:focus{
+    border-color: #D5282A;
+    box-shadow: 1px 1px 2px rgba(213,40,42, 0.2);
+}
+.ivu-input:hover{
+    border-color: #D5282A;
+}
+.ivu-btn-primary:focus{
+    box-shadow: 0 0 0 2px rgba(213,40,42, 0.2);
+}
+/* 面包屑导航部分样式覆盖 */
+.breadcrumb {
+    min-width: 1280px;
+    background-color: #ddd;
+  }
+.ivu-breadcrumb{
+    font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto;
+    width: 1280px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: #D5282A;
+}
+.ivu-breadcrumb-item-separator{
+    color: #454545;
+}
+.ivu-breadcrumb>span:last-child{
+    font-weight: 400;
+    color: #454545;
+}
+.ivu-breadcrumb>span:first-child{
+    font-weight: 400;
+    color: #454545;
+}
+/* 分页样式 */
+.ivu-page{
+    text-align: right;
+}
+.ivu-page-item-active{
+    border-color: #D5282A;
+}
+.ivu-page-item-active a, .ivu-page-item-active:hover a{
+    color: #D5282A;
+}
+.ivu-page-item:hover{
+    border-color: #D5282A;
+}
+.ivu-page-item:hover a{
+    color: #D5282A;
+}
+.ivu-page-next:hover, .ivu-page-prev:hover {
+    border-color: #D5282A;
+}
+.ivu-page-next:hover a, .ivu-page-prev:hover a{
+    color: #D5282A;
+}
+.ivu-page-options-elevator input:hover{
+    border-color: #D5282A;
+}
+.ivu-page-options-elevator input:focus{
+    border-color: #D5282A;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(237,64,20,.2);
+}
+.ivu-select-visible .ivu-select-selection{
+    border-color: #D5282A;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba(237,64,20,.2);
+}
+.ivu-select-selection-focused, .ivu-select-selection:hover{
+    border-color: #D5282A;
+}
+.ivu-select-item-selected, .ivu-select-item-selected:hover{
+    color: #D5282A;
+}
+
+/* 文档中心和问题中心左侧导航栏样式覆盖 */
+.ivu-menu-light.ivu-menu-vertical>.ivu-menu-submenu.ivu-menu-item-active.ivu-menu-opened.ivu-menu-child-item-active>.ivu-menu-submenu-title {
+    color: #D5282A;
+}
+.ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
+    color: #D5282A;
+}
+.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
+    background: #D5282A;
+    color: #fff;
+}
+
+.ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
+    background: #D5282A;
+}

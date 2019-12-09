@@ -1,0 +1,35 @@
+@font-face {
+  
+	font-family: 'pingFangSC-Medium';
+
+	src: url('苹方字体.ttf');
+
+	font-weight: normal;
+  
+	font-style: normal;
+
+}
+
+@font-face{
+  
+	font-family: 'pingFangSC-Light';
+  
+	src: url('苹方字体.ttf');
+  
+	font-weight: normal;
+  
+	font-style: normal;
+
+}
+
+@font-face{
+  
+	font-family: 'pingFangSC-Regular';
+  
+	src: url('苹方字体.ttf');
+  
+	font-weight: normal;
+  
+	font-style: normal;
+}
+
