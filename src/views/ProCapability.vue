@@ -47,7 +47,6 @@
 import Header from "../components/Header";
 import Loopautoplay from '@/components/LoopAutoplay';
 import Footer from "@/components/Footer";
-// import goTop from "@/components/goTop";
 export default {
   name: "procapability",
   data() {

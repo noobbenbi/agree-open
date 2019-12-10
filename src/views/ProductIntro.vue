@@ -1,4 +1,5 @@
 <template>
+<!-- 产品能力/产品介绍 -->
 <div>
     <Header></Header>
     <div class="productintro">
@@ -10,7 +11,14 @@
             </Breadcrumb>
         </div>
         <div class="select-lab">
-             <Menu :theme="theme3" active-name="1" width="240px" class="menu" :active-name="menuId">
+             <Menu 
+                :theme="theme3" 
+                active-name="1" 
+                width="240px" 
+                class="menu" 
+                :active-name="menuId"
+                @on-select="selected"
+              >
                 <MenuItem name="1" class="menuitem">
                     <p>支付结算</p>
                 </MenuItem>
@@ -26,15 +34,16 @@
             </Menu>
         </div>
         <div class="productintro-content">
-            <img :src="imgsrc[1]" >
-            <p>{{proTitle[1]}}</p>
+            <img :src="imgsrc[contentItem]" >
+            <p>{{proTitle[contentItem]}}</p>
             <Table class="pro-table"
             :show-header="showHeader" 
             :columns="msgColumns" 
             :data="msgData" 
             :width="tableWidth"
             :height="tableHeight"
-            :size="tableSize">></Table>
+            :size="tableSize"
+            ></Table>
         </div>
     </div>
     <Footer></Footer>
@@ -54,6 +63,7 @@ export default {
             showHeader:false,
             tableWidth:'900',
             tableHeight:'400',
+            contentItem:'',
             proTitle: [
                 '支付结算',
                 '投资理财',
@@ -62,23 +72,26 @@ export default {
             ],
             imgsrc: [
                 require('@/assets/images/proImg1.png'),
-                require('@/assets/images/proImg1.png'),
-                require('@/assets/images/proImg1.png'),
-                require('@/assets/images/proImg1.png')
+                require('@/assets/images/proImg2.png'),
+                require('@/assets/images/proImg3.png'),
+                require('@/assets/images/proImg4.png')
             ],
             msgColumns:[
                 {
                     title: ' ',
-                    key: 'msgtitle'
+                    key: 'msgtitle',
+                    width:'350',
                 },
                 {
                     title: ' ',
                     key: 'look',
+                    width:'400'
                     
                 },
                 {
                     title: ' ',
                     key: 'time',
+                    width:'100',
                     render: (h, params) => {
                             return h('div', [
                                 h('Button', {
@@ -88,11 +101,10 @@ export default {
                                     },
                                     style: {
                                         marginRight: '5px',
-                                        // color:rgba(2,164,175,1)
                                     },
                                     on: {
                                         click: () => {
-                                            this.show()
+                                            
                                         }
                                     }
                                 }, '立即加入'),
@@ -129,7 +141,12 @@ export default {
     methods: {
         getParams() {
            this.menuId  = this.$route.query.nameId;
-        }
+           this.contentItem = this.$route.query.nameId - 1;
+        },
+        selected(name) {
+            console.log(name);
+            this.contentItem = name - 1;
+        },
     },
     components: {
         Header,
@@ -144,7 +161,7 @@ export default {
 .productintro {
     width: 100%;
     min-width: 1200px;
-    height: 2409px;
+    height: 1409px;
     position: relative;
 }
 .productintro img {
@@ -194,8 +211,18 @@ export default {
     top: 0px;
     left: 0px;
 }
+.productintro-content p{
+    position: relative;
+    left: 50px;
+    top: 0px;
+    font-size:25px;
+    font-family:PingFangSC-Medium,PingFang SC;
+    font-weight:500;
+    color:rgba(29,31,49,1);
+}
 .pro-table {
     position: absolute;
-    top: 45px;
+    top: 90px;
+    left: 30px;
 }
 </style>

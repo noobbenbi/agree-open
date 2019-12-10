@@ -1,5 +1,5 @@
 <template>
-<div class="body">
+<div>
     <Header></Header>
     <LoopAutoplay></LoopAutoplay>
     <div class="devaccess">
@@ -8,7 +8,7 @@
         <VideoTutorial></VideoTutorial>
         <QuickAccess></QuickAccess>
     </div>
-<Footer class="footer" ></Footer>
+    <Footer></Footer>
 </div>
 </template>
 
@@ -35,15 +35,4 @@ export default {
 </script>
 
 <style  scoped>
-.devaccess {
-    width:1920px;
-    height:3610px;
-    background:rgba(255,255,255,1);
-    position: absolute;
-    top: 870px;
-}
-.footer {
-    position: absolute;
-    top: 4480px;
-}
 </style>

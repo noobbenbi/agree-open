@@ -39,90 +39,87 @@ export default {
 
 <style scoped>
 .quickaccess {
-    width: 1920px;
-    height: 820px;
-    position: absolute;
-    bottom: 0px;
+    width: 100%;
+    min-width: 1200px;
+    height: 585px;
+    position: relative;
 }
 .center-title {
-  width:144px;
-  height:50px;
-  font-size:36px;
-  font-family:"Times New Roman",Georgia,Serif;
+  font-size:1.625em;
+  font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(29,31,49,1);
   line-height:50px;
-  position: absolute;
-  top: 120px;
-  left: 888px;
+  position: relative;
+  top: 60px;
+  display: table;
+  margin: 0 auto;
 }
 .center-line {
-  width:70px;
-  height:4px;
-  background:rgba(2,164,175,1);
-  position: absolute;
-  top: 190px;
-  left: 925px;
+    width:60px;
+    height:3px;
+    background:rgba(2,164,175,1);
+    position: absolute;
+    top: 18.6%;
+    left: 48.17%;
 }
 .check-in,
 .createapp,
 .devtest,
 .online {
-    width: 200px;
-    height: 322px;
+    width: 142px;
+    height: 230px;
     position: absolute;
-    top: 234px;
+    top: 28.5%;
 }
 .check-in {
-    left: 278px;
+    left: 14.5%;
 }
 .createapp {
-    left: 673px;
+    left: 35.1%;
 }
 .devtest {
-    left: 1054px;
+    left: 54.9%;
 }
 .online {
-    left: 1443px;
+    left: 75.2%;
 }
 .check-in img,
 .createapp img,
 .devtest img,
 .online img{
-    width: 200px;
-    height: 200px;
+    width: 142px;
+    height: 142px;
     position: absolute;
     top: 0px;
 }
 .box-title {
     position: absolute;
-    left: 31px;
-    top: 190px;
-    font-size:30px;
-    font-family:"PingFangSC-Medium",PingFang SC;
+    left: 15.5%;
+    top: 59%;
+    font-size:1.3em;
+    font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(29,31,49,1);
     line-height:42px;
 }
 .box-line {
     position: absolute;
-    top: 252px;
-    left: 61px;
-    width:80px;
-    height:6px;
+    top: 78.26%;
+    left: 30.5%;
+    width:60px;
+    height:4px;
     background:rgba(2,164,175,1);
 }
 .box-content {
     position: absolute;
-    top: 278px;
-    width:200px;
+    top: 86.3%;
+    width:100%;
     height:44px;
-    font-size:16px;
-    font-family:"PingFangSC-Semibold", sans-serif;
+    font-size:1em;
+    font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(29,31,49,1);
-    line-height:22px;
-    /* display:inline-block; */
     text-align: center;
 }
 </style>

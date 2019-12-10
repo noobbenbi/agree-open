@@ -43,118 +43,118 @@ export default {
 }
 </script>
 <style scoped>
+@import url("../../assets/styles/font/font.css");
 .accessguide {
-    width: 1920px;
-    height: 986px;
+    width: 100%;
+    min-width: 1200px;
+    height: 702px;
     background-image: url(../../assets/images/278433d1c14890e34f12826849607864.png);
-    position: absolute;
-    top: 914px;
+    position: relative;
 }
 .center-title {
-  width:144px;
-  height:50px;
-  font-size:36px;
-  font-family:"Times New Roman",Georgia,Serif;
+  font-size:1.625em;
+  font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(255,255,255,1);
   line-height:50px;
-  position: absolute;
-  top: 120px;
-  left: 888px;
+  position: relative;
+  top: 70px;
+  display: table;
+  margin: 0 auto;
 }
 .center-line {
-  width:70px;
-  height:4px;
-  background:rgba(2,164,175,1);
-  position: absolute;
-  top: 190px;
-  left: 925px;
+    width:60px;
+    height:3px;
+    background:rgba(2,164,175,1);
+    position: absolute;
+    top: 18.6%;
+    left: 48.17%;
 }
 .accessguide img{
-    width: 400px;
-    height: 280px;
+    width: 285px;
+    height: 200px;
     position: absolute;
 }
 .accessguide  img:nth-of-type(1){
-    top: 266px;
-    left: 161px;
+    top: 27%;
+    left: 8.4%;
 }
 .accessguide  img:nth-of-type(2){
-    top: 266px;
-    left: 971px;
+    top: 27%;
+    left: 50.57%;
 }
 .accessguide  img:nth-of-type(3){
-    top: 586px;
-    left: 161px;
+    top: 59.43%;
+    left: 8.4%;
 }
 .accessguide  img:nth-of-type(4){
-    top: 586px;
-    left: 971px;
+    top: 59.43%;
+    left: 50.57%;
 }
 .text-part-read {
     position: absolute;
-    width:390px;
-    height:280px;
+    width:278px;
+    height:200px;
     background:rgba(255,255,255,1);
     border:1px solid rgba(213,213,213,1);
-    top: 266px;
-    left: 561px;
+    top: 27%;
+    left: 29.2%;
 }
 .text-part-dev {
     position: absolute;
-    width:390px;
-    height:280px;
+    width:278px;
+    height:200px;
     background:rgba(255,255,255,1);
     border:1px solid rgba(213,213,213,1);
-    top: 266px;
-    left: 1371px;
+    top: 27%;
+    left: 71.4%;
 }
 .text-part-api {
     position: absolute;
-    width:390px;
-    height:280px;
+    width:278px;
+    height:200px;
     background:rgba(255,255,255,1);
     border:1px solid rgba(213,213,213,1);
-    top: 586px;
-    left: 561px;
+    top: 59.4%;
+    left: 29.2%;
 }
 .text-part-sdk {
     position: absolute;
-    width:390px;
-    height:280px;
+    width:278px;
+    height:200px;
     background:rgba(255,255,255,1);
     border:1px solid rgba(213,213,213,1);
-    top: 586px;
-    left: 1371px;
+    top: 59.4%;
+    left: 71.4%;
 }
 .text-part-title {
-    font-size:32px;
+    font-size:1.56em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(29,31,49,1);
     line-height:45px;
     position: absolute;
-    top: 51px;
-    left: 115px;
+    top: 18.2%;
+    left: 29.48%;
 }
 .text-part-line {
-    width:240px;
-    height:6px;
+    width:180px;
+    height:4px;
     background:rgba(2,164,175,1);
     position: absolute;
-    top: 116px;
-    left: 75px;
+    top: 41.5%;
+    left: 19.2%;
 }
 .text-part-content {
-    width:240px;
-    height:84px;
-    font-size:20px;
+    width:170px;
+    height:60px;
+    font-size:1em;
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(155,155,155,1);
     line-height:28px;
     position: absolute;
-    left: 75px;
-    top: 144px;
+    left: 19.2%;
+    top: 51.4%;
 }
 </style>

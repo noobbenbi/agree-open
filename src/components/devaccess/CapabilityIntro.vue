@@ -23,69 +23,69 @@ export default {
 </script>
 
 <style scoped>
+@import url("../../assets/styles/font/font.css");
 .capabilityintro {
-    width: 1920px;
-    height: 914px;
-    position: absolute;
-    top:0px;
+    width: 100%;
+    min-width: 1200px;
+    height: 650px;
+    position: relative;
 }
 .center-title {
-  width:144px;
-  height:50px;
-  font-size:36px;
-  font-family:"Times New Roman",Georgia,Serif;
+  font-size:1.625em;
+  font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(29,31,49,1);
   line-height:50px;
-  position: absolute;
-  top: 120px;
-  left: 888px;
+  position: relative;
+  top: 70px;
+  display: table;
+  margin: 0 auto;
 }
 .center-line {
-  width:70px;
-  height:4px;
-  background:rgba(2,164,175,1);
-  position: absolute;
-  top: 190px;
-  left: 925px;
+    width:60px;
+    height:3px;
+    background:rgba(2,164,175,1);
+    position: absolute;
+    top: 18.6%;
+    left: 48.17%;
 }
 .capabilityintro img {
-    width: 385px;
-    height: 400px;
+    width: 275px;
+    height: 290px;
     position: absolute;
-    top: 274px;
+    top: 30%;
 }
 .capabilityintro img:nth-of-type(1) {
-    left: 161px;
+    left: 8.38%;
 }
 .capabilityintro img:nth-of-type(2) {
-    left: 566px;
+    left: 29.5%;
 }
 .capabilityintro img:nth-of-type(3) {
-    left: 971px;
+    left: 50.57%;
 }
 .capabilityintro img:nth-of-type(4) {
-    left: 1376px;
+    left: 71.667%;
 }
 .capabilityintro p {
-    font-size:32px;
+    font-size:1.56em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(29,31,49,1);
     line-height:45px;
     position: absolute;
-    top: 709px;
+    top: 77.57%;
 }
 .capabilityintro p:nth-of-type(1) {
-    left: 289px;
+    left: 15.1%;
 }
 .capabilityintro p:nth-of-type(2) {
-    left: 694px;
+    left: 36.15%;
 }
 .capabilityintro p:nth-of-type(3) {
-    left: 1084px;
+    left: 56.46%;
 }
 .capabilityintro p:nth-of-type(4) {
-    left: 1505px;
+    left: 78.4%;
 }
 </style>
