@@ -78,7 +78,7 @@ export default {
   position:relative;
 }
 .center-title {
-  font-size:25px;
+  font-size:1.56em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(255,255,255,1);
@@ -141,7 +141,7 @@ export default {
   position: absolute;
   top: 55.78%;
   left: 33.25%;
-  font-size:21px;
+  font-size:1.3em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(255,255,255,1);
@@ -187,7 +187,7 @@ export default {
   left: 30.25%;
   top: 23.43%;
   height:42px;
-  font-size:23px;
+  font-size:1.44em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:600;
   color:black;
@@ -198,7 +198,7 @@ export default {
   top: 39%;
   left: 20.77%;
   right: 20.77%;
-  font-size:15px;
+  font-size:1em;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:black;

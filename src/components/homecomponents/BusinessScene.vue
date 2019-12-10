@@ -46,20 +46,25 @@ export default {
 .businessscene {
   width:100%;
   min-width: 1200px;
-  /* height:1022px; */
   height: 727px;
   background-color:rgba(255,255,255,1);
   position: relative;
 }
 .center-title {
-  font-size:26px;
+  font-size:1.625em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(29,31,49,1);
   line-height:50px;
-  position: absolute;
+  /* position: absolute;
   top: 11.74%;
   left: 46.25%;
+  width:7.5%; */
+  position: relative;
+  top: 70px;
+  /* text-align: center; */
+  display: table;
+  margin: 0 auto;
 }
 .center-line {
   width:60px;
@@ -110,7 +115,7 @@ export default {
   left: 33.35%;
   /* width:120px; */
   /* height:42px; */
-  font-size:21px;
+  font-size:1.3em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:700;
   color:rgba(29,31,49,1);

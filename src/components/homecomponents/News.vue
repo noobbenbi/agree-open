@@ -46,7 +46,7 @@ export default {
     height: 615px;
 }
 .center-title {
-    font-size:25px;
+    font-size:1.56em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(29,31,49,1);
@@ -85,20 +85,20 @@ export default {
     bottom: 11.57%;
 }
 .day-of-time {
-    font-size: 30px;
+    font-size: 1.875em;
     position: absolute;
     top: 25.65%;
     left: 10.42%;
 }
 .yearmon-of-time {
-    font-size: 15px;
+    font-size: 1em;
     position: absolute;
     top: 62.17%;
     left: 9.6%;
 }
 .news-title {
     font-family:PingFangSC-Medium,PingFang SC;
-    font-size: 21px;
+    font-size: 1.3em;
     position: absolute;
     top: 15.2%;
     left: 35.45%;
@@ -110,7 +110,7 @@ export default {
     left: 35.45%;
     width:57.36%;
     height:36.5%;
-    font-size:15px;
+    font-size:1em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(155,155,155,1);
@@ -121,7 +121,7 @@ export default {
     position: absolute;
     top: 82.74%;
     left: 85.15%;
-    font-size:12px;
+    font-size:0.8em;
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(2,164,175,1);

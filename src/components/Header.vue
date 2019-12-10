@@ -84,7 +84,7 @@ import { constants } from "crypto";
 import 'view-design/dist/styles/iview.css';
 export default {
   name: "Header",
-  inject:['reload'],
+  // inject:['reload'],
   data() {
     return {
       searchBox: false,

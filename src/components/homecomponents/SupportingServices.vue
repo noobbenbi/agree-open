@@ -48,7 +48,7 @@ export default {
     /* opacity:0.1; */
 }
 .center-title {
-    font-size:25px;
+    font-size:1.6em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);
@@ -112,7 +112,7 @@ export default {
     position: absolute;
     top: 15.4%;
     left: 11.54%;
-    font-size:21px;
+    font-size:1.3em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(29,31,49,1);
@@ -136,7 +136,7 @@ export default {
     left: 11.54%;
     width:200px;
     height:84px;
-    font-size:15px;
+    font-size:1em;
     font-family:"PingFangSC-Regular",PingFang SC;
     font-weight:400;
     color:rgba(155,155,155,1);

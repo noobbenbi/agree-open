@@ -5,7 +5,7 @@
 
         <div class="box4">
           <div class="footer-menu-title">
-            <img src="@/assets/images/hf_3.png" class="" /> 
+            <img src="@/assets/images/footer-logoztkj.png" class="" /> 
           </div>
           <div class="box1">
             <p class="fontsize">客服24小时服务热线：010-64731113</p>  

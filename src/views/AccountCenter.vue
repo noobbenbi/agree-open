@@ -3,7 +3,6 @@
     <Header></Header>
     <div class="accountcenter">
         <img src="@/assets/images/accountcenter-background.png">
-        <!-- 切图缺失需替换 -->
         <img src="@/assets/images/UserAvatar.png">
         <span class="center-title">{{userName}}</span>
         <span class="center-line"></span>
@@ -80,32 +79,31 @@ export default {
     min-width: 1200px;
     height: 814px;
     background:rgba(255,255,255,1);
+    /* text-align: center; */
 }
 .accountcenter img:nth-of-type(1) {
     width:100%;
-    height:43.7%;
+    height:356px;
     position: absolute;
     top: 0%;
 }
 .accountcenter img:nth-of-type(2) {
-    width:8.3%;
-    height:14%;
-    background:rgba(74,74,74,1);
+    width:112px;
+    height:112px;
     position: absolute;
     top: 10.1%;
     left: 45.8%;
 }
 .center-title {
-  width:7.5%;
-  height:4.4%;
-  /* font-size:26px; */
+  font-size:1.2em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(255,255,255,1);
-  /* line-height:50px; */
   position: absolute;
   top: 25.6%;
-  left: 48%;
+  left: 47.5%;
+  /* display: table;
+  margin: 0 auto; */
 }
 .center-line {
   width:2.3%;
@@ -128,6 +126,7 @@ export default {
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);
+    cursor: pointer;
 }
 .menu {
     position: absolute;
@@ -135,9 +134,8 @@ export default {
     width: 100%;
 }
 .menu-title {
-    /* font-size:1.375em; */
+    font-size:1.2em;
     font-family:PingFangSC-Medium,PingFang SC;
-    /* font-weight:500; */
 
 }
 .mydata {
@@ -145,17 +143,14 @@ export default {
     left: 35%;
     top: 0;
     font-family:PingFangSC-Medium,PingFang SC;
-    /* font-weight:500; */
     color:rgba(29,31,49,1);
 }
 .myapp {
     position: absolute;
     left: 47.6%;
-    /* top: 679px; */
 }
 .myagreement {
     position: absolute;
     left: 60.4%;
-    /* top: 679px; */
 }
 </style>
