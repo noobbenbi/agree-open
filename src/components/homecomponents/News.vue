@@ -51,17 +51,19 @@ export default {
     font-weight:500;
     color:rgba(29,31,49,1);
     line-height:50px;
-    position: absolute;
-    top: 10.27%;
-    left: 46.25%;
+    position: relative;
+    top: 70px;
+    display: table;
+    margin: 0 auto;
 }
 .center-line {
-   width:60px;
+    width:60px;
     height:3px;
     background:rgba(2,164,175,1);
-    position: absolute;
-    top: 20%;
-    left: 48.1%;
+    position: relative;
+    top: 75px;
+    display: table;
+    margin: 0 auto;
 }
 .news-img {
     position: absolute;

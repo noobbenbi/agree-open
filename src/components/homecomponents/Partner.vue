@@ -45,16 +45,18 @@ export default {
     font-weight:500;
     color:black;
     line-height:50px;
-    position: absolute;
-    top: 12%;
-    left: 46.25%;
+    position: relative;
+    top: 70px;
+    display: table;
+    margin: 0 auto;
 }
 .center-line {
     width:55px;
     height:3px;
     background:rgba(2,164,175,1);
-    position: absolute;
-    top: 19.4%;
-    left: 48.18%;
+    position: relative;
+    top: 75px;
+    display: table;
+    margin: 0 auto;
 }
 </style>

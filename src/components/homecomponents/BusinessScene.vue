@@ -56,13 +56,8 @@ export default {
   font-weight:500;
   color:rgba(29,31,49,1);
   line-height:50px;
-  /* position: absolute;
-  top: 11.74%;
-  left: 46.25%;
-  width:7.5%; */
   position: relative;
   top: 70px;
-  /* text-align: center; */
   display: table;
   margin: 0 auto;
 }
@@ -70,9 +65,10 @@ export default {
   width:60px;
   height:3px;
   background:rgba(2,164,175,1);
-  position: absolute;
-  top: 18.6%;
-  left: 48.17%;
+  position: relative;
+  top: 75px;
+  display: table;
+  margin: 0 auto;
 }
 .payment-settlement,
 .investment,
@@ -84,6 +80,7 @@ export default {
   height:54.8%;
   background:rgba(255,255,255,1);
   border:1px solid rgba(213,213,213,1);
+  text-align: center;
 }
 .payment-settlement {
   left: 8.38%;
@@ -101,7 +98,7 @@ export default {
 .investment img,
 .account-management img,
 .loan-financing img{
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 60%;
   top: 256px;
@@ -110,11 +107,12 @@ export default {
 .investment a,
 .account-management a,
 .loan-financing a{
-  position: absolute;
-  top: 9%;
-  left: 33.35%;
-  /* width:120px; */
-  /* height:42px; */
+  position: relative;
+  /* top: 9%;
+  left: 33.35%; */
+  /* display: table; */
+  display: table;
+  margin: -80% auto;
   font-size:1.3em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:700;
@@ -130,10 +128,6 @@ export default {
   font-weight:550;
   color:rgba(29,31,49,1);
   line-height:28px;
-  text-align: center;
-  position: relative;
-  top: 29.2%;
-  /* left: 19%; */
-  /* right: 72px; */
+  margin: 100% auto;
 }
 </style>

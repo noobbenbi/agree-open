@@ -53,17 +53,19 @@ export default {
     font-weight:500;
     color:rgba(255,255,255,1);
     line-height:50px;
-    position: absolute;
-    top: 13.27%;
-    left: 46.25%;
+    position: relative;
+    top: 70px;
+    display: table;
+    margin: 0 auto;
 }
 .center-line {
     width:60px;
     height:3px;
     background:rgba(2,164,175,1);
-    position: absolute;
-    top: 20%;
-    left: 48.1%;
+    position: relative;
+    top: 75px;
+    display: table;
+    margin: 0 auto;
 }
 .supportingservices img {
     width: 27.1%;

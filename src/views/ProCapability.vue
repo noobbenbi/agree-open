@@ -11,33 +11,45 @@
       <img src="@/assets/images/Payment-settlement.png" />
       <a class="itemTitie" @click="goIntro('1')">支付结算</a>
       <span></span>
-      <p >电子账户</p>
-      <p>e想账户</p> 
-      <p>现金管理账户</p>
+      <p>电子账户
+        <br/>
+        e想账户
+        <br/>
+        现金管理账户
+      </p>
     </div>
     <div class="investment">
       <img src="@/assets/images/Investment.png" />
       <a class="itemTitie" @click="goIntro('2')">投资理财</a>
       <span></span>
-      <p>电子账户</p>
-      <p>e想账户</p> 
-      <p>现金管理账户</p>
+     <p>电子账户
+        <br/>
+        e想账户
+        <br/>
+        现金管理账户
+      </p>
     </div>
     <div class="account-management">
       <img src="@/assets/images/Account-management.png" />
       <a class="itemTitie" @click="goIntro('3')">账户管理</a>
       <span></span>
-      <p>电子账户</p>
-      <p>e想账户</p>
-      <p>现金管理账户</p>
+      <p>电子账户
+        <br/>
+        e想账户
+        <br/>
+        现金管理账户
+      </p>
     </div>
     <div class="loan-financing">
       <img src="@/assets/images/Loan-financing.png" />
       <a class="itemTitie" @click="goIntro('4')">贷款融资</a>
       <span></span>
-      <p>电子账户</p>
-      <p>e想账户</p>
-      <p>现金管理账户</p>
+      <p>电子账户
+        <br/>
+        e想账户
+        <br/>
+        现金管理账户
+      </p>
     </div>
   </div>
   <Footer></Footer>
@@ -80,6 +92,7 @@ export default {
   height: 680px;
   background-color:rgba(255,255,255,1);
   position: relative;
+  text-align: center;
 }
 .center-title {
     font-size:1.6em;
@@ -87,24 +100,21 @@ export default {
     font-weight:500;
     color:rgba(29,31,49,1);
     line-height:50px;
-    position: absolute;
-    top: 10.27%;
-    left: 46.25%;
+    display: table;
+    margin: 5% auto;
 }
 .center-line {
     width:60px;
     height:3px;
     background:rgba(2,164,175,1);
-    position: absolute;
-    top: 19%;
-    left: 48.1%;
-}
+    display: table;
+    margin: -4.5% auto;}
 .payment-settlement,
 .investment,
 .account-management,
 .loan-financing{
   position: absolute;
-  top: 28.72%;
+  top: 18.72%;
   width:20%;
   height:60%;
   background:rgba(255,255,255,1);
@@ -127,19 +137,16 @@ export default {
 .investment img,
 .account-management img,
 .loan-financing img{
-  position: absolute;
   width: 150px;
   height: 150px;
-  top: 7.14%;
-  left: 60px;
+  margin: 0 auto;
 }
 .payment-settlement a,
 .investment a,
 .account-management a,
 .loan-financing a{
-  position: absolute;
-  top: 46.43%;
-  left: 93px;
+  display: table;
+  margin: 0 auto;
   height:42px;
   font-size:1.5em;
   font-family:PingFangSC-Medium,PingFang SC;
@@ -154,9 +161,8 @@ export default {
   width:50px;
   height:3px;
   background:rgba(2,164,175,1);
-  position: absolute;
-  top: 59.2%;
-  left: 110px;
+  display: table;
+  margin: 0 auto;
 }
 .payment-settlement p,
 .investment p,
@@ -167,8 +173,6 @@ export default {
   font-weight:400;
   color:rgba(29,31,49,1);
   line-height:28px;
-  text-align: center;
-  position: relative;
-  top: 66.42%;
+  margin: 10% auto;
 }
 </style>

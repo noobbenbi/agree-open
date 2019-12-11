@@ -7,7 +7,7 @@
   </div>
     <div class="payment-settlement" >
       <img  src="@/assets/images/productCapability_icon1.png" />
-      <img class="background-img" src="@/assets/images/productCapability1.png" alt="">
+      <!-- <img class="background-img" src="@/assets/images/productCapability1.png" alt=""> -->
       <p class="itemTitie" href="#">支付结算</p>
       <span></span>
       <div class="mouseenter">
@@ -17,7 +17,7 @@
     </div>
     <div class="investment">
       <img  src="@/assets/images/productCapability_icon2.png" />
-      <img class="background-img" src="@/assets/images/productCapability2.png" />
+      <!-- <img class="background-img" src="@/assets/images/productCapability2.png" /> -->
       <p  class="itemTitie" href="#">投资理财</p>
       <span></span>
       <div class="mouseenter">
@@ -27,7 +27,7 @@
     </div>
     <div class="account-management">
       <img src="@/assets/images/productCapability_icon3.png" />
-      <img class="background-img" src="@/assets/images/close-up-photo-of-man-wearing-black-suit-jacket-doing-thumbs-684385.png" />
+      <!-- <img class="background-img" src="@/assets/images/close-up-photo-of-man-wearing-black-suit-jacket-doing-thumbs-684385.png" /> -->
       <p class="itemTitie" href="#">账户管理</p>
       <span></span>
       <div class="mouseenter">
@@ -37,7 +37,7 @@
     </div>
     <div class="loan-financing">
       <img src="@/assets/images/productCapability_icon4.png" />
-      <img class="background-img" src="@/assets/images/productCapability4.png" />
+      <!-- <img class="background-img" src="@/assets/images/productCapability4.png" /> -->
       <p class="itemTitie" href="#">贷款融资</p>
       <span></span>
       <div class="mouseenter">
@@ -83,17 +83,19 @@ export default {
   font-weight:500;
   color:rgba(255,255,255,1);
   line-height:50px;
-  position: absolute;
-  top: 11.6%;
-  left: 46.25%;
+  position: relative;
+  top: 70px;
+  display: table;
+  margin: 0 auto;
 }
 .center-line {
   width:60px;
   height:3px;
   background:rgba(2,164,175,1);
-  position: absolute;
-  top: 18.38%;
-  left: 48.1%;
+  position: relative;
+  top: 75px;
+  display: table;
+  margin: 0 auto;
 }
 .payment-settlement,
 .investment,
@@ -104,6 +106,8 @@ export default {
   width:20%;
   height:455px;
   background:rgba(29,31,49,1);
+  text-align: center;
+  /* opacity: 0.5; */
 }
 .payment-settlement {
   left: 8.38%;
@@ -122,25 +126,15 @@ export default {
 .account-management img:nth-of-type(1),
 .loan-financing img:nth-of-type(1){
   opacity:1;
-  position: absolute;
   width: 121px;
   height: 121px;
-  top: 24.5%;
-  left: 27.8%;
-}
-.background-img {
-  width:100%;
-  height:100%;
-  background:rgba(29,31,49,0.1);
-  opacity: 0.5;
+  margin: 30% auto;
 }
 .payment-settlement p,
 .investment p,
 .account-management p,
 .loan-financing p{
-  position: absolute;
-  top: 55.78%;
-  left: 33.25%;
+  margin: -10% auto;
   font-size:1.3em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
@@ -166,6 +160,22 @@ export default {
   opacity: 1;
   display: none;
 }
+.payment-settlement {
+  background-image: url(../../assets/images/productCapability1.png);
+  background-size: 100% 100%;
+}
+.investment {
+  background-image: url(../../assets/images/productCapability2.png);
+  background-size: 100% 100%;
+}
+.account-management {
+  background-image: url(../../assets/images/close-up-photo-of-man-wearing-black-suit-jacket-doing-thumbs-684385.png);
+  background-size: 100% 100%;
+}
+.loan-financing {
+  background-image: url(../../assets/images/productCapability4.png);
+  background-size: 100% 100%;
+}
 .payment-settlement:hover .mouseenter {
   background-image: url(../../assets/images/shopping-business-money-pay-50987.png);
   display: block;
@@ -183,9 +193,9 @@ export default {
   display: block;
 }
 .detail-title {
-  position: absolute;
-  left: 30.25%;
-  top: 23.43%;
+  position: relative;
+  top: 40px;
+  margin: 0 auto;
   height:42px;
   font-size:1.44em;
   font-family:PingFangSC-Medium,PingFang SC;
