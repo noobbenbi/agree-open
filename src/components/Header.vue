@@ -186,7 +186,7 @@ export default {
     top: 20.2%;
     /* top: 35px; */
     left: 21.4%;
-    font-size:1.25em;
+    font-size:1em;
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(29,31,49,1);

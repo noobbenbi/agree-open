@@ -10,22 +10,22 @@
       <img src="@/assets/images/blue-and-yellow-graph-on-stock-market-monitor-159888.png">
       <img src="@/assets/images/adult-blur-boss-business-288477.png">
       <div class="text-part-read">
-          <a class="text-part-title" href="">接入前必读</a>
+          <a class="text-part-title" @click="goDetail('1')">接入前必读</a>
           <span class="text-part-line"></span>
           <p class="text-part-content">{{msg}}</p>
       </div>
       <div class="text-part-dev">
-          <a class="text-part-title" href="">接入开发</a>
+          <a class="text-part-title" @click="goDetail('2')">接入开发</a>
           <span class="text-part-line"></span>
           <p class="text-part-content">{{msg}}</p>
       </div>
       <div class="text-part-api">
-          <a class="text-part-title" href="">API接口规范</a>
+          <a class="text-part-title" @click="goDetail('4')">API接口规范</a>
           <span class="text-part-line"></span>
           <p class="text-part-content">{{msg}}</p>
       </div>
   <div class="text-part-sdk">
-      <a class="text-part-title" href="">基础SDK集成</a>
+      <a class="text-part-title" @click="goDetail('3')">基础SDK集成</a>
       <span class="text-part-line"></span>
       <p class="text-part-content">{{msg}}</p>  
   </div>
@@ -39,7 +39,17 @@ export default {
       return {
           msg:'金融场景化业务产品和多种理财产品，为客户流动资金创造更大价值'
       }
-  }
+  },
+  methods:{
+      goDetail(id){
+          this.$router.push({
+              path:'/devaccess/accessguidedetail',
+              query: {
+                  nameId: id
+              }
+          });
+      },
+  },
 }
 </script>
 <style scoped>

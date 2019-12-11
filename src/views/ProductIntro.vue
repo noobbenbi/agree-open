@@ -144,7 +144,6 @@ export default {
            this.contentItem = this.$route.query.nameId - 1;
         },
         selected(name) {
-            console.log(name);
             this.contentItem = name - 1;
         },
     },

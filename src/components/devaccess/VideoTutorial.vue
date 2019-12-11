@@ -13,13 +13,13 @@
           <p class="video-time"></p>
         </div> -->
       </div>
-      <button>查看更多</button>
+      <router-link to="/devaccess/videotutorialall"><button>查看更多</button></router-link>
   </div>
 </template>
 
 <script>
 export default {
-    name:'VideoTutorial'
+    name:'VideoTutorial',
 }
 </script>
 

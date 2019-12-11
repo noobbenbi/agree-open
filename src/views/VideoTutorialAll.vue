@@ -91,34 +91,36 @@ export default {
 
 <style scoped>
 .videotutorialall {
-    width:1920px;
-    height:1912px;
+    width:100%;
+    min-width: 1200px;
+    height:1405px;
     background:rgba(255,255,255,1);
+    position: relative;
 }
 .videotutorialall img {
-    width: 1920px;
+    width: 100%;
     height: 450px;
     position: absolute;
-    top: 120px;
+    top: 0px;
 }
 .bread {
     position: absolute;
-    top: 596px;
-    left: 160px;
+    top: 470px;
+    left: 114px;
 }
 .breadcrumbitem{
-    font-size:20px;
+    font-size:1em;
     font-family:PingFangSC-Regular,PingFang SC;
     line-height:28px;
 }
 .videotutorialall video {
-    width: 520px;
-    height: 365px;
+    width: 370px;
+    height: 260px;
 }
 .icon {
   position: absolute;
-  top: 325px;
-  left: 440px;
+  bottom: 0px;
+  right: 0px;
   width: 80px;
   height: 40px;
   color:darkgray;
@@ -128,47 +130,47 @@ export default {
 }
 .video-box1 {
     position: absolute;
-    left: 160px;
-    top: 644px;
+    left: 114px;
+    top: 520px;
 }
 .video-box2 {
     position: absolute;
-    left: 700px;
-    top: 644px;
+    left: 36.5%;
+    top: 520px;
 }
 .video-box3 {
     position: absolute;
-    left: 1240px;
-    top: 644px;
+    left: 64.6%;
+    top: 520px;
 }
 .video-box4 {
     position: absolute;
-    left: 160px;
-    top: 1040px;
+    left: 114px;
+    top: 800px;
 }
 .video-box5 {
     position: absolute;
-    left: 700px;
-    top: 1040px;
+    left: 36.5%;
+    top: 800px;
 }
 .video-box6 {
     position: absolute;
-    left: 1240px;
-    top: 1040px;
+    left: 64.6%;
+    top: 800px;
 }
 .video-box7 {
     position: absolute;
-    left: 160px;
-    top: 1436px;
+    left: 114px;
+    top: 1080px;
 }
 .video-box8 {
     position: absolute;
-    left: 700px;
-    top: 1436px;
+    left: 36.5%;
+    top: 1080px;
 }
 .video-box9 {
     position: absolute;
-    left: 1240px;
-    top: 1436px;
+    left: 64.6%;
+    top: 1080px;
 }
 </style>

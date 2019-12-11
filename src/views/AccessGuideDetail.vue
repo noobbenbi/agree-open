@@ -6,24 +6,24 @@
             <Breadcrumb>
                 <BreadcrumbItem class="breadcrumbitem">开发接入</BreadcrumbItem>
                 <BreadcrumbItem class="breadcrumbitem">接入指南</BreadcrumbItem>
-                <BreadcrumbItem class="breadcrumbitem">{{title}}</BreadcrumbItem>
+                <BreadcrumbItem class="breadcrumbitem">{{title[breadId]}}</BreadcrumbItem>
             </Breadcrumb>
         </div>
         <div class="select-lab">
-             <Menu :theme="theme3" active-name="1" width="240px" class="menu">
+             <Menu :theme="theme3" active-name="1" width="240px" class="menu" :active-name="menuId" @on-select="selected">
                 <MenuItem name="1" class="menuitem">
-                    <p>接入前必读</p>
+                    <p>{{title[0]}}</p>
                 </MenuItem>
                 <MenuItem name="2" class="menuitem">
-                    <p>接入开发</p>
+                    <p>{{title[1]}}</p>
                 </MenuItem>
                 <MenuItem name="3" class="menuitem">
-                    <p>基础SDK集成</p>
+                    <p>{{title[2]}}</p>
                 </MenuItem>
                 <MenuItem name="4" class="menuitem">
-                    <p>API接口规范</p>
+                    <p>{{title[3]}}</p>
                 </MenuItem>
-            </Menu>
+            </Menu> 
         </div>
     </div>
     <!-- <Footer class="footer"></Footer> -->
@@ -37,8 +37,31 @@ export default {
     name:'AccessGuideDetail',
     data() {
         return {
-            title:'接入前必读'
+            theme3:'light',
+            title:[
+                '接入前必读',
+                '接入开发',
+                '基础SDK集成',
+                'API接口规范'
+            ],
+            menuId:'',
+            breadId:'',
         }
+    },
+    created(){
+        this.getParams();
+    },
+    watch:{
+        '$route':'getParams'
+    },
+    methods:{
+        getParams(){
+            this.menuId = this.$route.query.nameId;
+            this.breadId  = this.$route.query.nameId -1;
+        },
+        selected(name) {
+            this.breadId = name - 1;
+        },
     },
     components:{
         Header,
@@ -71,7 +94,7 @@ export default {
 }
 .select-lab {
     position: absolute;
-    top: 75px;
+    top: 85px;
     left: 151px;
 }
 .menuitem {
