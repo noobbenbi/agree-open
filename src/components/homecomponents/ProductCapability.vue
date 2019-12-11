@@ -177,19 +177,19 @@ export default {
   background-size: 100% 100%;
 }
 .payment-settlement:hover .mouseenter {
-  background-image: url(../../assets/images/shopping-business-money-pay-50987.png);
+  background-image: url(../../assets/images/productCapability1-mohu.png);
   display: block;
 }
 .investment:hover .mouseenter {
-  background-image: url(../../assets/images//productCapability2.png);
+  background-image: url(../../assets/images//productCapability2-mohu.png);
   display: block;
 }
 .account-management:hover .mouseenter {
-  background-image: url(../../assets/images/close-up-photo-of-man-wearing-black-suit-jacket-doing-thumbs-684385.png);
+  background-image: url(../../assets/images/productCapability3-mohu.png);
   display: block;
 }
 .loan-financing:hover .mouseenter {
-  background-image: url(../../assets/images/productCapability4.png);
+  background-image: url(../../assets/images/productCapability4-mohu.png);
   display: block;
 }
 .detail-title {
@@ -197,10 +197,10 @@ export default {
   top: 40px;
   margin: 0 auto;
   height:42px;
-  font-size:1.44em;
+  font-size:1.64em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:600;
-  color:black;
+  color:rgba(255,255,255,1);
   line-height:42px;
 }
 .detail-content {
@@ -208,9 +208,9 @@ export default {
   top: 39%;
   left: 20.77%;
   right: 20.77%;
-  font-size:1em;
+  font-size:1.25em;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
-  color:black;
+  color:rgba(255,255,255,1);
 }
 </style>

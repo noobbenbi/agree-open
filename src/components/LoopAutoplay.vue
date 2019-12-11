@@ -29,10 +29,7 @@ export default {
 .loop-autoplay {
   width:100%;
   min-width: 1200px;
-  /* padding-bottom: 39%; */
-  /* height:0; */
   background:linear-gradient(180deg,rgba(255,218,0,0) 0%,rgba(255,179,0,1) 100%);
-  /* opacity:0.1; */
   position: relative;
 }
 .loop-autoplay img {

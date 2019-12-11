@@ -59,9 +59,10 @@ export default {
     width:60px;
     height:3px;
     background:rgba(2,164,175,1);
-    position: absolute;
-    top: 18.6%;
-    left: 48.17%;
+    position: relative;
+    top: 75px;
+    display: table;
+    margin: 0 auto;
 }
 .check-in,
 .createapp,

@@ -5,14 +5,22 @@
       <span class="center-title">能力介绍</span>
       <span class="center-line"></span>
   </div>
-  <img src="@/assets/images/abstract-art-blur-bright-373543.png">
-  <img src="@/assets/images/bandwidth-close-up-computer-connection-1148820.png" alt="">
-  <img src="@/assets/images/people-discuss-about-graphs-and-rates-3184292.png" alt="">
-  <img src="@/assets/images/photo-of-man-wearing-brown-sweater-3184603.png" alt="">
-  <p>简单集成</p>
-  <p>技术优势</p>
-  <p>一站式服务</p>
-  <p>产融合作</p>
+  <div class="capabilityintro-img1">
+      <img class="img1" src="@/assets/images/abstract-art-blur-bright-373543.png">
+      <p>简单集成</p>
+  </div>
+  <div class="capabilityintro-img2">
+      <img class="img2" src="@/assets/images/bandwidth-close-up-computer-connection-1148820.png">
+      <p>技术优势</p>
+  </div>
+  <div class="capabilityintro-img3">
+      <img class="img3" src="@/assets/images/people-discuss-about-graphs-and-rates-3184292.png">
+      <p>一站式服务</p>
+  </div>
+  <div class="capabilityintro-img4">
+      <img class="img4" src="@/assets/images/photo-of-man-wearing-brown-sweater-3184603.png">
+      <p>产融合作</p>
+  </div>
 </div>
 </template>
 
@@ -49,43 +57,45 @@ export default {
     top: 18.6%;
     left: 48.17%;
 }
-.capabilityintro img {
+.capabilityintro-img1,
+.capabilityintro-img2,
+.capabilityintro-img3,
+.capabilityintro-img4{
     width: 275px;
-    height: 290px;
+    height: 370px;
     position: absolute;
     top: 30%;
+    text-align: center;
 }
-.capabilityintro img:nth-of-type(1) {
-    left: 8.38%;
+.capabilityintro-img1 img,
+.capabilityintro-img2 img,
+.capabilityintro-img3 img,
+.capabilityintro-img4 img{
+    width: 100%;
+    height: 290px;
 }
-.capabilityintro img:nth-of-type(2) {
-    left: 29.5%;
+.capabilityintro-img1 {
+    left: 115px;
 }
-.capabilityintro img:nth-of-type(3) {
-    left: 50.57%;
+.capabilityintro-img2 {
+    left: 403px;
 }
-.capabilityintro img:nth-of-type(4) {
-    left: 71.667%;
+.capabilityintro-img3 {
+    left: 691px;
 }
-.capabilityintro p {
+.capabilityintro-img4{
+    left: 979px;
+}
+.capabilityintro-img1 p,
+.capabilityintro-img2 p,
+.capabilityintro-img3 p, 
+.capabilityintro-img4 p{
     font-size:1.56em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(29,31,49,1);
     line-height:45px;
-    position: absolute;
-    top: 77.57%;
-}
-.capabilityintro p:nth-of-type(1) {
-    left: 15.1%;
-}
-.capabilityintro p:nth-of-type(2) {
-    left: 36.15%;
-}
-.capabilityintro p:nth-of-type(3) {
-    left: 56.46%;
-}
-.capabilityintro p:nth-of-type(4) {
-    left: 78.4%;
+    display: table;
+    margin: 0 auto;
 }
 </style>
