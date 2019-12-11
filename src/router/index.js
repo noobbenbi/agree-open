@@ -21,6 +21,26 @@ const routes = [
     component: () => import('../views/AccountCenter.vue')
   },
   {
+    path: '/accountcenter/acc',
+    name: 'accountcentersub',
+    component: () => import('../views/accountCenterSub.vue')
+  },
+  {
+    path: '/accountcenter/acc/accf',
+    name: 'accountconfirm',
+    component: () => import('../views/accouConfirm.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/devhelp',
+    name: 'devhelp',
+    component: () => import('../views/DevHelp.vue')
+  },
+  {
     path: '/msgcenter',
     name: 'msgcenter',
     component: () => import('../views/MsgCenter.vue')

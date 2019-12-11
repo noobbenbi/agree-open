@@ -79,50 +79,48 @@ export default {
     min-width: 1200px;
     height: 814px;
     background:rgba(255,255,255,1);
-    /* text-align: center; */
+    text-align: center;
 }
 .accountcenter img:nth-of-type(1) {
     width:100%;
     height:356px;
-    position: absolute;
-    top: 0%;
 }
 .accountcenter img:nth-of-type(2) {
     width:112px;
     height:112px;
-    position: absolute;
-    top: 10.1%;
-    left: 45.8%;
+    margin: 0 auto;
+    position: relative;
+    top: -300px;
+    
 }
 .center-title {
   font-size:1.2em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(255,255,255,1);
-  position: absolute;
-  top: 25.6%;
-  left: 47.5%;
-  /* display: table;
-  margin: 0 auto; */
+  display: table;
+  margin: 0 auto;
+  position: relative;
+  top: -280px;
 }
 .center-line {
   width:2.3%;
   height:2px;
   background:rgba(2,164,175,1);
-  position: absolute;
-  top: 30%;
-  left: 48.6%;
+  position: relative;
+  display: table;
+  margin: 0 auto;
+  top: -270px;
 }
 .btn-createapp {
     width:7.3%;
     height:4.2%;
     background:rgba(2,164,175,1);
-    /* border-radius:2px; */
-    position: absolute;
-    top: 33.5%;
-    left: 46.4%;
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    top: -240px;
     border: none;
-    /* font-size:20px; */
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);
@@ -140,17 +138,17 @@ export default {
 }
 .mydata {
     position: absolute;
-    left: 35%;
+    left: 32%;
     top: 0;
     font-family:PingFangSC-Medium,PingFang SC;
     color:rgba(29,31,49,1);
 }
 .myapp {
     position: absolute;
-    left: 47.6%;
+    left: 46.6%;
 }
 .myagreement {
     position: absolute;
-    left: 60.4%;
+    left: 61.4%;
 }
 </style>

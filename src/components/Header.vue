@@ -15,7 +15,7 @@
             <a href="javascript:;" @click="HandleLink('/devaccess')">开发接入</a>
             <a href="javascript:;" @click="HandleLink('')">文档中心</a>
             <a href="javascript:;" @click="HandleLink('')">API沙箱</a>
-            <a href="javascript:;" @click="HandleLink('')">帮助与支持</a>
+            <a href="javascript:;" @click="HandleLink('/devhelp')">帮助与支持</a>
         </div>
         <div class="login-register" v-show="loginBox">
           <!-- 未登录 -->
@@ -25,7 +25,7 @@
           <div class="user-info" v-if="curr_user">
             <a
               class="user-bar clear-a-color"
-              href="/accountCenter"
+              
               @mouseenter="showUserInfo"
               @mouseleave="hideUserInfo"
             >
@@ -37,11 +37,11 @@
                     <Icon type="ios-arrow-down"></Icon>
                 </a>
                 <DropdownMenu slot="list">
-                    <DropdownItem  @on-click.native="HandleLink('/accountcenter')">账户中心</DropdownItem>
+                    <DropdownItem  @click.native="HandleLink('/accountcenter')">账户中心</DropdownItem>
                     <DropdownItem href="/appCenter">应用中心</DropdownItem>
                     <DropdownItem href="javascript:;" @click="changeLoacle('zh')">切换中文</DropdownItem>
                     <DropdownItem href="javascript:;" @click="changeLoacle('en')">切换英文</DropdownItem>
-                    <DropdownItem href="/login">退出</DropdownItem>
+                    <DropdownItem  @click.native="HandleLink('/')">退出</DropdownItem>
                 </DropdownMenu>
                 </Dropdown>
                 </div>

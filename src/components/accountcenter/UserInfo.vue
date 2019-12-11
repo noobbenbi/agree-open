@@ -3,7 +3,7 @@
 <div class="userinfo">
         <span class="head-text">基本资料</span>
         <button class="btn-Certification">认证</button>
-        <button class="btn-modify">修改</button>
+        <router-link to="/accountcenter/acc"><button class="btn-modify">修改</button></router-link>
         <p class="account-title">{{agreementInfo.index1}}</p><span class="user-account">{{agreementInfo.title1}}</span>
         <p class="state-title">{{agreementInfo.index2}}</p><span class="state-text">{{agreementInfo.title2}}</span>
         <p class="pwd-title">{{agreementInfo.index3}}</p><span class="password">{{agreementInfo.title3}}</span>

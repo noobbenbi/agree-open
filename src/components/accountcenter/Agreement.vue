@@ -9,7 +9,7 @@
     <!-- 有协议 -->
     <div class="hasagreement" v-if="!state">
         <span class="head-text">已签协议</span>
-        <button class="btn-look">查看</button>
+        <router-link to="/accountcenter/acc"><button class="btn-look">查看</button></router-link>
         <p class="agreement-index1">{{agreementInfo.index1}}</p><span class="agreement-title1">{{agreementInfo.title1}}</span>
         <p class="agreement-index2">{{agreementInfo.index2}}</p><span class="agreement-title2">{{agreementInfo.title2}}</span>
     </div>
