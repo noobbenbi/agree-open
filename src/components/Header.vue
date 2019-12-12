@@ -14,7 +14,7 @@
             <a href="javascript:;" @click="HandleLink('/procapability')">产品能力</a>
             <a href="javascript:;" @click="HandleLink('/devaccess')">开发接入</a>
             <a href="javascript:;" @click="HandleLink('')">文档中心</a>
-            <a href="javascript:;" @click="HandleLink('')">API沙箱</a>
+            <a href="javascript:;" @click="HandleLink('/sandbox')">API沙箱</a>
             <a href="javascript:;" @click="HandleLink('/devhelp')">帮助与支持</a>
         </div>
         <div class="login-register" v-show="loginBox">

@@ -107,8 +107,8 @@ export default {
   height:455px;
   background:rgba(29,31,49,1);
   text-align: center;
-  /* opacity: 0.5; */
 }
+
 .payment-settlement {
   left: 8.38%;
 }
@@ -160,6 +160,47 @@ export default {
   opacity: 1;
   display: none;
 }
+/* .payment-settlement:after,
+.investment:after,
+.account-management:after,
+.loan-financing:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 2;
+  background-color: #D74643;
+} */
+
+/* .payment-settlement:hover:after,
+.investment:hover:after,
+.account-management:hover:after,
+.loan-financing:hover:after{
+  opacity: 0.98;
+} */
+/* .mouseenter {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 100px 72px;
+  text-align: center;
+  left: 0;
+  bottom: -10%;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 3;
+  -webkit-transition: bottom .4s ease, opacity .4s ease;
+  -moz-transition: bottom .4s ease, opacity .4s ease;
+  transition: bottom .4s ease, opacity .4s ease;
+  color: #fff;
+  text-align: center;
+} */
 .payment-settlement {
   background-image: url(../../assets/images/productCapability1.png);
   background-size: 100% 100%;
@@ -178,18 +219,22 @@ export default {
 }
 .payment-settlement:hover .mouseenter {
   background-image: url(../../assets/images/productCapability1-mohu.png);
+  background-size: 100% 100%;
   display: block;
 }
 .investment:hover .mouseenter {
   background-image: url(../../assets/images//productCapability2-mohu.png);
+  background-size: 100% 100%;
   display: block;
 }
 .account-management:hover .mouseenter {
   background-image: url(../../assets/images/productCapability3-mohu.png);
+  background-size: 100% 100%;
   display: block;
 }
 .loan-financing:hover .mouseenter {
   background-image: url(../../assets/images/productCapability4-mohu.png);
+  background-size: 100% 100%;
   display: block;
 }
 .detail-title {

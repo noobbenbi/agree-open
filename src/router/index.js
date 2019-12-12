@@ -71,10 +71,16 @@ const routes = [
     component: () => import('../views/VideoTutorialAll.vue')
   },
   {
+    path: '/sandbox',
+    name: 'sandbox',
+    component: () => import('../views/SandBox.vue')
+  },
+  {
     path: '/devaccess/accessguidedetail',
     name: 'devaccess',
     component: () => import('../views/AccessGuideDetail.vue')
   }
+  
 ]
 
 const router = new VueRouter({

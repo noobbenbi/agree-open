@@ -8,7 +8,7 @@
     <div class="img-box">
         
     </div>
-    <Button :size="buttonSize" type="primary">快速加入</Button>
+    <Button  type="primary">快速加入</Button>
     
 </div>
 </template>
