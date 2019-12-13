@@ -26,7 +26,7 @@
             </Menu> 
         </div>
     </div>
-    <!-- <Footer class="footer"></Footer> -->
+    <Footer class="footer"></Footer>
 </div>
 </template>
 
@@ -79,7 +79,8 @@ export default {
     width:100%;
     /* height:2700px; */
     position: relative;
-    height: auto;
+    height: 258px;
+    min-height: 600px;
     background:rgba(255,255,255,1);
 }
 .breadcrumbitem{

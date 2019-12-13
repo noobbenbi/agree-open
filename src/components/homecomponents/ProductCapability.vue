@@ -134,7 +134,7 @@ export default {
 .investment p,
 .account-management p,
 .loan-financing p{
-  margin: -10% auto;
+  margin: -20% auto;
   font-size:1.3em;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
