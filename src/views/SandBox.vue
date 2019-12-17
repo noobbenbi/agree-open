@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="body">
     <Header></Header>
     <div class="sandbox">
         <div class="productintro-title">
@@ -47,6 +47,7 @@
                     <MenuItem name="4-3" class="dh-title-son"><p>Option 11</p></MenuItem>
                 </Submenu>
             </Menu>
+            
         </div>
         <DocManage  :visiable="showDoc" :value="docMenuId" :faId="faId"></DocManage>
     </div>
@@ -58,6 +59,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import DocManage from '../components/sandbox/DocManage';
+import SandboxSider from '../components/sandbox/SandboxSider';
 export default {
     name:'ApiSandBox',
     data() {
@@ -89,12 +91,14 @@ export default {
     components: {
         Header,
         Footer,
-        DocManage
+        DocManage,
+        SandboxSider
     }
 }
 </script>
 
 <style  scoped>
+
 .sandbox {
     width: 100%;
     min-width: 1200px;
@@ -118,6 +122,7 @@ export default {
     position: absolute;
     top: 80px;
     left: 151px;
+    overflow-y: auto;
 }
 .title-icon {
     position: relative;

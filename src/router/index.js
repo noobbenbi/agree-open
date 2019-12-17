@@ -79,7 +79,12 @@ const routes = [
     path: '/devaccess/accessguidedetail',
     name: 'devaccess',
     component: () => import('../views/AccessGuideDetail.vue')
-  }
+  },
+  {
+    path: '/sandboxtest',
+    name: 'sandboxtest',
+    component: () => import('../views/SandBoxTest.vue')
+  },
   
 ]
 

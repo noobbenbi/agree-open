@@ -17,6 +17,11 @@ export default {
         value:String,
         faId:String
     },
+    data(){
+        return {
+            // visiable:true
+        }
+    },
     components:{
         ParameterSet,
         OfflineDoc,
@@ -27,9 +32,6 @@ export default {
 
 <style  scoped>
 .docmanage{
-    position: absolute;
-    left: 500px;
-    top: 100px;
-    height: 50%;
+    position: relative;
 }
 </style>

@@ -8,7 +8,7 @@
         <span class="center-line"></span>
         <button class="btn-createapp">创建应用</button>
         <div class="menu">
-            <Menu mode="horizontal" :theme="light" active-name="1" >
+            <Menu mode="horizontal" :theme="theme3" active-name="1" >
                 <MenuItem name="1" class="mydata" @click.native="infoToShow">
                     <p class="menu-title" >我的资料</p>
                 </MenuItem>
@@ -41,7 +41,8 @@ export default {
             userName:'测试帐号',
             agreeVis:false,
             appVis:false,
-            infoVis:true
+            infoVis:true,
+            theme3:'light'
         }
     },
     methods: {

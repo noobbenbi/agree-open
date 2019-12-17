@@ -102,7 +102,7 @@ export default {
                 });
             }
             } else {
-                this.error = '请先滑动解锁'
+                this.error = '请先滑动解锁!'
                 this.showError();
             }
         },
