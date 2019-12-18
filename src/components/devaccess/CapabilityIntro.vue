@@ -75,16 +75,16 @@ export default {
     height: 290px;
 }
 .capabilityintro-img1 {
-    left: 115px;
+    left: 8.4%;
 }
 .capabilityintro-img2 {
-    left: 403px;
+    left: 29.5%;
 }
 .capabilityintro-img3 {
-    left: 691px;
+    left: 50.6%;
 }
 .capabilityintro-img4{
-    left: 979px;
+    left: 71.7%;
 }
 .capabilityintro-img1 p,
 .capabilityintro-img2 p,

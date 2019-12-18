@@ -3,7 +3,7 @@
         <Layout>
             <Header>
             </Header>
-            <Layout :style="{padding: '0 150px',background: '#fff'}">
+            <Layout :style="{padding: '0 150px',background: '#fff'}"> 
                 <Breadcrumb>
                     <BreadcrumbItem class="breadcrumbitem" to="/">API沙箱</BreadcrumbItem>
                     <BreadcrumbItem class="breadcrumbitem" >{{title[breadId]}}</BreadcrumbItem>
@@ -93,6 +93,9 @@ export default {
             this.faId = name.charAt(0);
             // console.log(this.faId);
         },
+    },
+    mounted(){
+        this.choosed('1-1');
     },
     components:{
         Header,

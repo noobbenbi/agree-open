@@ -192,4 +192,12 @@ export default {
     left: 20px;
     top: -40px;
 }
+/* .tb-parameter /deep/ .ivu-table td{
+    border-bottom: none !important;
+    border-right-color:honeydew;
+}
+.ivu-table th{
+    border-bottom: none !important;
+    border-right-color:honeydew;
+} */
 </style>
