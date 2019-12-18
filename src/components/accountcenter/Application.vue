@@ -1,5 +1,6 @@
 <template>
 <!-- 我的应用 -->
+<div>
 <div class="myapplication">
     <!-- 无应用 -->
     <div class="noapplication" v-if="state">
@@ -19,6 +20,7 @@
         <p class="authorization-callback-title">授权回调地址:</p>
         <p class="authorization-callback">{{appInfo.callbackAddr    }}</p>
     </div>
+</div>
 </div>
 </template>
 
@@ -44,9 +46,9 @@ export default {
 @import url("../../assets/styles/font/font.css");
 .myapplication {
     width: 62.5%;
-    height: 35%;
-    position: absolute;
-    top: 53%;
+    height: 400px;
+    position: relative;
+    /* top: 53%; */
     left: 18.75%;
 }
 .noapplication p{
@@ -54,16 +56,18 @@ export default {
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(155,155,155,1);
-    position: absolute;
-    top: 71%;
-    left: 41.6%;
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    top: 130px;
 }
 .noapplication img {
     height: 40%;
     width: 17%;
-    position: absolute;
-    top: 26.25%;
-    left: 43.76%;
+    position: relative;
+    top: 100px;
+    display: table;
+    margin: 0 auto;
 }
 .app-name {
     font-size: 1.25em;
@@ -77,11 +81,11 @@ export default {
 }
 .btn-look {
     width:6%;
-    height:9%;
+    height:30px;
     background:rgba(2,164,175,1);
     border-radius:2px;
     position: absolute;
-    top: 8%;
+    top: 32px;
     right: 5%;
     border: none;
     font-family:PingFangSC-Medium,PingFang SC;
@@ -92,7 +96,7 @@ export default {
 .hasapplication p:nth-of-type(3),
 .hasapplication p:nth-of-type(5),
 .hasapplication p:nth-of-type(7){
-    font-size:1.25em;
+    font-size:1.15em;
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(155,155,155,1);
@@ -102,7 +106,7 @@ export default {
 .hasapplication p:nth-of-type(4),
 .hasapplication p:nth-of-type(6),
 .hasapplication p:nth-of-type(8){
-    font-size:1.25em;
+    font-size:1.15em;
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(29,31,49,1);
@@ -111,30 +115,30 @@ export default {
 }
 .appid-title {
     left: 12.4%;
-    top: 32%;
+    top: 100px;
 }
 .rsa2-title {
     left: 9%;
-    top: 49%;
+    top: 150px;
 }
 .aes-title {
     left: 10.3%;
-    top: 66%;
+    top: 200px;
 }
 .authorization-callback-title {
     left: 5.77%;
-    top: 83%;
+    top: 250px;
 }
 .appid {
-    top: 31.75%;
+    top: 100px;
 }
 .rsa2 {
-    top: 49%;
+    top: 150px;
 }
 .aes {
-    top: 66%;
+    top: 200px;
 }
 .authorization-callback {
-    top: 83%;
+    top: 250px;
 }
 </style>

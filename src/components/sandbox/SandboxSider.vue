@@ -72,11 +72,6 @@ export default {
 }
 </script>
 <style  scoped>
-.detail-menu {
-    position: relative;
-    top: 80px;
-    left: 151px;
-}
 .title-icon {
     position: relative;
     top: 7px;

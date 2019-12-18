@@ -301,8 +301,7 @@ export default {
 .register-input input:nth-of-type(1){
     position: relative;
     width:327px;
-    height:45px;
-    
+    height:45px;   
     margin-left: auto;
     margin-right: auto;
     top: 120px;
@@ -403,5 +402,6 @@ export default {
 input::-webkit-input-placeholder{
     position: relative;
     left: 20px;
+    font-size: 5px;
 }
 </style>

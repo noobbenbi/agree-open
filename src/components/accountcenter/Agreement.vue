@@ -1,5 +1,6 @@
 <template>
 <!-- 我的协议 -->
+<div>
 <div class="myagreements">
     <!-- 无协议 -->
     <div class="noagreement" v-if="state">
@@ -13,6 +14,7 @@
         <p class="agreement-index1">{{agreementInfo.index1}}</p><span class="agreement-title1">{{agreementInfo.title1}}</span>
         <p class="agreement-index2">{{agreementInfo.index2}}</p><span class="agreement-title2">{{agreementInfo.title2}}</span>
     </div>
+</div>
 </div>
 </template>
 
@@ -35,28 +37,40 @@ export default {
 
 <style  scoped>
 @import url("../../assets/styles/font/font.css");
+
 .myagreements {
     width: 62.5%;
-    height: 35%;
-    position: absolute;
-    top: 53%;
+    height: 1000px;
+    height:auto;
+    min-height:400px;
+    position: relative;
     left: 18.75%;
+    text-align: center;
+}
+.test{
+    height: 200px;
+    width: 100%;
+    background-color: aqua;
+    position: relative;
+    /* top: 400px; */
 }
 .noagreement img {
-    height: 40%;
+    height: 115px;
     width: 17%;
-    position: absolute;
-    top: 26.25%;
-    left: 41.76%;
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    top: 100px
 }
 .noagreement p{
     font-size: 1.375em;
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(155,155,155,1);
-    position: absolute;
-    top: 71%;
-    left: 42.6%;
+    position: relative;
+    top: 130px;
+    display: table;
+    margin: 0 auto;
 }
 .head-text {
     font-size: 1.25em;
@@ -70,7 +84,7 @@ export default {
 }
 .btn-look {
     width:6%;
-    height:9%;
+    height:30px;
     background:rgba(2,164,175,1);
     border-radius:2px;
     position: absolute;
@@ -82,7 +96,7 @@ export default {
     color:rgba(255,255,255,1);
 }
 .hasagreement p{
-    font-size:1.25em;
+    font-size:1.15em;
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(155,155,155,1);
@@ -91,7 +105,7 @@ export default {
 }
 .hasagreement span:nth-of-type(2),
 .hasagreement span:nth-of-type(3) {
-    font-size:1.25em;
+    font-size:1.15em;
     font-family:PingFangSC-Regular,PingFang SC;
     font-weight:400;
     color:rgba(29,31,49,1);
@@ -99,15 +113,15 @@ export default {
     left: 25%;
 }
 .agreement-index1 {
-    top: 32%;
+    top: 100px;
 }
 .agreement-index2 {
-    top: 50%;
+    top: 150px;
 }
 .agreement-title1 {
-    top: 31.75%;
+    top: 100px;
 }
 .agreement-title2 {
-    top: 50%;
+    top: 150px;
 }
 </style>

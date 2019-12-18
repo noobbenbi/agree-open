@@ -2,11 +2,13 @@
 <div>
     <Header></Header>
     <div class="accountcenter">
-        <img src="@/assets/images/accountcenter-background.png">
-        <img src="@/assets/images/UserAvatar.png">
-        <span class="center-title">{{userName}}</span>
-        <span class="center-line"></span>
-        <button class="btn-createapp">创建应用</button>
+        <div class="toppart">
+            <img src="@/assets/images/accountcenter-background.png">
+            <img src="@/assets/images/UserAvatar.png">
+            <span class="center-title">{{userName}}</span>
+            <span class="center-line"></span>
+            <button class="btn-createapp">创建应用</button>
+        </div>
         <div class="menu">
             <Menu mode="horizontal" :theme="theme3" active-name="1" >
                 <MenuItem name="1" class="mydata" @click.native="infoToShow">
@@ -24,7 +26,7 @@
         <Application v-show="appVis" ></Application>
         <UserInfo v-show="infoVis" ></UserInfo>
     </div>
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
 </div>
 </template>
 
@@ -74,13 +76,21 @@ export default {
 
 <style  scoped>
 @import url("../assets/styles/font/font.css");
+.body{
+    display: flex;
+    flex-direction: column;
+}
 .accountcenter {
     position: relative;
     width: 100%;
-    min-width: 1200px;
-    height: 814px;
+    /* min-width: 1200px; */
+    /* height: 814px; */
     background:rgba(255,255,255,1);
     text-align: center;
+    /* display: flex; */
+}
+.toppart {
+    height: 356px;
 }
 .accountcenter img:nth-of-type(1) {
     width:100%;
@@ -115,7 +125,7 @@ export default {
 }
 .btn-createapp {
     width:7.3%;
-    height:4.2%;
+    height:30px;
     background:rgba(2,164,175,1);
     position: relative;
     display: table;
@@ -128,8 +138,8 @@ export default {
     cursor: pointer;
 }
 .menu {
-    position: absolute;
-    top: 43.7%;
+    position:  relative;
+    /* top: 43.7%; */
     width: 100%;
 }
 .menu-title {
