@@ -3,7 +3,7 @@
         <Layout>
             <Header>
             </Header>
-            <Layout :style="{padding: '0 150px',background: '#fff'}"> 
+            <Layout class="newstyle1" :style="{padding: '0 00px',background: '#fff'}"> 
                 <Breadcrumb>
                     <BreadcrumbItem class="breadcrumbitem" to="/">API沙箱</BreadcrumbItem>
                     <BreadcrumbItem class="breadcrumbitem" >{{title[breadId]}}</BreadcrumbItem>
@@ -154,6 +154,9 @@ export default {
 .sider{
     width: 240px;
 }
+/* .newstyle1 /deep/ .ivu-layout {
+    padding: 0px 0px !important;
+} */
 .layout{
     border: 1px solid #d7dde4;
     background: #f5f7f9;

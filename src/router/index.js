@@ -46,6 +46,11 @@ const routes = [
     component: () => import('../views/MsgCenter.vue')
   },
   {
+    path: '/msgDetail',
+    name: 'msgDetail',
+    component: () => import('../views/msgDetail.vue')
+  },
+  {
     path: '/procapability',
     name: 'procapability',
     component: () => import('../views/ProCapability.vue')

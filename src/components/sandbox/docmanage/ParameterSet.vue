@@ -5,7 +5,7 @@
         </p>
         <Button class="btn-add" type="success" @click="toShow">添加参数</Button>
         <Divider class="d-line"/>
-        <Table class="tb-parameter" :columns="columns1" :data="data1"></Table>
+        <Table class="tb-parameter" :columns="columns1" :data="data1" :width="tableWidth"></Table>
         <div class="input-add" v-if="show">
             <Input v-model="newParamName" placeholder="参数名称" style="width: 100px" />
             <Input v-model="newParamValue" placeholder="参数值" style="width: 100px" />
@@ -30,6 +30,7 @@ export default {
                 newParamType:'',
                 show:false,
                 error:'',
+                tableWidth:'900',
                 columns1: [
                     {
                         title: '参数名称',
@@ -162,11 +163,11 @@ export default {
 }
 .d-line {
     position: relative;
-    top: -50px;
+    top: -70px;
 }
 .tb-parameter {
     position: relative;
-    top: -50px;
+    top: -70px;
     left: 60px;
     font-size:1em;
     font-family:PingFangSC-Medium,PingFang SC;
@@ -176,7 +177,7 @@ export default {
 }
 .input-add {
     position: relative;
-    left: 20px;
+    left: 70px;
     top: -40px;
 }
 /* .tb-parameter /deep/ .ivu-table td{

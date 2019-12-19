@@ -10,9 +10,9 @@
             </Breadcrumb>
         </div>
         <span class="text-title">通知</span>
-        <Table class="msg-table" 
+        <Table  class="msg-table"  
         :columns="msgColumns" 
-        :data="msgData" 
+        :data="showmsgData" 
         :show-header="showHeader"
         :width="tableWidth"
         :height="tableHeight"
@@ -28,12 +28,15 @@
                 </MenuItem>
             </Menu>
         </div>
-        <Page class="msg-page" :total="10" :page-size="5"/>
+        <Page class="msg-page" 
+        :total="msgDatalength" 
+        :page-size="pageSize"
+        @on-change="changepage"/>
     </div>
     <div class="footer-test">
 
     </div>
-    <!-- <Footer class="footer"></Footer> -->
+    <Footer class="footer"></Footer>
 </div>
 </template>
 
@@ -48,6 +51,7 @@ export default {
             msgColumns:[
                 {
                     title: ' ',
+                    width: 500 + 'px',
                     key: 'msgtitle'
                 },
                 {
@@ -65,7 +69,7 @@ export default {
                                     },
                                     on: {
                                         click: () => {
-                                            this.show()
+                                            this.show(params)
                                         }
                                     }
                                 }, '查看'),
@@ -79,41 +83,138 @@ export default {
             ],
             msgData: [
                 {
-                    msgtitle: '消息1',
-                    look: '查看',
-                    time: '2019-12-02  12:00:00'
+                msgtitle: "消息1",
+                look: "查看",
+                admincode: 1,
+                time: "2019-12-02  12:00:00"
                 },
                 {
-                    msgtitle: '消息2',
-                    look: '查看',
-                    time: '2019-12-02  12:00:00'
+                msgtitle: "消息2",
+                look: "查看",
+                admincode: 2,
+                time: "2019-12-02  12:00:00"
                 },
                 {
-                    msgtitle: '消息3',
-                    look: '查看',
-                    time: '2019-12-02  12:00:00'
+                msgtitle: "消息3",
+                look: "查看",
+                admincode: 3,
+                time: "2019-12-02  12:00:00"
                 },
                 {
-                    msgtitle: '消息4',
-                    look: '查看',
-                    time: '2019-12-02  12:00:00'
+                msgtitle: "消息4",
+                look: "查看",
+                admincode: 4,
+                time: "2019-12-02  12:00:00"
                 },
                 {
-                    msgtitle: '消息5',
-                    look: '查看',
-                    time: '2019-12-02  12:00:00'
+                msgtitle: "消息5",
+                look: "查看",
+                admincode: 5,
+                time: "2019-12-02  12:00:00"
                 },
+                {
+                msgtitle: "消息6",
+                look: "查看",
+                admincode: 6,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息7",
+                look: "查看",
+                admincode: 7,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息8",
+                look: "查看",
+                admincode: 8,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息9",
+                look: "查看",
+                admincode: 9,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息10",
+                look: "查看",
+                admincode: 10,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息11",
+                look: "查看",
+                admincode: 11,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息12",
+                look: "查看",
+                admincode: 12,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息13",
+                look: "查看",
+                admincode: 13,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息14",
+                look: "查看",
+                admincode: 14,
+                time: "2019-12-02  12:00:00"
+                },
+                {
+                msgtitle: "消息15",
+                look: "查看",
+                admincode: 15,
+                time: "2019-12-02  12:00:00"
+                }
             ],
             tableSize:'large',
             showHeader:false,
             tableWidth:'900',
-            tableHeight:'400'
+            tableHeight:'300',
+            showmsgData: [],
+            msgDatanow: [],
+            msgDatalength: '',
+            pageSize: 5,
+            currentPage: 1,
+            msgcode: 1222,
         }
     },
+    mounted() {
+        this.do();
+    },
     methods: {
-        show () {
-            alert('hhhhhhh');
+        do() {
+            console.log('数据',this.msgData);
+            let lenn = this.msgData.length;
+            this.msgDatalength = Number(lenn);
+            for(var i =0 ;i < this.msgData.length;i++){
+                this.msgDatanow[i] = this.msgData[i];
             }
+            console.log('now',this.msgDatanow);
+            this.showmsgData = this.msgDatanow.slice(0, 5);
+            console.log('show', this.showmsgData);
+        },
+        show (params) {
+            console.log('传入',params.row);
+            sessionStorage.setItem('code',params.row.admincode);
+            sessionStorage.setItem('title',params.row.msgtitle);
+            sessionStorage.setItem('content',params.row.look);
+            sessionStorage.setItem('time',params.row.time);
+            this.$router.push('/msgDetail');
+        },
+        changepage(index) {
+            this.currentPage = index;
+            let _start = (index - 1) * this.pageSize;
+            let _end = index * this.pageSize;
+            console.log(_start,_end);
+            this.showmsgData = this.msgDatanow.slice(_start, _end);
+        },
     },
     components: {
         Header,
@@ -130,6 +231,7 @@ export default {
     min-width: 1200px;
     height: 0; 
     padding-bottom: 37%;
+    margin-bottom: 100px;
 }
 .bread {
     position: absolute;
@@ -179,7 +281,7 @@ export default {
 }
 .msg-page {
     position: absolute;
-    top: 100%;
+    margin-top: 35%;
     left: 26%;
 }
 </style>
