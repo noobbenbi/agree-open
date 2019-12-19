@@ -59,7 +59,6 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import DocManage from '../components/sandbox/DocManage';
-import SandboxSider from '../components/sandbox/SandboxSider';
 export default {
     name:'ApiSandBox',
     data() {
@@ -92,19 +91,22 @@ export default {
         Header,
         Footer,
         DocManage,
-        SandboxSider
     }
 }
 </script>
 
 <style  scoped>
-
+.body{
+    display: flex;
+    flex-direction: column;
+}
 .sandbox {
     width: 100%;
     min-width: 1200px;
-    position: relative;
-    height: 258px;
-    min-height: 600px;
+    /* position: relative; */
+    height: 3000px;
+    height:auto;
+    min-height:600px;
     /* height: auto;
     max-height: 2000px; */
 }
@@ -123,6 +125,7 @@ export default {
     top: 80px;
     left: 151px;
     overflow-y: auto;
+    max-height: 2000px;
 }
 .title-icon {
     position: relative;

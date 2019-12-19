@@ -1,6 +1,6 @@
 <template>
     <div class="detail-menu">
-            <Menu class="menu-box"  :open-names="['1']" :active-name="'1-1'" width="240px" @on-open-change="selected" @on-select="choosed">
+             <Menu class="menu-box"  :open-names="['1']" :active-name="'1-1'" width="240px" @on-open-change="selected" @on-select="choosed">
                 <Submenu class="select-box" name="1">
                     <template slot="title">
                         <Icon class="title-icon" type="ios-folder-outline" size="25"/>
@@ -36,8 +36,8 @@
                     <MenuItem name="4-1" class="dh-title-son"><p>Option 9</p></MenuItem>
                     <MenuItem name="4-2" class="dh-title-son"><p>Option 10</p></MenuItem>
                     <MenuItem name="4-3" class="dh-title-son"><p>Option 11</p></MenuItem>
-                </Submenu>
-            </Menu>
+                    </Submenu>
+                </Menu>
         </div>
 </template>
 <script>

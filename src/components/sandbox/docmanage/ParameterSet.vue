@@ -18,6 +18,9 @@
 </template>
 
 <script>
+import userParams from '../../../language/userParams.json';
+const  data = userParams;
+
 export default {
     name:'ParameterSet',
     data () {
@@ -62,28 +65,7 @@ export default {
                         }
                     }
                 ],
-                data1: [
-                    {
-                        name: 'John Brown',
-                        paramvalue: 18,
-                        paramtype: 'New York No. 1 Lake Park',
-                    },
-                    {
-                        name: 'Jim Green',
-                        paramvalue: 24,
-                        paramtype: 'London No. 1 Lake Park',
-                    },
-                    {
-                        name: 'Joe Black',
-                        paramvalue: 30,
-                        paramtype: 'Sydney No. 1 Lake Park',
-                    },
-                    {
-                        name: 'Jon Snow',
-                        paramvalue: 26,
-                        paramtype: 'Ottawa No. 2 Lake Park',
-                    }
-                ],
+                data1: data,
                 cityList: [
                     {
                         value: 'NaN',
@@ -128,6 +110,11 @@ export default {
             },
             //添加参数
             addParameter() {
+                let newParams = {
+                    name: this.newParamName,
+                    paramvalue: this.newParamValue,
+                    paramtype: this.newParamType
+                };
                 if(this.newParamName == ''){
                     this.error = '请输入参数名称！';
                     this.showError();
@@ -166,7 +153,7 @@ export default {
     line-height:50px;
     position: relative;
     top: -35px;
-    left: 20px;
+    left: 60px;
 }
 .btn-add {
     position: relative;
@@ -180,7 +167,7 @@ export default {
 .tb-parameter {
     position: relative;
     top: -50px;
-    left: 20px;
+    left: 60px;
     font-size:1em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;

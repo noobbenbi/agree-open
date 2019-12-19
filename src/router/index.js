@@ -85,6 +85,11 @@ const routes = [
     name: 'sandboxtest',
     component: () => import('../views/SandBoxTest.vue')
   },
+  {
+    path: '/documentcenter',
+    name: 'documentcenter',
+    component: () => import('../views/DocumentCenter.vue')
+  },
   
 ]
 

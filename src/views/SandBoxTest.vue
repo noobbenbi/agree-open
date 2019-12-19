@@ -9,51 +9,51 @@
                     <BreadcrumbItem class="breadcrumbitem" >{{title[breadId]}}</BreadcrumbItem>
                 </Breadcrumb>
                 <Content :style="{padding: '40px 0 80px 0', minHeight: '280px', background: '#fff'}">
-                    <Layout>
-                        <Sider hide-trigger :style="{background: '#fff'}">
-                            <Menu class="menu-box"  :open-names="['1']" :active-name="'1-1'" width="240px" @on-open-change="selected" @on-select="choosed">
-                <Submenu class="select-box" name="1">
-                    <template slot="title">
-                        <Icon class="title-icon" type="ios-folder-outline" size="25"/>
-                        <span>{{title[0]}}</span>
-                    </template>
-                        <MenuItem name="1-1" class="dh-title-son" ><p>全局参数设置</p></MenuItem>
-                        <MenuItem name="1-2" class="dh-title-son"><p>离线文档(MD)</p></MenuItem>
-                        <MenuItem name="1-3" class="dh-title-son"><p>个性化设置</p></MenuItem>
-                </Submenu>
-                <Submenu class="select-box" name="2">
-                    <template slot="title">
-                        <Icon class="title-icon" type="ios-pie-outline" size="25"/>
-                        <span>{{title[1]}}</span>
-                    </template>
-                        <MenuItem name="2-1" class="dh-title-son"><p>Option 5</p></MenuItem>
-                        <MenuItem name="2-2" class="dh-title-son"><p>Option 6</p></MenuItem>
-                        <MenuItem name="2-3" class="dh-title-son"><p>Option 7</p></MenuItem>
-                </Submenu>
-                <Submenu class="select-box" name="3">
-                    <template slot="title">
-                        <Icon class="title-icon" type="ios-card" size="25"/>
-                        <span>{{title[2]}}</span>
-                    </template>
-                    <MenuItem name="3-1" class="dh-title-son"><p>Option 9</p></MenuItem>
-                    <MenuItem name="3-2" class="dh-title-son"><p>Option 10</p></MenuItem>
-                    <MenuItem name="3-3" class="dh-title-son"><p>Option 11</p></MenuItem>
-                </Submenu>
-                 <Submenu class="select-box" name="4">
-                    <template slot="title">
-                        <Icon class="title-icon" type="ios-contacts-outline" size="25"/>
-                        <span>{{title[3]}}</span>
-                    </template>
-                    <MenuItem name="4-1" class="dh-title-son"><p>Option 9</p></MenuItem>
-                    <MenuItem name="4-2" class="dh-title-son"><p>Option 10</p></MenuItem>
-                    <MenuItem name="4-3" class="dh-title-son"><p>Option 11</p></MenuItem>
-                    </Submenu>
-                </Menu>
-                        </Sider>
-                        <Content class="content" :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-                            <DocManage :visiable="showDoc" :value="docMenuId" :faId="faId"></DocManage>
-                        </Content>
-                    </Layout>
+            <Layout>
+                <Sider hide-trigger :style="{background: '#fff'}">
+                    <Menu class="menu-box"  :open-names="['1']" :active-name="'1-1'" width="240px" @on-open-change="selected" @on-select="choosed">
+                        <Submenu class="select-box" name="1">
+                            <template slot="title">
+                                <Icon class="title-icon" type="ios-folder-outline" size="25"/>
+                                <span>{{title[0]}}</span>
+                            </template>
+                            <MenuItem name="1-1" class="dh-title-son" ><p>全局参数设置</p></MenuItem>
+                            <MenuItem name="1-2" class="dh-title-son"><p>离线文档(MD)</p></MenuItem>
+                            <MenuItem name="1-3" class="dh-title-son"><p>个性化设置</p></MenuItem>
+                        </Submenu>
+                        <Submenu class="select-box" name="2">
+                            <template slot="title">
+                                <Icon class="title-icon" type="ios-pie-outline" size="25"/>
+                                <span>{{title[1]}}</span>
+                            </template>
+                            <MenuItem name="2-1" class="dh-title-son"><p>Option 5</p></MenuItem>
+                            <MenuItem name="2-2" class="dh-title-son"><p>Option 6</p></MenuItem>
+                            <MenuItem name="2-3" class="dh-title-son"><p>Option 7</p></MenuItem>
+                        </Submenu>
+                        <Submenu class="select-box" name="3">
+                            <template slot="title">
+                                <Icon class="title-icon" type="ios-card" size="25"/>
+                                <span>{{title[2]}}</span>
+                            </template>
+                            <MenuItem name="3-1" class="dh-title-son"><p>Option 9</p></MenuItem>
+                            <MenuItem name="3-2" class="dh-title-son"><p>Option 10</p></MenuItem>
+                            <MenuItem name="3-3" class="dh-title-son"><p>Option 11</p></MenuItem>
+                        </Submenu>
+                        <Submenu class="select-box" name="4">
+                            <template slot="title">
+                                <Icon class="title-icon" type="ios-contacts-outline" size="25"/>
+                                <span>{{title[3]}}</span>
+                            </template>
+                            <MenuItem name="4-1" class="dh-title-son"><p>Option 9</p></MenuItem>
+                            <MenuItem name="4-2" class="dh-title-son"><p>Option 10</p></MenuItem>
+                            <MenuItem name="4-3" class="dh-title-son"><p>Option 11</p></MenuItem>
+                            </Submenu>
+                    </Menu>
+                </Sider>
+                <Content class="content" :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                    <DocManage :visiable="showDoc" :value="docMenuId" :faId="faId"></DocManage>
+                </Content>
+            </Layout>
                 </Content>
             </Layout>
             <Footer class="layout-footer-center"></Footer>
@@ -64,7 +64,6 @@
 <script>
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import SandboxSider from '../components/sandbox/SandboxSider';
 import DocManage from '../components/sandbox/DocManage';
 export default {
     name:'SandBoxTest',
@@ -100,7 +99,6 @@ export default {
     components:{
         Header,
         Footer,
-        SandboxSider,
         DocManage
     }
 }
@@ -117,19 +115,13 @@ export default {
 }
 .content{
     position: relative;
-    left: 40px;
+    /* left: 40px; */
 }
 .breadcrumbitem{
     width: 100px;
     font-size:1em;
     font-family:PingFangSC-Regular,PingFang SC;
     line-height:28px;
-}
-.detail-menu {
-    position: relative;
-    top: 80px;
-    left: 151px;
-    /* float: left; */
 }
 .title-icon {
     position: relative;
@@ -162,21 +154,12 @@ export default {
 .sider{
     width: 240px;
 }
-.test{
-    position: relative;
-    top: 2000px;
-    left: 200px;
-    width: 6px;
-    height: 2000px;
-    background:rgba(2,164,175,1);
-}
 .layout{
     border: 1px solid #d7dde4;
     background: #f5f7f9;
     position: relative;
     border-radius: 4px;
     overflow: hidden;
-
 }
 .layout-logo{
     width: 100px;
