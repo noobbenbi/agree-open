@@ -25,6 +25,9 @@
                 </MenuItem>
             </Menu> 
         </div>
+        <div class="content">
+
+        </div>
     </div>
     <Footer class="footer"></Footer>
 </div>
@@ -72,16 +75,20 @@ export default {
 
 <style scoped>
 @import url("../assets/styles/font/font.css");
+.body {
+    display: flex;
+    flex-direction: column;
+}
 .footer {
     position: relative;
 }
 .accessguidedetail {
     width:100%;
-    /* height:2700px; */
     position: relative;
-    height: 258px;
-    min-height: 600px;
     background:rgba(255,255,255,1);
+    height: 3000px;
+    height:auto;
+    min-height:400px;
 }
 .breadcrumbitem{
     font-size:1em;
@@ -91,12 +98,12 @@ export default {
 .productintro-title {
     position: absolute;
     top: 32px;
-    left: 160px;
+    left: 110px;
 }
 .select-lab {
     position: absolute;
     top: 85px;
-    left: 151px;
+    left: 110px;
 }
 .menuitem {
     width: 240px;
@@ -111,5 +118,13 @@ export default {
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     line-height:37px;
+}
+.content {
+    position: relative;
+    left: 370px;
+    top: 85px;
+    width: 70%;
+    height: 200px;
+    background: #FF02A4AF;
 }
 </style>

@@ -11,7 +11,7 @@
       <img src="@/assets/images/Payment-settlement.png" />
       <a class="itemTitie" @click="goIntro('1')">支付结算</a>
       <span></span>
-      <p>电子账户
+      <p @click="goDetail">电子账户
         <br/>
         e想账户
         <br/>
@@ -74,6 +74,9 @@ export default {
           nameId:id
         }
       });
+    },
+    goDetail() {
+      this.$router.push('/productdetail');
     }
   },
   components: {
@@ -174,5 +177,6 @@ export default {
   color:rgba(29,31,49,1);
   line-height:28px;
   margin: 10% auto;
+  cursor: pointer;
 }
 </style>

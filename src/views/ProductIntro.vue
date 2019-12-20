@@ -135,6 +135,9 @@ export default {
     created(){
         this.getParams();
     },
+    mounted(){
+        this.contentItem = 0;
+    },
     watch: {
         '$route':'getParams'
     },

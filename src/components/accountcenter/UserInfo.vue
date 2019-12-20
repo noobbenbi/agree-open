@@ -3,6 +3,7 @@
 <div class="userinfo">
         <div class="userinfo-some">
             <span class="head-text">基本资料</span>
+            <Divider class="c-line"/>
             <button class="btn-Certification">认证</button>
             <router-link to="/accountcenter/acc"><button class="btn-modify">修改</button></router-link>
             <p class="account-title">{{agreementInfo.index1}}</p><span class="user-account">{{agreementInfo.title1}}</span>
@@ -117,6 +118,10 @@ export default {
     position: absolute;
     left: 5%;
     top: 10%;
+}
+.c-line {
+    position: relative;
+    top: 70px;
 }
 .userinfo button {
     width:6%;

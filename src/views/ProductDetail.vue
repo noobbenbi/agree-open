@@ -9,24 +9,26 @@
                 <BreadcrumbItem class="breadcrumbitem" >产品详情</BreadcrumbItem>
             </Breadcrumb>
         </div>
-        <div class="detail-menu">
+        <Content :style="{padding: '40px 0 80px 0', minHeight: '280px', background: '#fff'}">
+            <Layout>
+                <Sider hide-trigger :style="{background: '#fff'}">
             <Menu class="menu-box"  :open-names="['1']" width="240px">
                 <Submenu class="select-box" name="1">
                     <template slot="title">
                         <!-- <img src="@/assets/images/proImg1.png"> -->
                         <span>支付结算</span>
                     </template>
-                        <MenuItem name="1-1" class="dh-title-son"><p>e享账户</p></MenuItem>
-                        <MenuItem name="1-2" class="dh-title-son"><p>账户管理</p></MenuItem>
-                        <MenuItem name="1-3" class="dh-title-son"><p>贷款融资</p></MenuItem>
+                    <MenuItem name="1-1" class="dh-title-son"><p>e享账户</p></MenuItem>
+                    <MenuItem name="1-2" class="dh-title-son"><p>账户管理</p></MenuItem>
+                    <MenuItem name="1-3" class="dh-title-son"><p>贷款融资</p></MenuItem>
                 </Submenu>
                 <Submenu class="select-box" name="2">
                     <template slot="title">
                         <span>投资理财</span>
                     </template>
-                        <MenuItem name="2-1" class="dh-title-son"><p>Option 5</p></MenuItem>
-                        <MenuItem name="2-2" class="dh-title-son"><p>Option 6</p></MenuItem>
-                        <MenuItem name="2-3" class="dh-title-son"><p>Option 7</p></MenuItem>
+                    <MenuItem name="2-1" class="dh-title-son"><p>Option 5</p></MenuItem>
+                    <MenuItem name="2-2" class="dh-title-son"><p>Option 6</p></MenuItem>
+                    <MenuItem name="2-3" class="dh-title-son"><p>Option 7</p></MenuItem>
                 </Submenu>
                 <Submenu class="select-box" name="3">
                     <template slot="title">
@@ -36,7 +38,7 @@
                     <MenuItem name="3-2" class="dh-title-son"><p>Option 10</p></MenuItem>
                     <MenuItem name="3-3" class="dh-title-son"><p>Option 11</p></MenuItem>
                 </Submenu>
-                 <Submenu class="select-box" name="4">
+                <Submenu class="select-box" name="4">
                     <template slot="title">
                         <span>贷款融资</span>
                     </template>
@@ -45,26 +47,30 @@
                     <MenuItem name="4-3" class="dh-title-son"><p>Option 11</p></MenuItem>
                 </Submenu>
             </Menu>
-        </div>
-        <div class="detail-text">
-            <p class="product-title">{{proDetail[0].proName}}</p>
-            <Divider class="cut-line"/>
-            <div class="pro-definition">
-                <span></span>
-                <p class="title-text">产品定义与介绍</p>
-                <p class="content-text">{{proDetail[0].proDefinition}}</p>
-            </div>
-            <div class="scenes-des">
-                <span></span>
-                <p class="title-text">应用场景描述</p>
-                <p class="content-text">{{proDetail[0].scenes}}</p>
-            </div>
-            <div class="contact-info">
-                <span></span>
-                <p class="title-text">联系人与联系方式</p>
-                <p class="content-text">{{proDetail[0].contactInfo}}</p>
-            </div>
-        </div>
+            </Sider>
+                <Content class="content" :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+                    <div class="detail-text">
+                        <p class="product-title">{{proDetail[0].proName}}</p>
+                        <Divider class="cut-line"/>
+                        <div class="pro-definition">
+                            <span></span>
+                            <p class="title-text">产品定义与介绍</p>
+                            <p class="content-text">{{proDetail[0].proDefinition}}</p>
+                        </div>
+                        <div class="scenes-des">
+                            <span></span>
+                            <p class="title-text">应用场景描述</p>
+                            <p class="content-text">{{proDetail[0].scenes}}</p>
+                        </div>
+                        <div class="contact-info">
+                            <span></span>
+                            <p class="title-text">联系人与联系方式</p>
+                            <p class="content-text">{{proDetail[0].contactInfo}}</p>
+                        </div>
+                    </div>
+                </Content>
+            </Layout>
+        </Content>        
     </div>
     <Footer></Footer>
 </div>
@@ -96,10 +102,16 @@ export default {
 
 <style scoped>
 @import url("../assets/styles/font/font.css");
+.body{
+     display: flex;
+     flex-direction: column;
+}
 .productdetail {
     width: 100%;
     min-width: 1200px;
-    height: 700px; 
+    height: 1700px;
+    height: auto;
+    min-height:580px; 
     position: relative;
 }
 .cut-line {
@@ -114,14 +126,13 @@ export default {
 .productintro-title {
     position: absolute;
     top: 20px;
-    left: 160px;
+    left: 110px;
 }
-.detail-menu {
-    position: absolute;
-    top: 80px;
-    left: 151px;
-    /* background-color: aquamarine; */
-}
+.menu-box {
+    position: relative;
+    left: 110px;
+    top: 40px;
+} 
 .select-box /deep/ .ivu-menu-submenu-title{
     height: 70px;
     background-color: #F5FCFC
@@ -147,9 +158,10 @@ export default {
 }
 .detail-text {
     width: 65%;
-    position: absolute;
-    left: 450px;
-    top: 70px;
+    height: 600px;
+    position: relative;
+    left: 150px;
+    top: 0px;
 }
 .cut-line {
     position: absolute;

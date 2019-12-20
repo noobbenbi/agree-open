@@ -19,7 +19,11 @@
             <Table class="tb-parameter" :columns="columns1" :data="data1" :width="tableWidth"></Table>
         </div>
         <div class="developer-certifi">
-
+            <span class="line"></span>
+            <span class="detail-title">企业开发者认证</span>
+            <div class="certificode">
+                <pre>{{certificode}}</pre>
+            </div>
         </div>
     </div>
 </template>
@@ -28,7 +32,7 @@ export default {
     name:'OfflineDoc',
     data(){
         return {
-            tableWidth:'900',
+            tableWidth:'830',
             synopsisList:[
                 {
                     name:'HOST：',
@@ -82,7 +86,7 @@ export default {
                 {
                     title:'说明',
                     key:'desc',
-                    width:'370px'
+                    width:'340px'
                 },
                 {
                     title:'in',
@@ -127,15 +131,49 @@ export default {
                     schema:''
                 },
             ],
+            certificode:`{
+    "meta": {
+        "lastUpdated": 20190101,
+        "totalResults": 0,
+        "agreement": "",
+        "license": "",
+        "termsOfUse": ""
+    },
+    "data": {
+        "brand": [
+            {
+                "atm": [
+                    {
+                        "access24HoursIndicator": true,
+                        "accessibility": [],
+                        "atmServices": [],
+                        "identification": "",
+                        "minimumPossibleAmount": "",
+                        "note": "",
+                        "supportedCurrencies": [],
+                        "supportedLanguages": []
+                    }
+                ],
+                "brandName": ""
+            }
+        ]
+    },
+    "links": []
+}`,
         }
     }
 }
 </script>
 
 <style  scoped>
+@import url("../../../assets/styles/font/font.css");
+.offlinedoc{
+    width: 100%;
+    height: 1700px;
+}
 .title {
     position: relative;
-    left: 50px;
+    left: 60px;
     top: -30px;
     font-size:1.8em;
     font-family:PingFangSC-Medium,PingFang SC;
@@ -145,7 +183,7 @@ export default {
 }
 .synopsis {
     position: relative;
-    left: 50px;
+    left: 60px;
 }
 .line {
     position:absolute;
@@ -178,11 +216,38 @@ export default {
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(29,31,49,1);
-    line-height:22px;
+    /* line-height:22px; */
+}
+.tb-parameter /deep/ .ivu-table td{
+    height: 50px;
+    font-size:0.8em;
+}
+.tb-parameter /deep/ .ivu-table-header{
+    height: 50px;
+    font-size:0.8em;
+}
+.tb-parameter /deep/ .ivu-table-header th{
+    background:#F1FAFB;
+    height: 50px;
 }
 .tb-atmselect {
     position: relative;
-    left: 50px;
+    left: 60px;
     top: 70px;
+}
+.developer-certifi {
+    position: relative;
+    left: 60px;
+    top: 120px;
+}
+.certificode {
+    position: absolute;
+    top: 50px;
+    width: 830px;
+    height: 625px;
+    background:#F1FAFB;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(29,31,49,1);
 }
 </style>

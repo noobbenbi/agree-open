@@ -33,5 +33,9 @@ export default {
 <style  scoped>
 .docmanage{
     position: relative;
+    left: 100px;
+    width: 100%;
+    margin-top: 40px;
+    /* top: 40px; */
 }
 </style>

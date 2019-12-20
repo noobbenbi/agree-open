@@ -180,12 +180,8 @@ export default {
     left: 70px;
     top: -40px;
 }
-/* .tb-parameter /deep/ .ivu-table td{
-    border-bottom: none !important;
-    border-right-color:honeydew;
+.tb-parameter /deep/ .ivu-table-header th{
+    background:#fff;
+    height: 50px;
 }
-.ivu-table th{
-    border-bottom: none !important;
-    border-right-color:honeydew;
-} */
 </style>

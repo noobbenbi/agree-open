@@ -1,13 +1,13 @@
 <template>
     <div class="layout">
-        <Layout>
-            <Header>
-            </Header>
-            <Layout :style="{padding: '0 150px',background: '#fff'}"> 
+            <Header></Header>
+            <div class="sandbox">
+            <div class="productintro-title"> 
                 <Breadcrumb>
                     <BreadcrumbItem class="breadcrumbitem" to="/">API沙箱</BreadcrumbItem>
                     <BreadcrumbItem class="breadcrumbitem" >{{title[breadId]}}</BreadcrumbItem>
                 </Breadcrumb>
+            </div>
                 <Content :style="{padding: '40px 0 80px 0', minHeight: '280px', background: '#fff'}">
             <Layout>
                 <Sider hide-trigger :style="{background: '#fff'}">
@@ -55,9 +55,8 @@
                 </Content>
             </Layout>
                 </Content>
-            </Layout>
+        </div>
             <Footer class="layout-footer-center"></Footer>
-        </Layout>
     </div>
 </div>
 </template>
@@ -106,12 +105,21 @@ export default {
 
 <style  scoped>
 .body{
-    background: black
+    display: flex;
+    flex-direction: column;
 }
-.footer{
-    text-align: center;
+.sandbox {
+    width: 100%;
+    min-width: 1200px;
+    height: 700px;
+    height: auto;
+    min-height:580px; 
     position: relative;
-    /* top: 200px; */
+}
+.productintro-title {
+    position: absolute;
+    top: 19px;
+    left: 110px;
 }
 .content{
     position: relative;
@@ -122,6 +130,11 @@ export default {
     font-size:1em;
     font-family:PingFangSC-Regular,PingFang SC;
     line-height:28px;
+}
+.menu-box {
+    position: relative;
+    left: 110px;
+    top: 40px;
 }
 .title-icon {
     position: relative;
@@ -153,13 +166,6 @@ export default {
 }
 .sider{
     width: 240px;
-}
-.layout{
-    border: 1px solid #d7dde4;
-    background: #f5f7f9;
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
 }
 .layout-logo{
     width: 100px;
