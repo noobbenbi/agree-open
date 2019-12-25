@@ -6,20 +6,20 @@
       <span>Open.com</span>
     </div>
     <div class="header-nav">
-            <Menu mode="horizontal" :theme="theme1" >
-                <MenuItem name="1" class="mydata" to="/procapability">
+            <Menu class="header-menu" mode="horizontal" :theme="theme1" @on-select="selected" :active-name="menuId">
+                <MenuItem name="1" class="procapability" to="/procapability">
                     <p class="menu-title" >产品能力</p>
                 </MenuItem>
-                <MenuItem name="2" class="myapp" to="/devaccess">
+                <MenuItem name="2" class="devaccess" to="/devaccess">
                     <p class="menu-title">开发接入</p>
                 </MenuItem>                
-                <MenuItem name="3" class="myagreement" to="/documentcenter">
+                <MenuItem name="3" class="documentcenter" to="/documentcenter">
                     <p class="menu-title">文档中心</p>
                 </MenuItem>
-                <MenuItem name="4" class="myagreement" to="/sandboxtest">
+                <MenuItem name="4" class="sandboxtest" to="/sandboxtest">
                     <p class="menu-title">API沙箱</p>
                 </MenuItem>
-                <MenuItem name="5" class="myagreement" to="/devhelp">
+                <MenuItem name="5" class="devhelp" to="/devhelp">
                     <p class="menu-title">帮助与支持</p>
                 </MenuItem>
             </Menu>
@@ -39,7 +39,7 @@
             <DropdownItem >退出</DropdownItem>
         </DropdownMenu>
         </Dropdown>
-        <a class="msg-icon" href="/msgcenter" style="position: absolute;left:65px;top:5px;">
+        <a class="msg-icon" href="/msgcenter" style="position: absolute;left:75px;top:5px;">
               <Badge :count="msgamount" size="20">
                 <Icon type="ios-mail-outline" size="30"/>
               </Badge>
@@ -77,6 +77,7 @@ export default {
       searchBox: false,
       searchIconShow: true,
       keywords: '',
+      menuId:'',
     }
   },
   methods: {
@@ -96,6 +97,10 @@ export default {
     goPush(path) {
       this.$router.push(path);
     },
+    selected(name) {
+      this.menuId = name;
+      // console.log(this.menuId);
+    },
   },
 }
 </script>
@@ -108,19 +113,19 @@ export default {
   box-shadow: 0px -10px 5px #FFF9F9F9 inset;
 }
 .header-logo {
-  width: 300px;
+  width: 280px;
   position: absolute;
-  left: 90px;
+  left: 8%;
   top: 15px;
 }
 .header-logo img {
-  width: 200px;
+  width: 180px;
 }
 .header-logo a {
   position: absolute;
   top: 8px;
-  left: 208px;
-  font-size:1em;
+  left: 188px;
+  font-size:0.7em;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:rgba(29,31,49,1);
@@ -129,21 +134,47 @@ export default {
 .header-logo span {
   position: absolute;
   top: 30px;
-  left: 208px;
-  font-size:0.9em;
+  left: 188px;
+  font-size:0.7em;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:rgba(29,31,49,1);
 }
 .header-nav {
   height: 90px;
-  width: 600px;
+  width: 52%;
   position: relative;
-  left: 420px;
+  /* left: 420px; */
+  left: 28%;
   top: 15px; 
   font-size:1.175em;
   font-weight: 600;
   font-family:PingFangSC-Medium,PingFang SC;
+}
+.header-menu {
+  width: 100%;
+  position:absolute;
+  /* left: 25%; */
+}
+.procapability {
+  position: absolute;
+  left: 0%;
+}
+.devaccess {
+  position: absolute;
+  left: 15%;
+}
+.documentcenter {
+  position: absolute;
+  left: 30%;
+}
+.sandboxtest {
+  position: absolute;
+  left: 45%;
+}
+.devhelp {
+  position: absolute;
+  left: 60%;
 }
 .header-nav ul {
   height: 75px;
@@ -161,8 +192,8 @@ export default {
 .user-login {
   width: 120px;
   position: relative;
-  left: 1140px;
-  top: -60px;
+  left: 80%;
+  top: -65px;
 }
 .login-register-item,
 .register-register-item {
@@ -179,9 +210,9 @@ export default {
   left: 10px;
 }
 .search-icon {
-  position: relative;
-  left: 1270px;
-  top: -99px;
+  position: absolute;
+  right: 8%;
+  top: 35px;
   width: 25px;
   height: 25px;
 }
@@ -191,7 +222,7 @@ export default {
 }
 .search-box {
   position: absolute;
-  left: 1120px;
+  left: 82%;
   top: 30px;
 }
 </style>
