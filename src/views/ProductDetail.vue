@@ -15,7 +15,7 @@
             <Menu class="menu-box"  :open-names="['1']" width="240px">
                 <Submenu class="select-box" name="1">
                     <template slot="title">
-                        <!-- <img src="@/assets/images/proImg1.png"> -->
+                        <Icon class="title-icon" type="ios-card" size="25"/>
                         <span>支付结算</span>
                     </template>
                     <MenuItem name="1-1" class="dh-title-son"><p>e享账户</p></MenuItem>
@@ -24,6 +24,7 @@
                 </Submenu>
                 <Submenu class="select-box" name="2">
                     <template slot="title">
+                        <Icon class="title-icon" type="ios-sync" size="25"/>
                         <span>投资理财</span>
                     </template>
                     <MenuItem name="2-1" class="dh-title-son"><p>Option 5</p></MenuItem>
@@ -32,6 +33,7 @@
                 </Submenu>
                 <Submenu class="select-box" name="3">
                     <template slot="title">
+                        <Icon class="title-icon" type="ios-contacts-outline" size="25"/>
                         <span>账户管理</span>
                     </template>
                     <MenuItem name="3-1" class="dh-title-son"><p>Option 9</p></MenuItem>
@@ -40,6 +42,7 @@
                 </Submenu>
                 <Submenu class="select-box" name="4">
                     <template slot="title">
+                        <Icon class="title-icon" type="ios-color-filter-outline" size="25"/>
                         <span>贷款融资</span>
                     </template>
                     <MenuItem name="4-1" class="dh-title-son"><p>Option 9</p></MenuItem>
@@ -132,7 +135,11 @@ export default {
     position: relative;
     left: 110px;
     top: 40px;
-} 
+}
+.title-icon {
+    position: relative;
+    top: 7px;
+}
 .select-box /deep/ .ivu-menu-submenu-title{
     height: 70px;
     background-color: #F5FCFC

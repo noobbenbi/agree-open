@@ -1,68 +1,54 @@
 <template>
-  <div>
-    <div class="header">
-      <div class="section">
-        <div class="header-logo">
-          <img src="@/assets/images/head-logo.png" />
-          <div class="divide-line"></div>
-          <div class="logo-word">
-            <a href="/">{{ $t("openTitle")}}</a>
-            <small>Open.com</small>
-          </div>
-        </div>
-        <div class="head_menu">
-            <a href="javascript:;" @click="HandleLink('/procapability')">产品能力</a>
-            <a href="javascript:;" @click="HandleLink('/devaccess')">开发接入</a>
-            <a href="javascript:;" @click="HandleLink('/documentcenter')">文档中心</a>
-            <a href="javascript:;" @click="HandleLink('/sandbox')">API沙箱</a>
-            <a href="javascript:;" @click="HandleLink('/devhelp')">帮助与支持</a>
-        </div>
-        <div class="login-register" v-show="loginBox">
-          <!-- 未登录 -->
-          <a href="/login" class="login-register-item" v-if="!curr_user">登录</a>
-          <a href="/register" class="register-register-item" v-if="!curr_user">注册</a>
-          <!-- 已登录 -->
-          <div class="user-info" v-if="curr_user">
-            <a
-              class="user-bar clear-a-color"
-              
-              @mouseenter="showUserInfo"
-              @mouseleave="hideUserInfo"
-            >
-              <transition name="fade" mode="out-in">
-                <div class="user-drop">
-                  <Dropdown>
-                <a href="#">
-                    13812345678
-                    <Icon type="ios-arrow-down"></Icon>
-                </a>
-                <DropdownMenu slot="list">
-                    <DropdownItem  @click.native="HandleLink('/accountcenter')">账户中心</DropdownItem>
-                    <DropdownItem href="/appCenter">应用中心</DropdownItem>
-                    <DropdownItem href="javascript:;" @click="changeLoacle('zh')">切换中文</DropdownItem>
-                    <DropdownItem href="javascript:;" @click="changeLoacle('en')">切换英文</DropdownItem>
-                    <DropdownItem  @click.native="HandleLink('/')">退出</DropdownItem>
-                </DropdownMenu>
-                </Dropdown>
-                </div>
-              </transition> 
-            </a>
-            <a class="clear-a-color msgcenter" href="/msgcenter" style="position: absolute;left:150px;top:-3px;">
-              <Badge :count="msgamount" size="25">
-                <Icon type="ios-mail-outline" href='/msgcenter' size="30"/>
+  <div class="header">
+    <div class="header-logo">
+      <img src="@/assets/images/head-logo.png" >
+      <a href="/">API开放平台</a>
+      <span>Open.com</span>
+    </div>
+    <div class="header-nav">
+            <Menu mode="horizontal" :theme="theme1" >
+                <MenuItem name="1" class="mydata" to="/procapability">
+                    <p class="menu-title" >产品能力</p>
+                </MenuItem>
+                <MenuItem name="2" class="myapp" to="/devaccess">
+                    <p class="menu-title">开发接入</p>
+                </MenuItem>                
+                <MenuItem name="3" class="myagreement" to="/documentcenter">
+                    <p class="menu-title">文档中心</p>
+                </MenuItem>
+                <MenuItem name="4" class="myagreement" to="/sandboxtest">
+                    <p class="menu-title">API沙箱</p>
+                </MenuItem>
+                <MenuItem name="5" class="myagreement" to="/devhelp">
+                    <p class="menu-title">帮助与支持</p>
+                </MenuItem>
+            </Menu>
+    </div>
+    <div class="user-login" v-show="loginBox">
+      <!-- 未登录 -->
+      <a href="/login" class="login-register-item" v-if="!curr_user">登录</a>
+      <a href="/register" class="register-register-item" v-if="!curr_user">注册</a>
+      <!-- 已登录 -->
+      <div class="userinfo" v-if="curr_user">
+        <Dropdown>
+          <img class="user-head" src="@/assets/images/user-head-img.png" >
+          <DropdownMenu slot="list">
+            <DropdownItem disabled>测试帐号</DropdownItem>
+            <DropdownItem @click.native="goPush('/accountcenter')">账户中心</DropdownItem>
+            <DropdownItem>应用中心</DropdownItem>
+            <DropdownItem >退出</DropdownItem>
+        </DropdownMenu>
+        </Dropdown>
+        <a class="msg-icon" href="/msgcenter" style="position: absolute;left:65px;top:5px;">
+              <Badge :count="msgamount" size="20">
+                <Icon type="ios-mail-outline" size="30"/>
               </Badge>
             </a>
-          </div>
-        </div>
-        <img
-          src="@/assets/images/hf_8.png"
-          id="search-show-icon"
-          class="search-show-icon"
-          @click="searchShow"
-          v-show="searchIconShow"
-        />
-        <div class="search-item" v-show="this.searchBox">
-          <i class="iconfont search-icon icon-searchicon" id="search-icon"></i>
+      </div>
+    </div>
+    <img class="search-icon" v-show="searchIconShow" @click="searchShow" src="@/assets/images/hf_8.png">
+    <div class="search-box" v-show="searchBox">
+      <i class="iconfont  icon-searchicon"></i>
           <i-input
             ref="search"
             class="search-val"
@@ -74,31 +60,26 @@
             @on-blur="searchBlur"
             @keyup.13.native="handleSearch"
           />
-        </div>
-      </div>
     </div>
   </div>
 </template>
+
 <script>
-import { constants } from "crypto";
 import 'view-design/dist/styles/iview.css';
 export default {
-  name: "Header",
-  // inject:['reload'],
+  name:'Header',
   data() {
     return {
-      searchBox: false,
+      theme1:'light',
+      curr_user:true,
+      msgamount:999,
       loginBox: true,
+      searchBox: false,
       searchIconShow: true,
-      curr_user: true,
-      userInfoShow: false,
-      iconTranslate: false,
       keywords: '',
-      msgamount:999
-    };
+    }
   },
   methods: {
-    //点击搜索图标，显示搜索框
     searchShow() {
       this.searchBox = true;
       this.loginBox = false;
@@ -107,163 +88,110 @@ export default {
         this.$refs.search.focus();
       });
     },
-    //搜索框失焦事件
     searchBlur() {
       this.searchBox = false;
       this.loginBox = true;
       this.searchIconShow = true;
     },
-    handleSearch() {
-      this.$router.push({
-        path:'/search',
-        query:{
-          from: "全部",
-          keywords: this.keywords
-        }
-      })
-    },
-    HandleLink(path) {
+    goPush(path) {
       this.$router.push(path);
     },
-    showUserInfo() {
-      this.userInfoShow = true;
-      this.iconTranslate = true;
-    },
-    hideUserInfo() {
-      this.userInfoShow = false;
-      this.iconTranslate = false;
-    },
-    changeLoacle(lang) {
-      // debugger
-      // if (lang == "zh") {
-      //   localStorage.setItem("locale", "zh");
-      //   this.$i18n.locale == "zh";
-      //   // this.reload();
-      // } else if (lang == "en") {
-      //   localStorage.setItem("locale", "en");
-      //   this.$i18n.locale == "en";
-        
-      // }
-      localStorage.setItem("locale", lang);
-      this.$i18n.locale =localStorage.getItem("locale");
-      this.reload();
-    }
   },
-  computed: {
-    activeClass() {
-      let path = this.$route.name;
-      return path;
-    }
-  },
-  created() {
-    //  this.keyupEnter()
-  }
-};
+}
 </script>
+
 <style  scoped>
-@import url("../assets/styles/font/font.css");
 .header {
-    width:100%;
-    min-width: 1200px;
-    height: 90px;
-    background:rgba(255,255,255,1);
-    position: relative;
-    top: 0%;
+  width: 100%;
+  height: 90px;
+  background:rgba(255,255,255,1);
+  box-shadow: 0px -10px 5px #FFF9F9F9 inset;
 }
-.header-logo img{
-    height: 66.67%;
-    width: 12.5%;
-    position: absolute;
-    top: 15%;
-    /* top: 23px; */
-    left: 8.3%;
+.header-logo {
+  width: 300px;
+  position: absolute;
+  left: 90px;
+  top: 15px;
 }
-.logo-word {
-    height: 100%;
+.header-logo img {
+  width: 200px;
 }
-.logo-word a{
-    position: absolute;
-    top: 20.2%;
-    /* top: 35px; */
-    left: 21.4%;
-    font-size:1em;
-    font-family:PingFangSC-Regular,PingFang SC;
-    font-weight:400;
-    color:rgba(29,31,49,1);
-    text-decoration:none;
+.header-logo a {
+  position: absolute;
+  top: 8px;
+  left: 208px;
+  font-size:1em;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(29,31,49,1);
+  text-decoration:none;
 }
-.logo-word small {
-    position: absolute;
-    /* top: 72.5%; */
-    bottom: 29.2%;
-    /* bottom: 35px; */
-    left: 21.4%;
-    font-size:1em;
-    font-family:PingFangSC-Regular,PingFang SC;
-    font-weight:400;
-    color:rgba(29,31,49,1);
+.header-logo span {
+  position: absolute;
+  top: 30px;
+  left: 208px;
+  font-size:0.9em;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:rgba(29,31,49,1);
 }
-.head_menu {
-    font-size:1.175em;
-    /* font-size: 22px; */
+.header-nav {
+  height: 90px;
+  width: 600px;
+  position: relative;
+  left: 420px;
+  top: 15px; 
+  font-size:1.175em;
+  font-weight: 600;
+  font-family:PingFangSC-Medium,PingFang SC;
 }
-.head_menu a {
-    color: black;
-    position: absolute;
-    text-decoration:none;
-    top: 36.7%;
-    font-weight: 500;
-    font-family:PingFangSC-Medium,PingFang SC;
+.header-nav ul {
+  height: 75px;
 }
-.head_menu a:nth-of-type(1) {
-    left:30.3%;
+.ivu-menu a {
+  width: 110px;
 }
-.head_menu a:nth-of-type(2) {
-    left: 38.1%;
+.ivu-menu-item p {
+  position: relative;
+  left: 10px;
 }
-.head_menu a:nth-of-type(3) {
-    left: 46%;
+.ivu-menu-horizontal.ivu-menu-light:after {
+  height: 0px;
 }
-.head_menu a:nth-of-type(4) {
-    left: 53.8%;
+.user-login {
+  width: 120px;
+  position: relative;
+  left: 1140px;
+  top: -60px;
 }
-.head_menu a:nth-of-type(5) {
-    left: 61.1%;
-}
-.login-register-item {
-    position: absolute;
-    left: 82%;
-    top: 35.3%;
-    font-size:1.375em;
-    font-weight:400;
-    font-family:PingFangSC-Regular,PingFang SC;
-    /* font-weight:400; */
-    color:rgba(29,31,49,1);
+.login-register-item,
+.register-register-item {
+  font-size:1em;
+  font-weight: 600;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  color:rgba(29,31,49,1);
+  line-height:30px;
+  text-decoration:none;
 }
 .register-register-item {
-    position: absolute;
-    left: 86%;
-    top: 35.3%;
-    font-size:1.375em;
-    font-weight:400;
-    font-family:PingFangSC-Regular,PingFang SC;
-    /* font-weight:400; */
-    color:rgba(29,31,49,1);
+  position: relative;
+  left: 10px;
 }
-.user-info {
-    position: absolute;
-    left: 75.7%;
-    top: 40.3%;
+.search-icon {
+  position: relative;
+  left: 1270px;
+  top: -99px;
+  width: 25px;
+  height: 25px;
 }
-.search-item {
-    position: absolute;
-    left: 82.8%;
-    top: 30.3%;
+.user-head{
+  width: 40px;
+  height: 40px;
 }
-#search-show-icon {
-    position: absolute;
-    top: 40.3%;
-    left: 92%;
-    height: 26px;
+.search-box {
+  position: absolute;
+  left: 1120px;
+  top: 30px;
 }
 </style>

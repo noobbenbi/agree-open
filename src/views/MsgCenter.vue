@@ -188,6 +188,9 @@ export default {
     mounted() {
         this.do();
     },
+    created(){
+        this.do();
+    },
     methods: {
         do() {
             console.log('数据',this.msgData);

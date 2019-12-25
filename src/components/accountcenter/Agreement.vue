@@ -1,6 +1,6 @@
 <template>
 <!-- 我的协议 -->
-<div>
+<div class="body">
 <div class="myagreements">
     <!-- 无协议 -->
     <div class="noagreement" v-if="state">
@@ -46,6 +46,7 @@ export default {
     position: relative;
     left: 18.75%;
     text-align: center;
+    box-shadow: 0px -10px 5px #FAFAFA;
 }
 .test{
     height: 200px;
