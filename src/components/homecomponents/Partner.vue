@@ -8,8 +8,7 @@
     <div class="img-box">
         
     </div>
-    <Button  type="primary">快速加入</Button>
-    
+    <Button  type="primary">快速加入</Button>   
 </div>
 </template>
 
@@ -25,7 +24,8 @@ export default {
     position: relative;
     width:100%;
     min-width: 1200px;
-    height:736px;
+    height: 0px;
+    padding-bottom:54%;
 }
 .partner Button {
     position: absolute;

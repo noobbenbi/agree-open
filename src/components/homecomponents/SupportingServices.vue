@@ -42,10 +42,10 @@ export default {
 .supportingservices {
     width: 100%;
     min-width: 1200px;
-    height: 643px;
+    height: 0px;
+    padding-bottom: 47%;
     position: relative;
     background-image: url('../../assets/images/accounting-analytics-balance-black-and-white-209224.png');
-    /* opacity:0.1; */
 }
 .center-title {
     font-size:1.6em;

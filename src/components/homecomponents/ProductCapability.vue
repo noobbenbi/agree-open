@@ -7,7 +7,6 @@
   </div>
     <div class="payment-settlement" >
       <img  src="@/assets/images/productCapability_icon1.png" />
-      <!-- <img class="background-img" src="@/assets/images/productCapability1.png" alt=""> -->
       <p class="itemTitie" href="#">支付结算</p>
       <span></span>
       <div class="mouseenter">
@@ -17,7 +16,6 @@
     </div>
     <div class="investment">
       <img  src="@/assets/images/productCapability_icon2.png" />
-      <!-- <img class="background-img" src="@/assets/images/productCapability2.png" /> -->
       <p  class="itemTitie" href="#">投资理财</p>
       <span></span>
       <div class="mouseenter">
@@ -27,7 +25,6 @@
     </div>
     <div class="account-management">
       <img src="@/assets/images/productCapability_icon3.png" />
-      <!-- <img class="background-img" src="@/assets/images/close-up-photo-of-man-wearing-black-suit-jacket-doing-thumbs-684385.png" /> -->
       <p class="itemTitie" href="#">账户管理</p>
       <span></span>
       <div class="mouseenter">
@@ -37,7 +34,6 @@
     </div>
     <div class="loan-financing">
       <img src="@/assets/images/productCapability_icon4.png" />
-      <!-- <img class="background-img" src="@/assets/images/productCapability4.png" /> -->
       <p class="itemTitie" href="#">贷款融资</p>
       <span></span>
       <div class="mouseenter">
@@ -73,7 +69,9 @@ export default {
 .productcapability {
   width:100%;
   min-width: 1200px;
-  height:736px;
+  /* height:736px; */
+  height: 0px;
+  padding-bottom: 54%;
   background:rgba(46,47,63,1);
   position:relative;
 }
@@ -104,7 +102,7 @@ export default {
   position: absolute;
   top: 25.34%;
   width:20%;
-  height:455px;
+  height:62%;
   background:rgba(29,31,49,1);
   text-align: center;
 }
@@ -145,12 +143,13 @@ export default {
 .investment span,
 .account-management span,
 .loan-financing span {
-  width:45px;
+  width:15%;
   height:4px;
   background:rgba(2,164,175,1);
-  position: absolute;
-  top: 66%;
-  left: 42.34%;
+  display: table;
+  margin: 0 auto;
+  position: relative;
+  top: 12%;
 }
 .mouseenter {
   position: absolute;
@@ -160,47 +159,6 @@ export default {
   opacity: 1;
   display: none;
 }
-/* .payment-settlement:after,
-.investment:after,
-.account-management:after,
-.loan-financing:after{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  z-index: 2;
-  background-color: #D74643;
-} */
-
-/* .payment-settlement:hover:after,
-.investment:hover:after,
-.account-management:hover:after,
-.loan-financing:hover:after{
-  opacity: 0.98;
-} */
-/* .mouseenter {
-  position: absolute;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 100px 72px;
-  text-align: center;
-  left: 0;
-  bottom: -10%;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  z-index: 3;
-  -webkit-transition: bottom .4s ease, opacity .4s ease;
-  -moz-transition: bottom .4s ease, opacity .4s ease;
-  transition: bottom .4s ease, opacity .4s ease;
-  color: #fff;
-  text-align: center;
-} */
 .payment-settlement {
   background-image: url(../../assets/images/productCapability1.png);
   background-size: 100% 100%;

@@ -46,7 +46,9 @@ export default {
 .businessscene {
   width:100%;
   min-width: 1200px;
-  height: 727px;
+  /* height: 727px; */
+  height: 0px;
+  padding-bottom: 53%;
   background-color:rgba(255,255,255,1);
   position: relative;
 }

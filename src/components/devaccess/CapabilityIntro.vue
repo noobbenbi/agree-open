@@ -1,11 +1,12 @@
 <template>
-<!-- 能力介绍 -->
+<!-- 产品优势 -->
 <div class="capabilityintro">
   <div class="center">
-      <span class="center-title">能力介绍</span>
+      <span class="center-title">产品优势</span>
       <span class="center-line"></span>
   </div>
-  <div class="capabilityintro-img1">
+  <div class="content">
+      <div class="capabilityintro-img1">
       <img class="img1" src="@/assets/images/abstract-art-blur-bright-373543.png">
       <p>简单集成</p>
   </div>
@@ -20,6 +21,7 @@
   <div class="capabilityintro-img4">
       <img class="img4" src="@/assets/images/photo-of-man-wearing-brown-sweater-3184603.png">
       <p>产融合作</p>
+  </div>
   </div>
 </div>
 </template>
@@ -53,38 +55,35 @@ export default {
     width:60px;
     height:3px;
     background:rgba(2,164,175,1);
-    position: absolute;
-    top: 18.6%;
-    left: 48.17%;
+    position: relative;
+    top: 80px;
+    display: table;
+    margin: 0 auto;
+}
+.content {
+    width: 83%;
+    height: 375px;
+    position: relative;
+    top: 25%;
+    display: table;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
 }
 .capabilityintro-img1,
 .capabilityintro-img2,
 .capabilityintro-img3,
 .capabilityintro-img4{
-    width: 275px;
+    flex: 1;
     height: 370px;
-    position: absolute;
-    top: 30%;
     text-align: center;
 }
 .capabilityintro-img1 img,
 .capabilityintro-img2 img,
 .capabilityintro-img3 img,
 .capabilityintro-img4 img{
-    width: 100%;
+    width: 275px;
     height: 290px;
-}
-.capabilityintro-img1 {
-    left: 8.4%;
-}
-.capabilityintro-img2 {
-    left: 29.5%;
-}
-.capabilityintro-img3 {
-    left: 50.6%;
-}
-.capabilityintro-img4{
-    left: 71.7%;
 }
 .capabilityintro-img1 p,
 .capabilityintro-img2 p,

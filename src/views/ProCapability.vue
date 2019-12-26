@@ -91,8 +91,9 @@ export default {
 .procapability {
   width:100%;
   min-width: 1200px;
-  /* height: 954px; */
-  height: 680px;
+  /* height: 680px; */
+  height: 0px;
+  padding-bottom: 50%;
   background-color:rgba(255,255,255,1);
   position: relative;
   text-align: center;
@@ -111,7 +112,8 @@ export default {
     height:3px;
     background:rgba(2,164,175,1);
     display: table;
-    margin: -4.5% auto;}
+    margin: -4.5% auto;
+}
 .payment-settlement,
 .investment,
 .account-management,
@@ -140,16 +142,19 @@ export default {
 .investment img,
 .account-management img,
 .loan-financing img{
-  width: 150px;
-  height: 150px;
+  width: 52%;
+  height: 36%;
+  display: table;
   margin: 0 auto;
+  position: relative;
+  top: 5%;
 }
 .payment-settlement a,
 .investment a,
 .account-management a,
 .loan-financing a{
   display: table;
-  margin: 0 auto;
+  margin: 19% auto;
   height:42px;
   font-size:1.5em;
   font-family:PingFangSC-Medium,PingFang SC;
@@ -166,6 +171,8 @@ export default {
   background:rgba(2,164,175,1);
   display: table;
   margin: 0 auto;
+  position: relative;
+  top: -12%;
 }
 .payment-settlement p,
 .investment p,
@@ -176,7 +183,7 @@ export default {
   font-weight:400;
   color:rgba(29,31,49,1);
   line-height:28px;
-  margin: 10% auto;
+  margin: 0 auto;
   cursor: pointer;
 }
 </style>
