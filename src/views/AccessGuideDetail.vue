@@ -92,6 +92,7 @@ export default {
 .accessguidedetail {
     width:100%;
     position: relative;
+    top: 30px;
     background:rgba(255,255,255,1);
     height: 3000px;
     height:auto;

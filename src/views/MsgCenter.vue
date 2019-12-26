@@ -232,7 +232,7 @@ export default {
     position: relative;
     width: 100%;
     min-width: 1200px;
-    height: 0; 
+    height: 0px; 
     padding-bottom: 37%;
     margin-bottom: 100px;
 }

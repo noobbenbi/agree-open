@@ -29,11 +29,12 @@ export default {
 .loop-autoplay {
   width:100%;
   min-width: 1200px;
-  background:linear-gradient(180deg,rgba(255,218,0,0) 0%,rgba(255,179,0,1) 100%);
+  height: 541px;
+  /* padding-bottom: 40%; */
   position: relative;
 }
-.loop-autoplay img {
-  width:100%;
-  height:100%;
+.demo-carousel img {
+  width: 100%;
+  height: 540px;
 }
 </style>

@@ -116,6 +116,7 @@ export default {
     height: auto;
     min-height:580px; 
     position: relative;
+    top: 30px;
 }
 .cut-line {
     position: absolute;

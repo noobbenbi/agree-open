@@ -91,7 +91,6 @@ export default {
 .procapability {
   width:100%;
   min-width: 1200px;
-  /* height: 680px; */
   height: 0px;
   padding-bottom: 50%;
   background-color:rgba(255,255,255,1);

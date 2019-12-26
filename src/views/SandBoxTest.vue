@@ -3,7 +3,7 @@
         <Layout>
             <Header>
             </Header>
-            <Layout class="newstyle1" :style="{padding: '0 100px',background: '#fff'}"> 
+            <Layout  :style="{position:'relative',top:'30px',padding:'0 0 0 9%',background: '#fff'}">
                 <Breadcrumb>
                     <BreadcrumbItem class="breadcrumbitem" to="/">API沙箱</BreadcrumbItem>
                     <BreadcrumbItem class="breadcrumbitem" >{{title[breadId]}}</BreadcrumbItem>
@@ -105,6 +105,10 @@ export default {
 </script>
 
 <style  scoped>
+
+.ivu-layout {
+    background: rgba(255,255,255,1);
+}
 .content{
     position: relative;
     width: 70%;
@@ -143,11 +147,7 @@ export default {
     position: relative;
     left: 13px;
 }
-.sider{
-    width: 240px;
+.menu-box {
+    width: 18%;
 }
-/* .newstyle1 /deep/ .ivu-layout {
-    padding: 0px 0px !important;
-} */
-
 </style>

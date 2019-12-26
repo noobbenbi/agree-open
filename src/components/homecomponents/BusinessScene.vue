@@ -25,8 +25,6 @@
       <a class="itemTitie" href="#">品牌零售</a>
       <p>{{msg}}</p>
     </div>
-  <!-- <goTop></goTop>
-  <Footer></Footer> -->
 </div>
 </template>
 <script>
@@ -46,7 +44,6 @@ export default {
 .businessscene {
   width:100%;
   min-width: 1200px;
-  /* height: 727px; */
   height: 0px;
   padding-bottom: 53%;
   background-color:rgba(255,255,255,1);
@@ -110,9 +107,6 @@ export default {
 .account-management a,
 .loan-financing a{
   position: relative;
-  /* top: 9%;
-  left: 33.35%; */
-  /* display: table; */
   display: table;
   margin: -80% auto;
   font-size:1.3em;

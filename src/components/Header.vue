@@ -61,6 +61,7 @@
             @keyup.13.native="handleSearch"
           />
     </div>
+    <!-- <div class="boxshadow"></div> -->
   </div>
 </template>
 
@@ -110,7 +111,7 @@ export default {
   width: 100%;
   height: 90px;
   background:rgba(255,255,255,1);
-  box-shadow: 0px -10px 5px #FFF9F9F9 inset;
+  box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
 }
 .header-logo {
   width: 280px;
@@ -224,5 +225,12 @@ export default {
   position: absolute;
   left: 82%;
   top: 30px;
+}
+.boxshadow {
+  position: relative;
+  bottom: 70px;
+  width: 100%;
+  /* height: 10px; */
+  box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
 }
 </style>
