@@ -15,6 +15,7 @@
             <p class="detail-title">
                 开发者资料
             </p>
+            <router-link to="/accountcenter/acc"><button class="btn-modify-detail">修改</button></router-link>
             <Divider class="d-line"/>
             <Table class="tb-userinfo" :columns="columns1" :data="data1" :show-header="showHeader" ></Table>
         </div>
@@ -46,7 +47,8 @@ export default {
                 },
                 {
                     title:'info',
-                    key:'info'
+                    key:'info',
+                    width:'400px'
                 },
             ],
             data1:[
@@ -100,9 +102,11 @@ export default {
     height: 3000px;
     height:auto;
     min-height:400px;
+    margin-bottom: 50px;
     position: relative;
     left: 18.75%;
     text-align: center;
+    box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
 }
 .userinfo-some {
     width: 100%;
@@ -123,17 +127,17 @@ export default {
     position: relative;
     top: 70px;
 }
-.userinfo button {
+.userinfo-some button {
     width:6%;
     height:9%;
     background:rgba(2,164,175,1);
-    border-radius:2px;
     position: absolute;
     top: 8%;
     border: none;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);
+    cursor: pointer;
 }
 .btn-Certification {
     left: 82.5%;
@@ -184,6 +188,7 @@ export default {
     left: 16.7%;
 }
 .userinfodetail{
+    width: 100%;
     position: relative;
     height: 800px;
 }
@@ -197,11 +202,21 @@ export default {
     left: 5%;
     top: 0px;
 }
+.btn-modify-detail {
+    width: 50px;
+    height: 30px;
+    background:rgba(2,164,175,1);
+    position: absolute;
+    left: 85%;
+    border: none;
+    cursor: pointer;
+}
 .d-line {
     position: relative;
     top: 50px;
 }
 .tb-userinfo {
+    width: 97%;
     position:relative;
     top: 50px;
     left:3%;

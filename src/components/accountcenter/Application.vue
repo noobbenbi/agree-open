@@ -46,10 +46,16 @@ export default {
 @import url("../../assets/styles/font/font.css");
 .myapplication {
     width: 62.5%;
-    height: 400px;
+    height: 1000px;
+    height:auto;
+    padding-bottom: 50px;
+    min-height:300px;
+    margin-bottom: 50px;
     position: relative;
-    /* top: 53%; */
+    top: 30px;
     left: 18.75%;
+    box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
+
 }
 .noapplication p{
     font-size: 1.375em;
@@ -83,7 +89,6 @@ export default {
     width:6%;
     height:30px;
     background:rgba(2,164,175,1);
-    border-radius:2px;
     position: absolute;
     top: 32px;
     right: 5%;
@@ -91,6 +96,7 @@ export default {
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);
+    cursor: pointer;
 }
 .hasapplication p:nth-of-type(1),
 .hasapplication p:nth-of-type(3),

@@ -42,11 +42,14 @@ export default {
     width: 62.5%;
     height: 1000px;
     height:auto;
-    min-height:400px;
+    padding-bottom: 50px;
+    min-height:300px;
+    margin-bottom: 50px;
     position: relative;
+    top: 30px;
     left: 18.75%;
     text-align: center;
-    box-shadow: 0px -10px 5px #FAFAFA;
+    box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
 }
 .test{
     height: 200px;
