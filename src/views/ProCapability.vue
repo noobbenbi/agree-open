@@ -1,5 +1,6 @@
 <template>
 <div>
+    <router-view></router-view>
   <Header></Header>
   <Loopautoplay></Loopautoplay>
   <div class="procapability">

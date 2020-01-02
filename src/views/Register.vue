@@ -15,7 +15,7 @@
             <span>创建账户</span>
         </div>
         <div class="register-input">
-            <input type="text"  placeholder="请输入注册的手机号码" v-model="phone"  
+            <input type="text"  placeholder="请输入手机号码" v-model="phone"  
             @input="$emit('input',$event.target.value)" :error="phone"> 
             <!-- 滑动解锁模块 <Icon type="ios-lock-outline" />-->
             <div class="lock">
@@ -37,8 +37,6 @@
                 <input type="text" placeholder="请输入短信验证码" v-model="verifyCode" :error="verifyCode">
                 <button :disabled="disabled" :btnTitle="btnTitle" @click="getVerifyCode">{{btnTitle}}</button>
             <!-- 设置密码 -->
-                <!-- <input class="inputpwd" id="pwd" type="password" placeholder="8-12位密码，字母/数字/符号至少两种">
-                <img class="pwdeye" title="点击隐藏或显示密码" src="/images/icon-invisible.png" @click="toShowCode"> -->
                 <input class="inputpwd" :type="pwdType" @on-change="userPassword"
                 v-model="userPassword"  placeholder="8-12位密码，字母/数字/符号至少两种">
                 <img class="pwdeye" title="点击隐藏或显示密码"  :src="seen?openeye:nopeneye" alt="" @click="toShowCode">

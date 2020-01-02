@@ -96,7 +96,6 @@ export default {
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);
-    cursor: pointer;
 }
 .hasapplication p:nth-of-type(1),
 .hasapplication p:nth-of-type(3),

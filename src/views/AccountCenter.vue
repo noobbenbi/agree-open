@@ -11,20 +11,18 @@
         </div>
         <div class="menu">
             <Menu mode="horizontal" :theme="theme3" active-name="1" >
-                <MenuItem name="1" class="mydata" @click.native="infoToShow">
+                <MenuItem name="1" class="mydata"  to="/accountcenter/userinfo">
                     <p class="menu-title" >我的资料</p>
                 </MenuItem>
-                <MenuItem name="2" class="myapp" @click.native="appToShow">
+                <MenuItem name="2" class="myapp"  to="/accountcenter/myapp">
                     <p class="menu-title">我的应用</p>
                 </MenuItem>                
-                <MenuItem name="3" class="myagreement" @click.native="agreementToShow">
+                <MenuItem name="3" class="myagreement"  to="/accountcenter/agreement">
                     <p class="menu-title">我的协议</p>
                 </MenuItem>
             </Menu>
         </div>
-        <Agreement v-show="agreeVis" ></Agreement>
-        <Application v-show="appVis" ></Application>
-        <UserInfo v-show="infoVis" ></UserInfo>
+        <router-view></router-view>
     </div>
     <Footer></Footer>
 </div>
@@ -48,21 +46,7 @@ export default {
         }
     },
     methods: {
-        agreementToShow() {
-            this.agreeVis = true;
-            this.appVis = false;
-            this.infoVis = false;
-        },
-        appToShow() {
-            this.agreeVis = false;
-            this.appVis = true;
-            this.infoVis = false;
-        },
-        infoToShow() {
-            this.agreeVis = false;
-            this.appVis = false;
-            this.infoVis = true;
-        }
+        
     },
     components: {
         Header,
@@ -83,11 +67,8 @@ export default {
 .accountcenter {
     position: relative;
     width: 100%;
-    /* min-width: 1200px; */
-    /* height: 814px; */
     background:rgba(255,255,255,1);
     text-align: center;
-    /* display: flex; */
 }
 .toppart {
     height: 356px;
@@ -135,7 +116,6 @@ export default {
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);
-    cursor: pointer;
 }
 .menu {
     position:  relative;

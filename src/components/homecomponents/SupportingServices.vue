@@ -9,17 +9,17 @@
     <img class="img-two" src="@/assets/images/abstract-art-blur-bright-373543备份 2.png">
     <img class="img-three" src="@/assets/images/abstract-art-blur-bright-373543备份.png">
     <div class="text-one">
-        <a href="#">接入指南</a>
+        <a href="/devaccess/accessguidedetail">接入指南</a>
         <span></span>
         <p>{{msg}}</p>
     </div>
     <div class="text-two">
-        <a href="#">文档中心</a>
+        <a href="/documentcenter">文档中心</a>
         <span></span>
         <p>{{msg}}</p>
     </div>
     <div class="text-three">
-        <a href="#">帮助与支持</a>
+        <a href="/devhelp">帮助与支持</a>
         <span></span>
         <p>{{msg}}</p>
     </div>

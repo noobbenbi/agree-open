@@ -18,7 +18,21 @@ const routes = [
   {
     path: '/accountcenter',
     name: 'accountcenter',
-    component: () => import('../views/AccountCenter.vue')
+    component: () => import('../views/AccountCenter.vue'),
+    children:[
+      {
+        path:'userinfo',
+        component: () => import('../components/accountcenter/UserInfo'),
+      },
+      {
+        path:'myapp',
+        component: () => import('../components/accountcenter/Application'),
+      },
+      {
+        path:'agreement',
+        component: () => import('../components/accountcenter/Agreement'),
+      }
+    ]
   },
   {
     path: '/accountcenter/acc',
@@ -53,7 +67,7 @@ const routes = [
   {
     path: '/procapability',
     name: 'procapability',
-    component: () => import('../views/ProCapability.vue')
+    component: () => import('../views/ProCapability.vue'),
   },
   {
     path: '/productintro',

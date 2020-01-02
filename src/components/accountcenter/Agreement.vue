@@ -56,7 +56,6 @@ export default {
     width: 100%;
     background-color: aqua;
     position: relative;
-    /* top: 400px; */
 }
 .noagreement img {
     height: 115px;

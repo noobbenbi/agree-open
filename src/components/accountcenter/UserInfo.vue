@@ -137,7 +137,6 @@ export default {
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);
-    cursor: pointer;
 }
 .btn-Certification {
     left: 82.5%;
@@ -209,7 +208,6 @@ export default {
     position: absolute;
     left: 85%;
     border: none;
-    cursor: pointer;
 }
 .d-line {
     position: relative;

@@ -34,7 +34,7 @@
           <img class="user-head" src="@/assets/images/user-head-img.png" >
           <DropdownMenu slot="list">
             <DropdownItem disabled>测试帐号</DropdownItem>
-            <DropdownItem @click.native="goPush('/accountcenter')">账户中心</DropdownItem>
+            <DropdownItem @click.native="goPush('/accountcenter/userinfo')">账户中心</DropdownItem>
             <DropdownItem>应用中心</DropdownItem>
             <DropdownItem >退出</DropdownItem>
         </DropdownMenu>
@@ -109,6 +109,7 @@ export default {
 <style  scoped>
 .header {
   width: 100%;
+  min-width: 1200px;
   height: 90px;
   background:rgba(255,255,255,1);
   box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);

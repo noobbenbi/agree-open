@@ -25,18 +25,9 @@
                     <p>{{title[3]}}</p>
                 </MenuItem>
             </Menu> 
-            <!-- <Anchor show-ink>
-                <AnchorLink href="#text_part_read" title="接入前必读" />
-                <AnchorLink href="#text_part_dev" title="接入开发" />
-                <AnchorLink href="#text_part_api" title="基础SDK集成" />
-                <AnchorLink href="#text_part_sdk" title="API接口规范    " />
-            </Anchor> -->
         </div>
         <div class="content">
-            <div class="text-part-read" id="text_part_read">接入前必读</div>
-            <div class="text-part-dev" id="text_part_dev">接入开发</div>
-            <div class="text-part-api" id="text_part_api">基础SDK集成</div>
-            <div class="text-part-sdk" id="text_part_sdk">API接口规范</div>
+            <BeforeDevRead></BeforeDevRead>
         </div>
     </div>
     <Footer class="footer"></Footer>
@@ -46,6 +37,7 @@
 <script>
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BeforeDevRead from '../components/devaccess/accessguide/BeforeDevRead';
 export default {
     name:'AccessGuideDetail',
     data() {
@@ -59,6 +51,7 @@ export default {
             ],
             menuId:'',
             breadId:'',
+            
         }
     },
     created(){
@@ -78,7 +71,8 @@ export default {
     },
     components:{
         Header,
-        Footer
+        Footer,
+        BeforeDevRead
     }
 }
 </script>
@@ -113,17 +107,6 @@ export default {
     top: 85px;
     left: 110px;
 }
-/* .select-lab /deep/ .ivu-anchor {
-    background:#F1FAFB;
-}
-.select-lab /deep/ .ivu-anchor-ink {
-    position: absolute;
-    left: 236px;
-}
-.ivu-anchor-link {
-    width: 240px;
-    height: 70px;
-} */
 .menuitem {
     width: 240px;
     height: 75px;
@@ -140,34 +123,10 @@ export default {
 }
 .content {
     position: relative;
-    left: 370px;
+    left: 375px;
     top: 85px;
     width: 70%;
     padding-bottom: 100px;
 }
-.text-part-read {
-    position: relative;
-    width: 100%;
-    height: 800px;
-    background-color: aqua;
-}
-.text-part-dev {
-    position: relative;
-    width: 100%;
-    height: 800px;
-    background-color:cadetblue;
-}
-.text-part-api {
-    position: relative;
-    width: 100%;
-    height: 800px;
-    background-color:coral;
-}
-.text-part-sdk {
-    position: relative;
-    width: 100%;
-    height: 800px;
-    background-color:dodgerblue;
-    box-shadow:10px 10px 10px 10px tomato;
-}
+
 </style>
