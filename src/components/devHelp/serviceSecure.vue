@@ -2,10 +2,11 @@
   <div class="ASize">
    <div class="block-section">
      <div class="lineT">
-      <div class="centerP">
-        <h3 class="textP">服务保障</h3>
-        <div class="line-box"></div>
-      </div>  
+        <div class="textP">服务保障</div>
+        <div class="center-line">
+          <div class="line-box">
+          </div>
+        </div>  
      </div> 
 
     <ul class="list">
@@ -17,7 +18,8 @@
             </div>
             
             <div class="textt">
-              <a href="" class="subtitle">7*12</a>
+              <div class="subtitle"><a href="" class="subtitle-text">7*12</a></div>
+              
               <div class="sub-linebox"></div>
               <p class="content-style">技术支持团队7x12小时在线支持，凭借团队技能和贴心服务提供全面保障</p>
             </div>
@@ -33,7 +35,8 @@
             </div>
             
             <div class="textt">
-              <a href="" class="subtitle">开发者至上</a>
+              <div class="subtitle"><a href="" class="subtitle-text">开发者至上</a></div>
+              
               <div class="sub-linebox"></div>
               <p class="content-style">开放银行平台官方以开发者和客户为中心，尽最大努力提供更好的使用服务</p>
             </div>
@@ -48,7 +51,7 @@
               <img src="@/assets/images/serviceScText03.png" alt="">
             </div>
             <div class="textt">
-              <a href="" class="subtitle">金融级保障</a>
+              <div class="subtitle"><a href="" class="subtitle-text">金融级保障</a></div>
               <div class="sub-linebox"></div>
               <p class="content-style">技术支持团队7x12小时在线支持，凭借团队技能和贴心服务提供全面保障</p>
             </div>
@@ -69,37 +72,35 @@ export default {
 .ASize{
     background:rgba(255,255,255,1);
     height: 862px;
-    width:1920px;
+    width:100%;
     .block-section{
-      height: 742px;
-      width:1600px;
-      margin-left: 162px;
-      margin-right: 157px;
+      height: 535px;
+      margin:0 8%;
       .lineT{
         height: 273px;
-        width: 1920px;
         padding-top:120px;
-        .centerP{
-          margin-left: 726px;
-          margin-right: 731px;
+        text-align: center;
+        .center-line{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .line-box{
+            width: 70px;
+            height: 4px;
+            background: rgba(2,164,175,1);
+          }
+
           .textP{
-            width:144px;
-            height:50px;
             font-size:36px;
             font-family:PingFangSC-Medium,PingFang SC;
             font-weight:500;
             color:rgba(29,31,49,1);
             line-height:50px;
           }
-          .line-box{
-            margin-top: 20px;
-            margin-left: 0px;
-            width: 70px;
-            height: 4px;
-            margin-left: 37px;
-            background: rgba(2,164,175,1);
-          }
-        }
+          
+
       }
     }
   .list{
@@ -109,10 +110,28 @@ export default {
     display: flex;
     justify-content: space-between;
     bottom: 30px;
+    .back-pic01{
+      width: 31%;
+      background: url("../../assets/images/servicescure-back02.png");
+      background-size: cover; 
+      overflow: hidden;
+    }
+    .back-pic02{
+      width: 33%;
+      background: url("../../assets/images/servicescure-back01.png");
+      background-size: cover; 
+      overflow: hidden;
+    }
+    .back-pic03{
+      width: 33%;
+      background: url("../../assets/images/servicescure-back01.png");
+      background-size: cover; 
+      overflow: hidden;
+      
+    }
 
     .ill{
-      width: 522px;
-      float: left;
+      width: 100%;
       position: relative;
       height: 468px;
       box-sizing: border-box;
@@ -126,36 +145,38 @@ export default {
       .imgg{
         height: 200px;
         width: 200px;
-        margin-left: 112px;
+        margin: 0 auto;
         background-color: aqua;
-        display: inline-block;
-        float: left;
       }
       
       .textt{
-        display: inline-block;
+        // display: inline-block;
         height: 162px;
-        width: 422px;
         text-align: center;
-        
         .subtitle{
-        width:422px;
-        height:42px;
-        font-size:30px;
-        font-family:PingFangSC-Medium,PingFang SC;
-        font-weight:500;
-        color:rgba(29,31,49,1);
-        line-height:42px;
-        
-      }
+          margin-bottom: 30px;
+          .subtitle-text{
+          // width:422px;
+          height:42px;
+          font-size:30px;
+          font-family:PingFangSC-Medium,PingFang SC;
+          font-weight:500;
+          color:rgba(29,31,49,1);
+          line-height:42px;
+          margin-bottom: 20px;
+          }
+
+        }
+
         .sub-linebox{
           width:60px;
           height:6px;
           background:rgba(2,164,175,1); 
-          margin: 30px 181px 34px;
+          // margin: 30px 181px 34px;
+          margin: 0 auto;
         }
         .content-style{
-          width:422px;
+          margin-top: 40px;
           height:60px;
           font-size:20px;
           font-family:PingFangSC-Regular,PingFang SC;
@@ -167,15 +188,7 @@ export default {
       }
     }
   }
-  .back-pic01{
-    background: url("../../assets/images/servicescure-back02.png")
-  }
-  .back-pic02{
-    background: url("../../assets/images/servicescure-back01.png")
-  }
-  .back-pic03{
-    background: url("../../assets/images/servicescure-back01.png")
-  }
+
 
 
 }

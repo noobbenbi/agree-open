@@ -2,19 +2,22 @@
   <div class="SideNavBarWrapper">
     <Menu
       class="navList"
-      width="315px"
+      width="309px"
       :active-name="activeName"
       :open-names="openNames"
       @on-select="getDocListInfo"
     >
-    <Input
-        class="searchInput"
+    <div class="searchInput">
+      <Input
+        style="width:260px"
         icon="ios-search"
         placeholder="输入关键词搜索"
         v-model="searchInput"
         @on-click="test"
         @on-enter="test"
       />
+    </div>
+    
       <Submenu class="cat1" v-for="doc1 in myarr" :key="doc1.docId" :name="doc1.docName">
         <template slot="title">
           <Icon type="md-list-box" />
@@ -150,7 +153,6 @@ export default {
       //目录和文档类型分类
       let newList = [];
       if (!params) {
-
         return;
       }
       params.forEach((item, index) => {
@@ -165,31 +167,28 @@ export default {
       this.$emit("selectedDocId", this.docList[this.activeName]);
       this.$emit("selectedDocName",this.activeName);
     },
-    getCatList() {
-      // console.log(this.myarr);
-      let newList = this.myarr;
-      let _catList = {};
-      let _docList = {};
-
-      newList.forEach((item, index) => {
-        if (item.docType == "doc") {
-          _catList[item.docName.docName] = [item.docName];
-          _docList[item.docName.docName] = item.docID;
-        } else {
-          let newList2 = item.childList;
-          newList2.forEach((item2, index) => {
-            if (item2.docType == "doc") {
-              _catList[item2.docName] = [item.docName, item2.docName];
-              _docList[item2.docName] = item2.docID;
-            }
-          });
-        }
-      });
-      this.catList = _catList;
-      this.docList = _docList;
-      // console.log('catList', this.catList);
-      // console.log('docList', this.docList);
-    }
+    getCatList() {
+      console.log(this.myarr);
+      let newList = this.myarr;
+      let _catList = {};
+      let _docList = {};
+      newList.forEach((item, index) => {
+        if (item.childList != null) {
+          let newList2 = item.childList;
+          newList2.forEach((item2, index) => {
+            if (item2.docType == "doc") {
+              _catList[item2.docName] = [item.docName, item2.docName];
+              _docList[item2.docName] = item2.docID;
+            }
+          });
+        } else {
+          _catList[item.docName] = [item.docName];
+          _docList[item.docName] = item.docID;
+        }
+      });
+      this.catList = _catList;
+      this.docList = _docList;
+    }
   }
 };
 </script>
@@ -198,32 +197,36 @@ export default {
 @sideNavHeight : 100%;
 @bgColor:#fafafa;
 .SideNavBarWrapper{
-  margin-left: 115px;
+  // margin-left: 115px;
   width: 315px;
   height: @sideNavHeight;
   background: @bgColor;
   overflow-x: hidden;
-  border-right: 1px solid #ebebeb;
-  position: relative;
-  align-items: center;
-  visibility: middle;
-  
+  // border-right: 1px solid #ebebeb;
+  // position: relative;
+  // align-items: center;
+  // visibility: middle;
+  // vertical-align: center;
+  // text-align: center;
   .searchInput{
-    width: 80%;
-    margin: 14px 24px;
-    padding: 14px 24px 0 0;
+    // width: 280px;
+    text-align: center;
+    
+    
   }
   .ivu-menu-light{
     //整体导航栏背景色
-    background:rgba(203,250,255,0.04);
+    background:rgba(2,164,175,0.04);
   }
       
   /* 文档中心和问题中心左侧导航栏样式覆盖 */
   .ivu-menu-light.ivu-menu-vertical>.ivu-menu-submenu.ivu-menu-item-active.ivu-menu-opened.ivu-menu-child-item-active>.ivu-menu-submenu-title {
       color: #02A4AF;
+      
   }
   .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
       color: #02A4AF;
+     
   }
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
       /* 选中时候的按钮的背景色和字体颜色 */
@@ -245,7 +248,5 @@ export default {
       font-weight:500;
     }
   }
-  
- 
 }
 </style>

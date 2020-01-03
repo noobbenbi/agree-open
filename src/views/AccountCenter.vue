@@ -67,6 +67,7 @@ export default {
 .accountcenter {
     position: relative;
     width: 100%;
+    min-width: 1200px;
     background:rgba(255,255,255,1);
     text-align: center;
 }

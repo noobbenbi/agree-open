@@ -1,20 +1,14 @@
 <template>
-  <div class="body">
-    <div class="title">
-      <h1>我的协议</h1>
+  <div class="myAgreement">
+    <div class="agreement-title">
+      <span>已签协议</span> 
     </div>
-    <div class="longline"></div>
-    
-    <div class="head-skin">
-     <div class="contentStyle">
-       <div class="docName">开放平台用户注册协议</div>
-       <div class="detailsCheck"><a href="">查看详情</a></div>
-     </div>
-     <div class="sublongline"></div>
-     <div class="contentStyle">
-       <div class="docName">开发者入住协议</div>
-       <div class="detailsCheck"><a href="">查看详情</a></div>
-     </div>
+    <div class="content-style" v-for="item in content" :key="item.index">
+      <div class="cut-line"></div>
+      <div class="agreement-content">
+        <div>{{item.agreementName}}</div>
+        <div><a href="">查看详情</a></div>
+      </div>
     </div>
   </div>
 </template>
@@ -23,68 +17,44 @@ export default {
     name:'myData',
     data(){
       return {
-        ifhide:true,
-        accountName:"用户名",
-        confirmStatu:"未认证",
-        confirmhide:"true",
-        buttonhide:"true"
+        content:[
+          {
+            agreementName:'开放平台用户注册协议'
+          },
+          {
+            agreementName:'开发者入住协议'
+          }
+        ]
       }
     },
-    methods:{
-      
-
-    }
 }
 </script>
 <style lang="less"  scoped>
-.body{
-  width: 900px;
-  .title{
-    padding:0 40px 0;
-    height:50px;
-    font-family:PingFangSC-Medium,PingFang SC;
+.myAgreement{
+  color:rgba(29,31,49,1);
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-size:20px;
+  font-weight:400;
+  min-height: 700px;
+  width: 80%;
+  padding: 0 5%;
+  .agreement-title{
+    font-size:36px;
     font-weight:500;
-    color:rgba(29,31,49,1);
-    line-height:50px;
+    text-align: left;
+    padding-bottom: 20px;
   }
-  
-  .longline{
-    margin:5px 20px 40px;
-    width:900px;
-    height:1px;
-    background:rgba(240,240,240,1);
-  }
-  .head-skin{
-    height: 200px;
-    padding: 0px 40px 0;
-    .contentStyle{
-      height:28px;
-      font-size:20px;
-      font-family:PingFangSC-Regular,PingFang SC;
-      font-weight:400;
-      line-height:28px;
-      .docName{
-        width: 50%;
-        color:rgba(29,31,49,1);
-        display: inline-block;
-      }
-      .detailsCheck{
-        width: 50%;
-        color:rgba(2,164,175,1);
-        display: inline-block;
-        text-align: right;
-      }
+  .content-style{
+    .cut-line{
+      height: 1px;
+      background:rgba(240,240,240,1);
     }
-    .sublongline{
-    margin:20px -20px 20px;
-    margin-bottom: px;
-    width:900px;
-    height:1px;
-    background:rgba(240,240,240,1);
+    .agreement-content{
+      padding: 35px 0;
+      display: flex;
+      justify-content: space-between;
     }
   }
- 
-  
 }
 
 </style>

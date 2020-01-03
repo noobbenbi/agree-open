@@ -17,7 +17,7 @@
                                 <Icon class="title-icon" type="ios-folder-outline" size="25"/>
                                 <span>{{title[0]}}</span>
                             </template>
-                            <MenuItem name="1-1" class="dh-title-son" ><p>全局参数设置</p></MenuItem>
+                            <MenuItem name="1-1" class="dh-title-son" to="/sandbox/docmanage"><p>全局参数设置</p></MenuItem>
                             <MenuItem name="1-2" class="dh-title-son"><p>离线文档(MD)</p></MenuItem>
                             <MenuItem name="1-3" class="dh-title-son"><p>个性化设置</p></MenuItem>
                         </Submenu>
@@ -50,9 +50,7 @@
                             </Submenu>
                     </Menu>
                 </Sider>
-                <Content class="content" :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-                    <DocManage :visiable="showDoc" :value="docMenuId" :faId="faId"></DocManage>
-                </Content>
+                <router-view></router-view>
             </Layout>
                 </Content>
         </div>

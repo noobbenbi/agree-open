@@ -15,7 +15,6 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-// import goTop from "@/components/goTop";
 import noobStart from "@/components/devHelp/noobStart";
 import serviceSecure from "@/components/devHelp/serviceSecure";
 import tecSupport from "@/components/devHelp/tecSupport";
@@ -25,7 +24,6 @@ export default {
   components: {
     Header,
     Footer,
-    
     noobStart,
     tecSupport,
     serviceSecure
@@ -42,7 +40,7 @@ html,body{
   height: 100%;
   min-height: 100%;
   width: 100%;
-  min-width: 100%;
+  min-width: 1280px;
 }
 .devAccess {
   .ivu-carousel {

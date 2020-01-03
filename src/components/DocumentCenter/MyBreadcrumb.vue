@@ -15,7 +15,7 @@ export default {
   name:'DocBreadcrumb',
   props: {
     BreadcrumbList: {
-      type: Array
+      type:Array
     }
   }
 }
@@ -24,12 +24,11 @@ export default {
 <style lang="less" scoped>
 @import "../../assets/styles/variables.less";
 .breadcrumb {
-  
   box-sizing: border-box;
   min-width: auto;
   background: white;
   border-bottom: 0.25px solid @bgColor;
-  padding-left: 115px;
+ 
   /deep/ .ivu-breadcrumb {
     height: 50px;
     line-height: 50px;

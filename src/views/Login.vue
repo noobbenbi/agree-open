@@ -1,25 +1,20 @@
 <template>
-  <div>
-    <!-- <div class="login_background"> -->
-      
-    <div class="login_body">
-      <div class="login_body_title1"> 
-       
-        <!-- <img src="@/assets/images/head-logo.png" width="190px"> -->
-        
+  <div class="bodys" :style="note">
+    <div class="login-body">
+
+      <div class="login-body-title">
+        <div class="login-title-img"><img src="/images/ztkj.png" style="width:185px"></div>
+        <div class="login-title-text">
+          <a href="/register" class="login-register">注册</a>|
+          <a href="/" class="login-return">返回首页</a>
+        </div>
       </div>
-      <div class="login_body_title2"> 
-        <a href="/" class="login-register-item">注册 | </a>
-        <a href="/" class="login-register-item"> 返回首页</a>
+
+      <div class="login-body-content">
         
-      </div>
-      
-      
-      <div class="login_body_content">
-        
-        
-        <div class="login_container">
+          <h2 class="head-title">欢迎登陆</h2>
           
+
           <Form
             class="login-form"
             id="login_form"
@@ -27,99 +22,102 @@
             ref="formInline"
             :model="formInline"
           >
-            <h2 class="title">欢迎登陆</h2>
             <FormItem prop="user">
               <i class="iconfont icon-denglu"></i>
-              <Input v-model="formInline.user" placeholder="请输入手机号/用户名"></Input>
+              <Input v-model="formInline.user" placeholder="请输入手机号/用户名" size="large"></Input>
             </FormItem>
 
-            <FormItem prop="password">
-              <i class="iconfont icon-mima"></i>
-              <Input
-                type="password"
-                v-model="formInline.password"
-                placeholder="请输入登录密码"
-              ></Input>
-            </FormItem>
-
-            <!-- <FormItem prop="verifycode">
-              <Input
-                type="text"
-                v-model="formInline.verifycode"
-                placeholder="请输入验证码"
-                class="verifycode"
-              ></Input>  
-            </FormItem>  -->
-            
-            <FormItem>
-              <Button type="dashed" @click="handleSubmit('formInline')">登录</Button>
-            </FormItem>
-
-            <div class="f-clearfix">
-              <!-- 注册 -->
-              <div class="f-sm-font f-fl">
-                <label><input name="Autologin" type="checkbox" value="" v-model="checked" />保存账号和密码 </label> 
-              </div>
-              <!-- 找回密码 -->
-              <div class="f-sm-font f-fr">
-                <a
-                  class="link"
-                  href="/retrievePassword"
-                  rel="noopener noreferrer"
-                  style="color:@themeColor"
-                  @click="clearCookie()" 
-                >忘记密码？</a>
-              </div>
+            <div class="icon-father">
+              <FormItem prop="password">
+                <i-input
+                  :value.sync="value"
+                  :type="pwdTypes"
+                  v-model="formInline.password"
+                  placeholder="请输入登录密码"
+                  size="large"
+                >
+                </i-input>
+                <Icon type="ios-eye-outline"  class="icon-me" @click="showPsw()" ></Icon>
+                <!-- <Icon type="eye" class="icon-me"></Icon> -->
+              </FormItem>
+              
             </div>
+
+            
+           
+            
+            <div class="login-bottom-content">
+            <div class="saveinfo">
+              <label><input  type="checkbox"  v-model="checked" />保存账号和密码</label> 
+            </div>
+            <div class="forgetpsw">
+              <a
+                href="/passwordForget"
+                @click="clearCookie()" 
+                class="fptext"
+              >忘记密码？</a>
+            </div>
+          </div>
+            <FormItem class="loginButton">
+              <Button type="primary" @click="handleSubmit('formInline')" long size="large">登录</Button>
+            </FormItem>
           </Form>
-        </div>
       </div>
+       <div class="foot-text">Copyright© 2018赞同科技 | 京ICP备 14027589号-1</div>
+       
     </div>
+
+   
   </div>
-  <!-- </div> -->
 </template>
 <script>
-// import { login } from "../request/api.js"; // 导入api接口
-
-
-export default {
-  name: "login2",
-  data() {
-    return {
-      checked:false,
-      formInline: {
-        user: "",
-        password: "",
-        verifycode: ""
-      },
-      ruleValidate: {
-        user: [
+ export default {
+    data () {
+      return {
+        pwdTypes:"password",//密码类型
+          // openeye: require('@/assets/icon-visible.png'), 
+          // nopeneye: require('@/assets/icon-invisible.png'), 
+          seen:true,
+        formInline: {
+          user: "",
+          password: "",
+          
+        },
+        ruleValidate: {
+           user: [
           { required: true, message: "请输入手机号/用户名", trigger: "blur" }
-        ],
-        password: [
-          { required: true, message: "请输入登录密码", trigger: "blur" }
-        ],
-        verifycode: [
-          { required: true, message: "请输入验证码", trigger: "blur" }
-        ]
+          ],
+          password: [
+          { required: true, message: "请输入登录密码", trigger: "blur" },
+          { min: 6, max: 10, message: "长度在 6 到 10 个字符", trigger: "blur" }
+          ]
+        },
+        checked:false,
+        note:{
+           backgroundImage: "url(" + require("../assets/images/agree-login-background.jpg") + ")",
+           backgroundRepeat: "no-repeat",
+           backgroundAattachment:"fixed",
+           backgroundPosition:"center",
+           backgroundSize:"cover"
+        }
       }
-    };
-  },
-  components: {
-   
-    
-  },
-  mounted(){
-    this.getCookie();
-
-  },
-  methods: {
-    handleSubmit(name) {
+    },
+    methods: {
+      // handleSubmit(name) {
+      //   this.$refs[name].validate((valid) => {
+      //       if (valid) {
+      //         this.$Message.success('提交成功!');
+      //         console.log(222);
+      //       } else {
+      //         this.$Message.error('表单验证失败!');
+      //       }
+      //   })
+      // },
+      handleSubmit(name) {
       this.$refs[name].validate(valid => {
         if (valid) {
           alert("登陆成功");
           const self=this;
-          
           //判断自动登陆是否被勾选
           if(this.checked==true){
             //若勾选自动登陆，传入账号，密码，保存时间 3个参数
@@ -130,18 +128,9 @@ export default {
             console.log("清空Cookie");
             //如果未勾选自动登陆，则清空Cookie
             self.clearCookie();
-          }
-          // login({
-          //   memberName: this.formInline.user,
-          //   password: this.formInline.password
-          // }).then(res => {
-          //   if (res.status.code == "200") {
-          //     localStorage.setItem("ms_username", this.formInline.user);
-               this.$router.push("/");
-          //   } else {
-          //     this.$alert("账号或密码错误！请检查后重试");
-          //   }
-          // });
+          } 
+          this.$router.push("/");
+          
         } else {
           this.$Message.error("请输入账号或密码!");
           return false;
@@ -157,7 +146,7 @@ export default {
           
 
           //字符串拼接cookie
-        window.document.cookie="user"+"="+name+";path=/expires";
+          window.document.cookie="user"+"="+name+";path=/expires";
         
           console.log(444);
           window.document.cookie="password"+"="+pwd+";path=/expires";
@@ -178,140 +167,131 @@ export default {
               this.formInline.password=arr2[1];
             }
             this.checked=true;
-          }
-          
+          } 
         },
         //清除cookie
         clearCookie:function(){
           this.setCookie("","",-1);
+        },
+        showPsw(){
+        //alert(this.pwdTypes);
+          this.pwdTypes = this.pwdTypes === 'password'?'text':'password';
+          if(this.seen==true){
+            this.seen=false;
+          }else{
+            this.seen=true;
+          }
         }
 
 
+
+
+    }
   }
-};
+
 </script>
 <style lang="less" scoped>
-@import "../assets/styles/variables.less";
-
-// .login_background {
-//         background-image: url("../assets/images/productCapability1.png");
-//         }
-.login_body_title1{
-  position: absolute;
-  width: 190px;
-  height: 120px;
-  left: 630px;
-  top: 159px;
+.pwdeye{
+  width: 100px;
+  height: 100px;
 }
-
-.login_body_title2{
-  position: absolute;
-  width: 190px;
-  height: 60px;
-  top: 169px;
-  left: 1128px;
-}
-
-
-.img{
-  width: 100%
-}
-.login_body {
-  
-  width: 1920px;
-  height: 1080px;
-  position: absolute;
-  min-width: 50%;
-  background-color: rgba(29,31,49,1);
-  background-color:gray;
-  background-image: url(/imgupload/login/about-banner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: absolute;
-  
-  .login_body_content {
-    
-    padding-top: 439px;
-padding-left: 659px;
-
-    height: 500px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    .login_container {
-      border-radius:10px;
-      width: 600px;
-      height: 500px;
+.bodys{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10%;
+  .login-body{
+    margin-top: 10%;
+    .login-body-title{
+      width: 427px;
+      height: 85px;
       position: relative;
-      top: 0px;
-      right: 690px;
-      padding: 32px 40px;
-      background-color: #fff;
-      box-sizing: border-box;
-      min-height: 380px;
-      .login-form {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0;
-        line-height: 1;
-        .title {
-          top: 60px;
-          font-size: 24px;
-          font-weight: 600;
-          color: #101010;
-          padding: 0;
-          text-align: center;
+      .login-title-img{
+        padding-bottom: -30px;
+        display: block;
+        float: left;
+      }
+      .login-title-text{
+        display: inline;
+        position: absolute;
+        right: 0;
+        top: 30px;
+        font-size:16px;
+        font-family:PingFangSC-Regular,PingFang SC;
+        font-weight:400;
+        .login-register{
+          text-decoration:none; 
+          display: inline-block;
+          margin-right: 10px;
+          color:rgba(2, 164, 175, 1);
         }
-        .ivu-form-item {
-          margin: 22px 0;
+        .login-return{
+          text-decoration:none; 
+          display: inline-block;
+          color:rgba(2, 164, 175, 1);
+        }
+      }
+    }
+    
+    .login-body-content{
+      width: 427px;
+      height: 356px;
+      background: white;
+      box-shadow:0px 2px 40px 0px rgba(248,248,248,1);
+      border-radius:4px;
+      padding:60px 70px;
+      .head-title{
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      .ivu-form-item.ivu-form-item-required{
+        display: block;
+      }
+      .icon-father{
+        position: relative;
+        display: block;
+        .icon-me{
+          position: absolute;
+          right: 0;
+          font-size:40px;
+        }
+      }
+      .login-bottom-content{
+        margin-bottom: 14px;
+        .saveinfo{
           display: block;
-          .iconfont {
-            position: absolute;
-            z-index: 2;
-            left: 10px;
-            top: 2px;
-            color: @borderColor;
-            
-            
-          }
-          /deep/.ivu-input {
-            height: 37px;
-            padding-left: 32px;
-          }
-          // .verifycode {
-          //   width: 160px;
-          //   display: inline-block;
-          //   vertical-align: middle;
-          //   height: 40px;
-          //   /deep/.ivu-input {
-          //     padding-left: 10px;S
-          //   }
-          // }
-         
-          /deep/.ivu-btn {
-            color: @bgColor !important;
-            background-color: @spanColor !important;
-            background-color: yellow;
-            border: none !important;
-            display: block;
-            margin: 0 auto;
-            width: 100%;
-            height: 50px;
-            font-size: 16px;
-            line-height: 36px;
-          }
+          float: left;
         }
-        .f-clearfix {
-          zoom: 1;
-          .f-sm-font {
-            font-size: 12px;
-            a {
-              font-size: 12px;
-            }
+        .forgetpsw{
+          display: block;
+          text-align: right;
+          .fptext{
+            text-decoration: none;
+          color: rgba(2, 164, 175, 1);
           }
         }
       }
     }
   }
+  .loginButton{
+    .ivu-btn.ivu-btn-primary.ivu-btn-long.ivu-btn-large{
+      background: rgba(2, 164, 175, 1);
+    }
+  }
+  .foot-text{
+    padding-top: 28px;
+    text-align: center;
+    width:372px;
+    height:22px;
+    font-size:10px;
+    font-family:PingFangSC-Regular,PingFang SC;
+    font-weight:400;
+    color:rgba(155,155,155,1);
+    line-height:22px;
+  }
+  
 }
+
+
+
 </style>

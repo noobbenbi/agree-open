@@ -6,7 +6,9 @@ import './registerServiceWorker'
 import ViewUI from 'view-design'
 import iviewArea from 'iview-area'
 import i18n from './language'
+import VueClipboard from 'vue-clipboard2'
 
+Vue.use(VueClipboard)
 Vue.use(iviewArea);
 Vue.config.productionTip = false
 Vue.use(ViewUI);

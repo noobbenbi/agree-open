@@ -34,7 +34,7 @@ export default {
     getWindowWidth() {
       let windowWidth = window.innerWidth;
       if(windowWidth > 1480) {
-        this.contentWidthused = '81%';
+        this.contentWidthused = '70%';
       } else {
         this.contentWidthused = '89%';
       }
@@ -47,9 +47,10 @@ export default {
 .contentWrapper {
   box-sizing: border-box;
   height: ~"calc(100% - 50.25px)";
-  padding-left: 66px;
+  padding-left: 2%;
   background: #fff;
   overflow-y: auto;
+  overflow-x: hidden;
   .content {
     width: 81%;
     /deep/ h1,

@@ -92,7 +92,13 @@ const routes = [
   {
     path: '/sandbox',
     name: 'sandbox',
-    component: () => import('../views/SandBox.vue')
+    component: () => import('../views/SandBox.vue'),
+    children:[
+      {
+        path:'docmanage',
+        component: () => import('../components/sandbox/DocManage'),
+      },
+    ]
   },
   {
     path: '/devaccess/accessguidedetail',
@@ -102,14 +108,28 @@ const routes = [
   {
     path: '/sandboxtest',
     name: 'sandboxtest',
-    component: () => import('../views/SandBoxTest.vue')
+    component: () => import('../views/SandBoxTest.vue'),
   },
   {
     path: '/documentcenter',
     name: 'documentcenter',
     component: () => import('../views/DocumentCenter.vue')
   },
-  
+  {
+    path: '/appcenter',
+    name: 'appcenter',
+    component: () => import('../views/ApplicationCenter.vue')
+  },
+  {
+    path: '/passwordForget',
+    name: 'passwordForget',
+    component: () => import('../views/passwordForget.vue')
+  },
+  {
+    path: '/passwordForgetOK',
+    name: 'passwordForgetOK',
+    component: () => import('../views/passwordForgetOK.vue')
+  },
 ]
 
 const router = new VueRouter({

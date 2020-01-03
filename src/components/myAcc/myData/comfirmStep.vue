@@ -49,13 +49,13 @@
       <div class="line2">
         <p class="textp">所在地区：</p>
         <i-select :model.sync="model1" style="width:200px">
-        <i-option v-for="item in cityList" :value="item.value" :key="label">{{ item.label }}</i-option>
+        <i-option v-for="item in cityList" :value="item.value" :key='label' >{{ item.label }}</i-option>
         </i-select>
         <i-select :model.sync="model1" style="width:200px">
-        <i-option v-for="item in cityList" :value="item.value" :key="label">{{ item.label }}</i-option>
+        <i-option v-for="item in cityList" :value="item.value" :key='label'>{{ item.label }}</i-option>
         </i-select>
         <i-select :model.sync="model1" style="width:200px">
-        <i-option v-for="item in cityList" :value="item.value" :key="label">{{ item.label }}</i-option>
+        <i-option v-for="item in cityList" :value="item.value" :key='label'>{{ item.label }}</i-option>
         </i-select>
       </div>
       <div class="line2">
@@ -126,7 +126,7 @@
         <i-button type="primary" class="agreebutton" @click="backstep()">上一步</i-button>
         <i-button type="primary" class="agreebutton" @click="instance()">提交</i-button>
       </div>
-      <div class="testbox">0</div>
+      <div class="testbox"></div>
     </div>
     
   </div>
@@ -136,7 +136,7 @@
   
 </template>
 <script>
-import Bus from '../../../bus.js';
+// import Bus from '../../../bus.js';
 export default {
     name:'myData',
     data(){
@@ -202,7 +202,7 @@ export default {
       },
       instance(){
         const title = '信息提交成功！';
-        
+        this.$router.push('login2')
         this.$Modal.success({
                             title: title,
                             

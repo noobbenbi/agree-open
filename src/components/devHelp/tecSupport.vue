@@ -2,11 +2,12 @@
   <div class="Size">
    <div class="block-section">
      <div class="lineT">
-      <div class="centerP">
-        <h3 class="textP">技术支持</h3>
-        <div class="line-box"></div>
-      </div>  
-     </div> 
+        <div class="textP">技术支持</div>
+        <div class="center-line">
+          <div class="line-box">
+          </div>
+        </div> 
+    </div> 
 
 
     <ul class="list">
@@ -64,27 +65,29 @@ export default {
 </script>
 <style lang="less"  scoped>
 .Size{
+    min-width: 1280px;
     background:rgba(255,255,255,1);
     height: 535px;
-    width:1920px;
+    width: 100%;
+    position: static;
+    min-width: 1200px;
     top: 0;
     left: 0;
     z-index: 10;
     .block-section{
       height: 535px;
-      width:1600px;
-      margin-left: 162px;
-      margin-right: 157px;
+      margin:0 8%;
       .lineT{
         height: 273px;
-        width: 1920px;
         padding-top:120px;
-        .centerP{
-          margin-left: 726px;
-          margin-right: 731px;
+        text-align: center;
+        .center-line{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
           .textP{
-            width:144px;
-            height:50px;
             font-size:36px;
             font-family:PingFangSC-Medium,PingFang SC;
             font-weight:500;
@@ -92,53 +95,56 @@ export default {
             line-height:50px;
           }
           .line-box{
-            margin-top: 20px;
-            margin-left: 0px;
-            
-              width: 70px;
-              height: 4px;
-              margin-left: 37px;
-              background: rgba(2,164,175,1);
-            
+            width: 70px;
+            height: 4px;
+            background: rgba(2,164,175,1);
           }
-        }
+        
       }
     }
   .list{
-    list-style: none;
     width:100%;
-    height: 222px;
+    height: 260px;
     display: flex;
     justify-content: space-between;
     bottom: 30px;
+    list-style: none;
+    .back-pic01{
+      width: 31%;
+      background: url("../../assets/images/help-background01.png");
+      background-size: cover; 
+    }
+    .back-pic02{
+      width: 33%;
+      background: url("../../assets/images/help-background02.png");
+      background-size: cover; 
+    }
+    .back-pic03{
+      width: 33%;
+      background: url("../../assets/images/help-background01.png");
+      background-size: cover; 
+    }
 
     .ill{
-      width: 522px;
-      float: left;
-      position: relative;
-      height: 222px;
-      box-sizing: border-box;
-      overflow: hidden;
-      
+      width: 100%;
+      height: 260px;
+      padding: 50px 30px;
       .background-style{
-      margin: 47px 33px;
+        display: flex;
+        justify-content: space-between;
       }
-      
       .imgg{
         height: 126px;
         width: 126px;
         background-color: aqua;
-        display: inline-block;
         float: left;
       }
       .textt{
-        display: inline-block;
+        text-align: left;;
         height: 126px;
-        width: 300px;
-        margin-left: 30px;
-
+        
         .title-style{
-          width:200px;
+          
           height:45px;
           font-size:32px;
           font-family:PingFangSC-Medium,PingFang SC;
@@ -148,7 +154,7 @@ export default {
         }
         .content-style{
           margin-top: 7px;
-          width:300px;
+          
           height:56px;
           font-size:20px;
           font-family:PingFangSC-Regular,PingFang SC;
@@ -163,15 +169,6 @@ export default {
       
     }
 
-  }
-  .back-pic01{
-    background: url("../../assets/images/help-background01.png")
-  }
-  .back-pic02{
-    background: url("../../assets/images/help-background02.png")
-  }
-  .back-pic03{
-    background: url("../../assets/images/help-background01.png")
   }
 
 

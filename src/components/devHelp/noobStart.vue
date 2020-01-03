@@ -1,13 +1,13 @@
 <template>
   <div class="aSize">
-   <div class="block-section">
-     <div class="lineT">
-      <div class="centerP">
-        <h3 class="textP">新手入门</h3>
-        <div class="line-box">
-        </div>
-      </div>  
-     </div> 
+    <div class="block-section">
+      <div class="lineT">
+        <div class="textP">新手入门</div>
+        <div class="center-line">
+          <div class="line-box">
+          </div>
+        </div> 
+    </div> 
 
 
     <ul class="list">
@@ -17,18 +17,18 @@
             <div class="textt">
               <p class="title-style">热门问题</p>
               <div class="longline"></div>
-              <ul class="inlistsize">
-                <li class="inliststyle">
+              <div class="inlistsize">
+                <div class="inliststyle">
                   <a href="" class="content-text-style">一、快速入门</a>
-                </li>
-                <li class="inliststyle">
+                </div>
+                <div class="inliststyle">
                   <a href="" class="content-text-style">二、接入开发</a>
-                </li>
-                <li class="inliststyle">
+                </div>
+                <div class="inliststyle">
                   <a href="" class="content-text-style">三、沙箱测试</a>
-                </li>
-              </ul>
-              <div class="href-size-style"><a href="" class="href-text-style">查看更多</a></div>
+                </div>
+              </div>
+              <div class="checkmore-position"><a href="" class="href-size-style" >查看更多</a></div>
             </div>
           </div>
         </div>  
@@ -41,25 +41,25 @@
               <p class="title-style">产品问题</p>
               <div class="longline"></div>
               <ul class="inlistsize">
-                <li class="inliststyle">
+                <div class="inliststyle">
                   <a href="" class="content-text-style">一、快速入门</a>
-                </li>
-                <li class="inliststyle">
+                </div>
+                <div class="inliststyle">
                   <a href="" class="content-text-style">二、接入开发</a>
-                </li>
-                <li class="inliststyle">
+                </div>
+                <div class="inliststyle">
                   <a href="" class="content-text-style">三、沙箱测试</a>
-                </li>
+                </div>
               </ul>
-              <div class="href-size-style"><a href="" class="href-text-style">查看更多</a></div>
+              <div class="checkmore-position"><a href="" class="href-size-style">查看更多</a></div>
             </div>
           </div>
         </div>  
       </li>
 
-      <li class="">
+      <li class="pic-size">
         <div class="showpic" >
-          <img src="@/assets/images/showpic.png" alt="">
+          <img src="@/assets/images/showpic.png" >
         </div>  
       </li>
     </ul>   
@@ -73,21 +73,23 @@ export default {
 }
 </script>
 <style lang="less"  scoped>
-.showpic{
-  width: 650px;
-  float: left;
-  position: relative;
-  height: 260px;
-  box-sizing: border-box;
-  overflow: hidden;
-      
-
+.pic-size{
+  width: 31%;
+  .showpic{
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    img{
+    width:auto;
+    height:100%;
+    }
+  }
 }
-
 .aSize{
+    min-width: 1280px;
     background:rgba(255,255,255,1);
     height: 535px;
-    width: 1920px;
+    width: 100%;
     position: static;
     min-width: 1200px;
     top: 0;
@@ -95,36 +97,31 @@ export default {
     z-index: 10;
     .block-section{
       height: 535px;
-      width:1600px;
-      margin-left: 162px;
-      margin-right: 157px;
+      margin:0 8%;
       .lineT{
         height: 273px;
-        width: 1920px;
         padding-top:120px;
-        .centerP{
-          margin-left: 726px;
-          margin-right: 731px;
+        text-align: center;
+        .center-line{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .line-box{
+            width: 70px;
+            height: 4px;
+            background: rgba(2,164,175,1);
+          }
+        // .centerP{
+          
           .textP{
-            width:144px;
-            height:50px;
             font-size:36px;
             font-family:PingFangSC-Medium,PingFang SC;
             font-weight:500;
             color:rgba(29,31,49,1);
             line-height:50px;
           }
-          .line-box{
-            margin-top: 20px;
-            margin-left: 0px;
-            
-              width: 70px;
-              height: 4px;
-              margin-left: 37px;
-              background: rgba(2,164,175,1);
-            
-          }
-        }
       }
     }
   .list{
@@ -132,38 +129,30 @@ export default {
     height: 260px;
     display: flex;
     justify-content: space-between;
-    bottom: 30px;
+    // bottom: 30px;
     list-style: none;
-
+    .back-pic01{
+    width: 33%;
+    background: url("../../assets/images/noobstart-back.png");
+    background-size: cover; 
+    }
     .ill{
-      width: 455px;
-      float: left;
-      position: relative;
+      width: 100%;
       height: 260px;
-      box-sizing: border-box;
-      overflow: hidden;
-      
       .background-style{
-      padding: 40px 60px 35px 57px;
-      width: 455px;
+      padding: 40px 60px;
       height: 260px;
       }
-      
-      
-      .textt{
-        
+      .textt{   
+        position: relative; 
         height: 185px;
-        width: 338px;
-        
-
         .title-style{
-          width:128px;
           height:45px;
           font-size:32px;
           font-family:PingFangSC-Medium,PingFang SC;
           font-weight:500;
           color:rgba(29,31,49,1);
-          line-height:45px;
+          
         }
         .content-style{
           margin-top: 7px;
@@ -176,25 +165,16 @@ export default {
           line-height:28px;
         }
         .longline{
-          width:338px;
           height:2px;
           background:rgba(2,164,175,1);
           margin-bottom: 14px;
-
         }
         .inlistsize{
           height: 115px;
-          width: 120px;
           float: left;
-          display: inline-block;
-          margin-right: 138px;
-          
-
-        
           .inliststyle{
             margin-top: 10px;
             .content-text-style{
-              width:120px;
               height:28px;
               font-size:20px;
               font-family:PingFangSC-Regular,PingFang SC;
@@ -204,40 +184,21 @@ export default {
             }
           }
         }
-        .href-size-style{
-          margin-top:86px;
-          width:80px;
-          height:28px;
-          display: inline-block;
-          border: 200px;
-          float: left;
-          .href-text-style{
-          
+        .checkmore-position{
+          position: absolute;
+          right: 0;
+          bottom: 10px;
+          .href-size-style{
           font-size:20px;
           font-family:PingFangSC-Medium,PingFang SC;
           font-weight:500;
           color:rgba(2,164,175,1);
-          line-height:28px;
+          } 
         }
-        }
-        
-        
-
-
       }
-      
     }
-
   }
-  .back-pic01{
-    // background-size: 455px 260px;
-    // height: 260px%;
-    // width: 455px;
-    background: url("../../assets/images/noobstart-back.png")   
-  }
-  
 }
-
 </style>
 
 

@@ -4,6 +4,9 @@
         <OfflineDoc v-if="2==value&&faId == '1'"></OfflineDoc>
         <IndiviSetting v-if="3==value&&faId == '1'"></IndiviSetting>
     </div>
+    <!-- <div class="docmanage">
+        <ParameterSet></ParameterSet>
+    </div> -->
 </template>
 
 <script>
