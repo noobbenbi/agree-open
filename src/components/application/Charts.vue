@@ -4,15 +4,15 @@
     <h1 class="title1">API调用统计</h1>
     <span class="line"></span>
     <Row :gutter="32">
-      <i-col span="12" class="demo-tabs-style2">
+      <i-col  class="demo-tabs-style2">
         <Tabs type="card">
-          <Tab-pane label="交易统计">
-            <div class="selecta" id="selecta">
+          <Tab-pane class="tab" label="交易统计">
+            <div class="selecta" id="selecta" style="margin-top:40px;">
               <div class="myLine" id="myLine" v-bind:style="{width: myWidth,height:myHeight}"></div>
             </div>
           </Tab-pane>
-          <Tab-pane label="API调用情况">
-            <div class="selectb" id="selectb" >
+          <Tab-pane class="tab" label="API调用情况">
+            <div class="selectb" id="selectb" style="margin-top:34px;">
               <div class="selectb1">
                 <span v-bind:style="{width: myWidth2}"></span>
                 <select class="selecttype" v-model="ChooseType" name="fruit">
@@ -331,32 +331,33 @@ export default {
   text-align:center;
   text-align-last:center;
 }
-// /deep/.tabs{
-//   margin-left:3%;
-//   display: flex;
-//   font-size: 20px;
-// }
-// .tab {
-//   display: flex;
-//   font-size: 20px;
-// }
-    .demo-tabs-style2 > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab{
-        border-radius: 0;
-        background: red;
-        width: 140px;
-        height: 60px;
-        text-align: center
-    }
-    .demo-tabs-style2 > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active{
-        border-top: 1px solid red;
-    }
-    .demo-tabs-style2 > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active:before{
-        content: '';
-        display: block;
-        height: 1px;
-        background: red;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+.tabs{
+  margin-left:3%;
+  display: flex;
+  margin-top: 30px;
+}
+.tab {
+  display: flex;
+}
+.ivu-tabs.ivu-tabs-card>.ivu-tabs-bar .ivu-tabs-nav-container {
+    height: 50px;
+}
+.demo-tabs-style2 > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab{
+  width: 140px;
+  height: 50px;
+  // bottom: 30px;
+  font-size: 20px;
+  line-height:40px;
+  text-align: center;
+}
+.demo-tabs-style2 > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active{
+  background: white;
+}
+.demo-tabs-style2 > .ivu-tabs.ivu-tabs-card > .ivu-tabs-bar .ivu-tabs-tab-active:before{
+  background: white;
+  border: 1px  solid  rgba(213,213,213,1);
+  border-radius: 4px 4px 0px 0px;
+  top: 0;
+  left: 0;
+}
 </style>

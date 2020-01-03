@@ -119,6 +119,7 @@ html,body{
 
 
 .line{
+// margin: 0 auto;
 height:1px;
 background-color:white;
 }

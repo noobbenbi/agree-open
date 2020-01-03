@@ -7,9 +7,12 @@ import ViewUI from 'view-design'
 import iviewArea from 'iview-area'
 import i18n from './language'
 import VueClipboard from 'vue-clipboard2'
+import Echarts from 'echarts'
 
-Vue.use(VueClipboard)
+Vue.use(VueClipboard);
+Vue.use(Echarts);
 Vue.use(iviewArea);
+Vue.prototype.$echarts = Echarts;
 Vue.config.productionTip = false
 Vue.use(ViewUI);
 new Vue({
