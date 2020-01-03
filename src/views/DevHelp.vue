@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <Header></Header>
+    <div class="banner"></div>
     <div class="devAccess">
      <tecSupport></tecSupport>
       <noobStart></noobStart>
@@ -36,6 +37,13 @@ export default {
   min-height: 100%;
 
 }
+.banner{
+    //控制子内容宽度
+    // width: 48%;
+    height: 450px;
+    background: url("../assets/images/banner.jpg");
+    background-size: cover; 
+    }
 html,body{
   height: 100%;
   min-height: 100%;

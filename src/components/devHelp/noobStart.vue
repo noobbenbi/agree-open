@@ -57,11 +57,11 @@
         </div>  
       </li>
 
-      <li class="pic-size">
+      <!-- <li class="pic-size">
         <div class="showpic" >
           <img src="@/assets/images/showpic.png" >
         </div>  
-      </li>
+      </li> -->
     </ul>   
    </div>
 
@@ -73,18 +73,18 @@ export default {
 }
 </script>
 <style lang="less"  scoped>
-.pic-size{
-  width: 31%;
-  .showpic{
-    width: 100%;
-    height: 260px;
-    overflow: hidden;
-    img{
-    width:auto;
-    height:100%;
-    }
-  }
-}
+// .pic-size{
+//   width: 31%;
+//   .showpic{
+//     width: 100%;
+//     height: 260px;
+//     overflow: hidden;
+//     img{
+//     width:auto;
+//     height:100%;
+//     }
+//   }
+// }
 .aSize{
     min-width: 1280px;
     background:rgba(255,255,255,1);
@@ -132,7 +132,8 @@ export default {
     // bottom: 30px;
     list-style: none;
     .back-pic01{
-    width: 33%;
+    //控制子内容宽度
+    width: 49%;
     background: url("../../assets/images/noobstart-back.png");
     background-size: cover; 
     }
