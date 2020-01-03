@@ -1,34 +1,33 @@
 <template>
   <div>
-    <Header></Header>
     <div class="document" >
+      <Breadcrumb class="bread" separator="/">
+        <BreadcrumbItem to="/">应用中心</BreadcrumbItem>
+        <BreadcrumbItem>应用详情</BreadcrumbItem>
+        <BreadcrumbItem>生活服务</BreadcrumbItem>
+        <BreadcrumbItem>{{activeName}}</BreadcrumbItem>
+      </Breadcrumb>
       <div class="guide">
-        <Breadcrumb class="bread" separator="/">
-          <BreadcrumbItem to="/">应用中心</BreadcrumbItem>
-          <BreadcrumbItem>应用详情</BreadcrumbItem>
-          <BreadcrumbItem>生活服务</BreadcrumbItem>
-          <BreadcrumbItem>{{activeName}}</BreadcrumbItem>
-        </Breadcrumb>
         <div class="select-lab">
-          <Menu class='menu' :theme="theme3" active-name="activeName" @on-select="choose">
-            <MenuItem name="概况" class="menuitem">
+          <Menu class='menu' :theme="theme3" :active-name="activeName" @on-select="choose">
+            <MenuItem name="概况" class="menuitem"  v-bind:style="{width: myWidth}">
               <p>概况</p>
             </MenuItem>
-            <MenuItem name="数据统计" class="menuitem">
+            <MenuItem name="数据统计" class="menuitem"  v-bind:style="{width: myWidth}">
               <p>数据统计</p>
             </MenuItem>
-            <MenuItem name="账单详情" class="menuitem">
+            <MenuItem name="账单详情" class="menuitem"  v-bind:style="{width: myWidth}">
               <p>账单详情</p>
             </MenuItem>
-            <MenuItem name="测试验收" class="menuitem">
+            <MenuItem name="测试验收" class="menuitem"  v-bind:style="{width: myWidth}">
               <p>测试验收</p>
             </MenuItem>
           </Menu>
         </div>
-      </div>
-      <div class="mainContent">
+        <div class="mainContent">
           <GeneralSituation v-show="activeName=='概况'"></GeneralSituation>
           <Charts v-show="activeName=='数据统计'"></Charts>
+        </div>
       </div>
     </div>
     <Footer class="footer"></Footer>
@@ -47,8 +46,9 @@ export default {
     return {
         theme3:'light',
         documentHeight:window.innerHeight -70 + 'px',
-        activeName: '数据统计',
+        activeName: '概况',
         Num: 1,
+        myWidth: '',
     };
   },
   components: {
@@ -62,9 +62,11 @@ export default {
   },
   watch: {
     $route() {
-        console.log('route', this.$route.query.docName);
         this.activeName = this.$route.query.docName;
     },
+  },
+  created() {
+    this.myWidth = window.innerWidth/1920*200*1.42 + 'px';
   },
   methods: {
     choose(name) {
@@ -75,7 +77,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .document {
-  display: flex;
+  
   margin-bottom: 100px;
   .mainContent {
     flex: 1;
@@ -85,9 +87,10 @@ export default {
 }
 .select-lab{
     display: flex;
-    width:341px;
     height: 404px;
     margin-top: 4%;
+    margin-right: 5%;
+
 }
 .ivu-menu-vertical.ivu-menu-light:after {
     content: '';
@@ -102,7 +105,6 @@ export default {
     z-index: 1;
 }
 .menuitem {
-    width:142%;
     height: 101px;
 }
 .menuitem p{
@@ -116,7 +118,7 @@ export default {
 }
 .guide{
     margin-left: 8%;
-    margin-right: -3%;
+    display: flex;
 }
 .bread {
     margin-top: 4%;
@@ -124,7 +126,7 @@ export default {
     margin-left: 8.5%;
     width: 450px;
 }
-.footer{  
-  margin:0 auto;
-}  
+// .footer{  
+//   margin:0 auto;
+// }  
 </style>

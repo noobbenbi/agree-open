@@ -144,7 +144,10 @@ export default {
 <style  scoped>
 @import url("../../../assets/styles/font/font.css");
 .parameterset {
+    width: 60%;
     height: 100%;
+    position: relative;
+    top: 130px;
 }
 .text-title {
     font-size:2em;
@@ -159,16 +162,17 @@ export default {
 .btn-add {
     position: relative;
     top: -75px;
-    left: 730px;
+    left: 90%;
 }
 .d-line {
     position: relative;
     top: -70px;
+    left: 50px;
 }
 .tb-parameter {
     position: relative;
     top: -70px;
-    left: 60px;
+    left: 40px;
     font-size:1em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;

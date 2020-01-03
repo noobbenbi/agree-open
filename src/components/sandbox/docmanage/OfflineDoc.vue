@@ -168,8 +168,11 @@ export default {
 <style  scoped>
 @import url("../../../assets/styles/font/font.css");
 .offlinedoc{
-    width: 100%;
+    width: 60%;
     height: 1700px;
+    position: relative;
+    /* left: 3%; */
+    top: 120px;
 }
 .title {
     position: relative;

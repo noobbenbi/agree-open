@@ -94,10 +94,14 @@ const routes = [
     name: 'sandbox',
     component: () => import('../views/SandBox.vue'),
     children:[
-      {
-        path:'docmanage',
-        component: () => import('../components/sandbox/DocManage'),
-      },
+        {
+          path:'parameterset',
+          component: () => import('../components/sandbox/docmanage/ParameterSet'),
+        },
+        {
+          path:'offlinedoc',
+          component: () => import('../components/sandbox/docmanage/OfflineDoc'),
+        },
     ]
   },
   {

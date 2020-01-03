@@ -16,7 +16,7 @@
                 <MenuItem name="3" class="documentcenter" to="/documentcenter">
                     <p class="menu-title">文档中心</p>
                 </MenuItem>
-                <MenuItem name="4" class="sandboxtest" to="/sandboxtest">
+                <MenuItem name="4" class="sandboxtest" to="/sandbox/parameterset">
                     <p class="menu-title">API沙箱</p>
                 </MenuItem>
                 <MenuItem name="5" class="devhelp" to="/devhelp">

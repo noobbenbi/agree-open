@@ -14,136 +14,146 @@
       <span class="stronefree1"></span>
       <span class="stronefree2"></span>
     </div>
-        <h2 class="title2">
+    <div class="bodys">
+      <h2 class="title2">
       <span class="glass"></span>
-      基础信息</h2>
-    <div class="divline">
-        <span class="content1">APPID：</span>
-        <span  class="content2">{{appid}}</span>
-      <button type="text" size="medium" v-clipboard:copy="appid" class="content3">复制</button>
-    </div>
-    <div class="divline">
-      <span class="content1">APP Secret:</span>
-      <span class="content2">{{appserveid}}</span>
-      <a @click="birth" class="content3">生成</a>
-    </div>
-    <div class="divline">
-      <span  class="content1">应用名称:</span>
-      <input v-model="appname" v-show="!updatename"  class="content2"/>
-      <span class="content2" v-show="updatename">{{appname}}</span>
-      <a @click="updatename=!updatename" v-show="updatename"  class="content3">修改</a>
-      <a @click="updatename=!updatename" v-show="!updatename" class="content3">完成</a>
-    </div>
-    <div class="divline">
-      <span  class="content1">应用类型:</span>
-      <span class="content2">WEB</span>
-    </div>
-    <div class="divline">
-      <span  class="content1">应用标签:</span>
-      <input v-model="applabel" v-show="!updatelab" class="content2"/>
-      <span v-show="updatelab" class="content2">{{applabel}}</span>
-      <a @click="updatelab=!updatelab" v-show="updatelab" class="content3">修改</a>
-      <a @click="updatelab=!updatelab" v-show="!updatelab" class="content3">完成</a>
-    </div>
-    <div class="divline">
-      <span class="content1">应用简介:</span>
-      <input v-model="appintroduce" v-show="!updateint" class="content2"/>
-      <span v-show="updateint" class="content2">{{appintroduce}}</span>
-      <a @click="updateint=!updateint" class="content3" v-show="updateint">修改</a>
-      <a @click="updateint=!updateint" class="content3" v-show="!updateint">完成</a>
-    </div>
-    <div class="imgline">
-      <span  class="content1">应用图标:</span>
-      <div>
-        <div v-if="allowAddImg">
-          <input
-            type="file"
-            accept="image/*"
-            v-show="!updateimg && !used"
-            @change="changeImg($event)"
-            class="content2"
-          />
-          <div  class="content2">
-            <img src="@/assets/images/havenothing.png" v-show="ss" class="img"/>
-          </div>
-        </div>
-        <div v-for="(item,index) in imgArr" :key="index">
-          <div>
-            <div class="content2">
-              <img :src="item" alt v-show="!ss && updateimg"  class="img" />
+        基础信息</h2>
+      <div class="divline">
+          <span class="content1">APPID：</span>
+          <span  class="content2">{{appid}}</span>
+          <div  class="content3"><button type="text" size="medium" v-clipboard:copy="appid">复制</button></div>
+        
+      </div>
+      <div class="divline">
+        <span class="content1">APP Secret:</span>
+        <span class="content2">{{appserveid}}</span>
+        <a @click="birth" class="content3">生成</a>
+      </div>
+      <div class="divline">
+        <span  class="content1">应用名称:</span>
+        <input v-model="appname" v-show="!updatename"  class="content2"/>
+        <span class="content2" v-show="updatename">{{appname}}</span>
+        <a @click="updatename=!updatename" v-show="updatename"  class="content3">修改</a>
+        <a @click="updatename=!updatename" v-show="!updatename" class="content3">完成</a>
+      </div>
+      <div class="divline">
+        <span  class="content1">应用类型:</span>
+        <span class="content2">WEB</span>
+        <span class="content3"></span>
+      </div>
+      <div class="divline">
+        <span  class="content1">应用标签:</span>
+        <input v-model="applabel" v-show="!updatelab" class="content2"/>
+        <span v-show="updatelab" class="content2">{{applabel}}</span>
+        <a @click="updatelab=!updatelab" v-show="updatelab" class="content3">修改</a>
+        <a @click="updatelab=!updatelab" v-show="!updatelab" class="content3">完成</a>
+      </div>
+      <div class="divline">
+        <span class="content1">应用简介:</span>
+        <input v-model="appintroduce" v-show="!updateint" class="content2"/>
+        <span v-show="updateint" class="content2">{{appintroduce}}</span>
+        <a @click="updateint=!updateint" class="content3" v-show="updateint">修改</a>
+        <a @click="updateint=!updateint" class="content3" v-show="!updateint">完成</a>
+      </div>
+      <div class="imgline">
+        <span  class="content1">应用图标:</span>
+        <div class="content2">
+          <div v-if="allowAddImg">
+            <input
+              type="file"
+              accept="image/*"
+              v-show="!updateimg && !used"
+              @change="changeImg($event)"
+            />
+            <div>
+              <img src="@/assets/images/havenothing.png" v-show="ss" class="img"/>
             </div>
-            <i class="img_delete" @click="deleteImg(index)"></i>
+          </div>
+          <div v-for="(item,index) in imgArr" :key="index">
+            <div>
+              <div>
+                <img :src="item" alt v-show="!ss && updateimg"  class="img" />
+              </div>
+              <i class="img_delete" @click="deleteImg(index)"></i>
+            </div>
           </div>
         </div>
+        <a @click="updateimgstart" v-show="updateimg"  class="content3">修改</a>
       </div>
-      <a @click="updateimgstart" v-show="updateimg"  class="content3">修改</a>
-    </div>
-    <h2 class="title2">
-      <span class="glass"></span>
-      收费模式</h2>
-    <div class="divline">
-      <span  class="content1">按API调用次数</span>
-      <span  class="content2"> 按接入的服务功能</span>
-    </div>
-    <h2 class="title2">
-      <span class="glass"></span>
-      服务功能</h2>
-    <div class="divline">
-      <span  class="content1">APP调用详情</span>
-      <div>
-        <form action></form>
+      <h2 class="title2">
+        <span class="glass"></span>
+        收费模式</h2>
+      <div class="divline">
+        <span  class="content1">按API调用次数</span>
+        <span  class="content2"> 按接入的服务功能</span>
+        <span class="content3"></span>
       </div>
-    </div>
-    <h2 class="title2">
-      <span class="glass"></span>
-      环境配置</h2>
-    <div class="divline">
-      <span  class="content1">网关访问地址:</span>
-      <span class="content2">{{netaddress}}</span>
-      <button type="text" size="netaddress" v-clipboard:copy="appid" class="content3">复制</button>
-    </div>
-    <div class="divline">
-      <span  class="content1">应用网关地址:</span>
-      <input v-model="appaddress" v-show="!updateadd" class="content2"/>
-      <span class="content2" v-show="updateadd">{{appaddress}}</span>
-      <a @click="updateadd=!updateadd" v-show="updateadd" class="content3">设置</a>
-      <a @click="updateadd=!updateadd" v-show="!updateadd" class="content3">完成</a>
-    </div>
-    <div class="divline">
-      <span  class="content1">授权回调地址:</span>
-      <input v-model="appaddresses" v-show="!updateadr"  class="content2"/>
-      <span v-show="updateadr" class="content2">{{appaddresses}}</span>
-      <a @click="updateadr=!updateadr" v-show="updateadr" class="content3">设置</a>
-      <a @click="updateadr=!updateadr" v-show="!updateadr" class="content3">完成</a>
-    </div>
-    <h2 class="title2">
-      <span class="glass"></span>
-      密匙配置</h2>
-    <div class="divline">
-      <span class="content1">如何生成应用rsa密匙？</span>
-      <a class="content2"></a>
-      <a href class="content3">查看</a>
-    </div>
-    <div class="divline">
-      <span  class="content1">RSA2(SHA256)密匙:</span>
-      <span class="content2"></span>
-      <a href class="content4">查看平台公匙</a>
-      <a href class="content5">上传/查看应用公匙</a>
-    </div>
-    <div class="divline">
-      <span  class="content1">AES密匙:</span>
-      <span class="content2"></span>
-      <span class="content4"></span>
-      <a href class="content5">修改/查看AES公匙</a>
-    </div>
-    <div class="divline">
-      <button href @click="submit" class="botton1">
-        <span class="bottonword">提交上线审核</span>
-        </button>
-      <button href @click="delecte" class= 'botton2'>
-        <span class="bottonword">删除此应用</span>
-      </button>
-    </div>
+      <h2 class="title2">
+        <span class="glass"></span>
+        服务功能</h2>
+      <div class="divline">
+        <span  class="content1">APP调用详情</span>
+        <div>
+          <form action></form>
+        </div>
+      </div>
+      <h2 class="title2">
+        <span class="glass"></span>
+        环境配置</h2>
+      <div class="divline">
+        <span  class="content1">网关访问地址:</span>
+        <span class="content2">{{netaddress}}</span>
+        <div  class="content3"><button type="text" size="medium" v-clipboard:copy="appid">复制</button></div>
+      </div>
+      <div class="divline">
+        <span  class="content1">应用网关地址:</span>
+        <input v-model="appaddress" v-show="!updateadd" class="content2"/>
+        <span class="content2" v-show="updateadd">{{appaddress}}</span>
+        <a @click="updateadd=!updateadd" v-show="updateadd" class="content3">设置</a>
+        <a @click="updateadd=!updateadd" v-show="!updateadd" class="content3">完成</a>
+      </div>
+      <div class="divline">
+        <span  class="content1">授权回调地址:</span>
+        <input v-model="appaddresses" v-show="!updateadr"  class="content2"/>
+        <span v-show="updateadr" class="content2">{{appaddresses}}</span>
+        <a @click="updateadr=!updateadr" v-show="updateadr" class="content3">设置</a>
+        <a @click="updateadr=!updateadr" v-show="!updateadr" class="content3">完成</a>
+      </div>
+      <h2 class="title2">
+        <span class="glass"></span>
+        密匙配置</h2>
+      <div class="divline">
+        <span class="content1">如何生成应用rsa密匙？</span>
+        <a class="content2"></a>
+        <a href class="content3">查看</a>
+      </div>
+      <div class="divline">
+        <span  class="content1">RSA2(SHA256)密匙:</span>
+        <div class="content6">
+          <a href class="" >查看平台公匙</a>
+          <a href class="">上传/查看应用公匙</a>
+        </div>
+        
+      </div>
+      <div class="divline">
+        <span  class="content1">AES密匙:</span>
+        <span class="content4"></span>
+        <a href class="content5">修改/查看AES公匙</a>
+      </div>
+      <div class="divline">
+        <div class="content1">
+          <button href @click="submit" class="botton1">
+            <span class="bottonword">提交上线审核</span>
+          </button>
+        </div>
+        <div class="content2">
+          <button href @click="delecte" class= 'botton2'>
+            <span class="bottonword">删除此应用</span>
+          </button>
+        </div>
+        <span class="content3"></span>
+      </div>
+   </div>
   </div>
 </template>
 
@@ -182,20 +192,16 @@ export default {
   },
   methods: {
     updateimgstart() {
-        console.log('修改图片');
         this.used = false;
         this.imgArr = [];
-        console.log(this.imgArr);
         this.updateimg=false;
         this.ss=false;
     },
     updateimgend() {
         if(this.imgArr.length == '0' || this.imgArr == null) {
-            console.log('更改失败');
             return;
         } else {
             clearInterval(this.timer2);
-            console.log('完成更改');
             this.updateimg = true;
         }
     },
@@ -226,7 +232,6 @@ export default {
           if (files.item(dd).size > imgLimit * 102400) {
             //to do sth
           } else {
-            console.log('修改成功');
             image.src = window.URL.createObjectURL(files.item(dd));
             image.onload = function() {
               // 默认按比例压缩
@@ -279,6 +284,9 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+.bodys{
+  padding: 0 14% 0 3%;
+}
 .title1{
   font-size: 36px;
   margin-top: 6.3%;
@@ -289,23 +297,9 @@ export default {
   font-size: 20px;
   line-height: 28px;
 }
-.botton2{
-  font-size: 20px;
-  width:152px;height:48px;
-  background:rgba(2,164,175,1);
-  border-radius: 2px;
-   margin-left:60px;
-}
-.botton1{
-  margin-left: 3%;
-  font-size: 20px;
-  width:152px;
-  height:48px;
-  background:rgba(2,164,175,1);
-  border-radius: 2px;
-}
+
 .glass{
-  margin-left:3%;
+  // margin-left:3%;
   width: 4px;
   height: 20px;
   margin-top: 10px;
@@ -322,13 +316,22 @@ export default {
   width:140px;
   height:140px;
 }
-// .imgdiv{
-//   margin-bottom: 7%;
-//   width:440px;
-// }
+.botton2{
+  font-size: 20px;
+  width:152px;height:48px;
+  background:rgba(2,164,175,1);
+  border-radius: 2px;
+}
+.botton1{
+  font-size: 20px;
+  width:152px;
+  height:48px;
+  background:rgba(2,164,175,1);
+  border-radius: 2px;
+}
 .content1 {
-  width:210px;
-  margin-left:3%;
+  // width:210px;
+  // margin-left:3%;
   margin-bottom: 7%;
 }
 .content2{
@@ -336,30 +339,38 @@ export default {
   width:440px;
 }
 .content3{
+  width: 200px;
+  text-align: right;
   margin-bottom: 7%;
-  margin-left:23%;
+  // margin-left:23%;
 }
 .content4{
   margin-bottom: 7%;
-  width: 123px;
-  margin-left:3%;
+  // width: 123px;
+  // margin-left:3%;
 }
 .content5{
   margin-bottom: 7%;
-  margin-left:3%;
+  
 }
 .content6{
   margin-bottom: 7%;
-  margin-left:14%;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+
 }
 .divline{
   font-size: 20px;
   display:flex;
+  justify-content: space-between;
 }
 .imgline{
   font-size: 20px;
   display:flex;
   width: 100%;
+  justify-content: space-between;
+
 }
 .strone {
   margin-top: 40px;

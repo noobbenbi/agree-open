@@ -1,13 +1,17 @@
 <template>
     <div class="detail-menu">
+            <Breadcrumb class="breadcrumbitem" >
+                    <BreadcrumbItem  to="/">API沙箱</BreadcrumbItem>
+                    <BreadcrumbItem >{{title[breadId]}}</BreadcrumbItem>
+            </Breadcrumb>
              <Menu class="menu-box"  :open-names="['1']" :active-name="'1-1'" width="240px" @on-open-change="selected" @on-select="choosed">
-                <Submenu class="select-box" name="1">
+                <Submenu class="select-box" name="1" >
                     <template slot="title">
                         <Icon class="title-icon" type="ios-folder-outline" size="25"/>
                         <span>{{title[0]}}</span>
                     </template>
-                        <MenuItem name="1-1" class="dh-title-son" ><p>全局参数设置</p></MenuItem>
-                        <MenuItem name="1-2" class="dh-title-son"><p>离线文档(MD)</p></MenuItem>
+                        <MenuItem name="1-1" class="dh-title-son" to="/sandbox/parameterset"><p>全局参数设置</p></MenuItem>
+                        <MenuItem name="1-2" class="dh-title-son" to="/sandbox/offlinedoc"><p>离线文档(MD)</p></MenuItem>
                         <MenuItem name="1-3" class="dh-title-son"><p>个性化设置</p></MenuItem>
                 </Submenu>
                 <Submenu class="select-box" name="2">
@@ -68,20 +72,40 @@ export default {
             this.faId = name.charAt(0);
             console.log(this.faId);
         },
+        toShow(path) {
+            this.$router.push(path);
+            console.log('aaa');
+        },
     },
 }
 </script>
 <style  scoped>
+.detail-menu {
+    width: 240px;
+    position: relative;
+    top: 70px;
+    margin-left: 10%;
+    padding-bottom: 100px;
+    display: table;
+}
+.breadcrumbitem {
+    width: 240px;
+    position: relative;
+    top: -20px;
+    font-size:1em;
+    font-family:PingFangSC-Regular,PingFang SC;
+    line-height:28px;
+}
 .title-icon {
     position: relative;
     top: 7px;
 }
 .select-box /deep/ .ivu-menu-submenu-title{
     height: 70px;
-    /* margin-bottom: 70px; */
     background-color: #F5FCFC
 }
 .dh-title-son /deep/ .ivu-menu-item{
+    width: 100%;
     height: 45px;
 }
 .select-box span {
