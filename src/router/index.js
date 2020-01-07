@@ -134,6 +134,11 @@ const routes = [
     name: 'passwordForgetOK',
     component: () => import('../views/passwordForgetOK.vue')
   },
+  {
+    path: '/helpquestion',
+    name: 'helpquestion',
+    component: () => import('../views/HelpQuestion.vue')
+  },
 ]
 
 const router = new VueRouter({

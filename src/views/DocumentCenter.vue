@@ -1,25 +1,24 @@
 <template>
-  <div>
+  
+    <div>
     <Header></Header>
-    <MyBreadcrumb :BreadcrumbList = "BreadcrumbList"></MyBreadcrumb>
-  <div class = "document" :style="{ height: documentHeight }">
-     
-        
-        <!-- <MyBreadcrumb :BreadcrumbList = "BreadcrumbList"></MyBreadcrumb> -->
-          <mypart
-            :myDatas="myDatas"
-            @selectedDocId = "selectedDocId"
-            @selectedDoc = "selectedDoc"
-            @selectedDocName = "selectedDocName"
-          ></mypart>
-          <div class = "maincontent">
-            
-            <MyContent 
-              :essayContent = "essayContent" 
-              :contentWidth = "contentWidth"
-            ></MyContent>
-          </div>
-        
+    <div class="documentCenter">
+      <MyBreadcrumb :BreadcrumbList = "BreadcrumbList"></MyBreadcrumb>
+      <div class = "documents" :style="{ height: documentHeight }">
+        <MyDocSideNavBar
+          :myDatas="myDatas"
+          @selectedDocId = "selectedDocId"
+          @selectedDoc = "selectedDoc"
+          @selectedDocName = "selectedDocName"
+          class="sideNavBar"
+        ></MyDocSideNavBar>
+        <!-- <div class = "maincontent"> -->
+          <MyContent 
+            :essayContent = "essayContent" 
+            :contentWidth = "contentWidth"
+          ></MyContent>
+        <!-- </div>    -->
+      </div>
       </div>
     <Footer></Footer>
   </div>
@@ -27,7 +26,7 @@
 
 <script>
 import Header from "@/components/Header";
-import mypart from "../components/DocumentCenter/MYDocSideNavBar";
+import MyDocSideNavBar from "../components/DocumentCenter/MYDocSideNavBar";
 import MyContent from "../components/DocumentCenter/MyContent";
 import MyBreadcrumb from "../components/DocumentCenter/MyBreadcrumb";
 import Footer from "@/components/Footer";
@@ -39,7 +38,7 @@ export default {
       activeName: "", // 当前被选择的文档名称
       catList: {}, // 所有文档的名称和其父目录
       docList: {}, // 所有文档的名称和ID
-      contentWidth: '89%',
+      contentWidth: '80%',
       BreadcrumbList:{},
       essayContents: [
         {
@@ -140,7 +139,7 @@ export default {
   
   components: {
     Header,
-    mypart,
+    MyDocSideNavBar,
     MyBreadcrumb,
     MyContent,
     Footer
@@ -175,14 +174,22 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.document {
+.documentCenter{
+  padding-left: 3%;
+  min-width: 1280px;
+}
+.documents{
   display: flex;
+  justify-content : space-between;
   .sideNavBar {
     width: 315px;
+    
   }
   .mainContent {
     flex: 1;
-    position: relative;
+    width: 600px;
+    
+    // position: relative;
     overflow-x: hidden;
   }
 }

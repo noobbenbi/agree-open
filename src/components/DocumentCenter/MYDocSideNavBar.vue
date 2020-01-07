@@ -9,6 +9,7 @@
     >
     <div class="searchInput">
       <Input
+      class="searchInput"
         style="width:260px"
         icon="ios-search"
         placeholder="输入关键词搜索"
@@ -23,14 +24,14 @@
           <Icon type="md-list-box" />
           {{doc1.docName}}
         </template>
-        <Submenu
+        <!-- <Submenu
           class="cat2"
           v-for="doc2 in getCatDocList(doc1.childList,'cat')"
           :key="doc2.docId"
           :name="doc2.docName"
         >
           <template slot="title">· {{doc2.docName}}</template>
-        </Submenu>
+        </Submenu> -->
         <MenuItem
           class="doc3"
           v-for="doc3 in getCatDocList(doc1.childList,'doc')"
@@ -194,14 +195,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@sideNavHeight : 100%;
-@bgColor:#fafafa;
-.SideNavBarWrapper{
-  // margin-left: 115px;
-  width: 315px;
-  height: @sideNavHeight;
-  background: @bgColor;
-  overflow-x: hidden;
+// @sideNavHeight : 100%;
+// @bgColor:#fafafa;
+// .SideNavBarWrapper{
+//   // margin-left: 115px;
+//   width: 315px;
+//   height: @sideNavHeight;
+//   background: @bgColor;
+//   overflow-x: hidden;
   // border-right: 1px solid #ebebeb;
   // position: relative;
   // align-items: center;
@@ -210,13 +211,13 @@ export default {
   // text-align: center;
   .searchInput{
     // width: 280px;
+    margin-top: 30px;
     text-align: center;
-    
-    
   }
   .ivu-menu-light{
     //整体导航栏背景色
     background:rgba(2,164,175,0.04);
+    font-size: 26px;
   }
       
   /* 文档中心和问题中心左侧导航栏样式覆盖 */
@@ -225,7 +226,9 @@ export default {
       
   }
   .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
+          //hover时的样式
       color: #02A4AF;
+      font-size: 25px;
      
   }
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
@@ -238,15 +241,20 @@ export default {
   .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
       background: none;
   }
-  .cat1{
-    font-size: 18px;
-    font-family:PingFangSC-Medium,PingFang SC;
-    font-weight:500;
-    .cat2{
-      font-size: 14px;
-      font-family:PingFangSC-Medium,PingFang SC;
-      font-weight:500;
-    }
+  .ivu-menu-item{
+    //第二层menu的样式
+    font-size: 20px;
+    color: #9B9B9B;
   }
-}
+  // .cat1{
+  //   font-size: 18px;
+  //   font-family:PingFangSC-Medium,PingFang SC;
+  //   font-weight:500;
+  //   .cat2{
+  //     font-size: 14px;
+  //     font-family:PingFangSC-Medium,PingFang SC;
+  //     font-weight:500;
+  //   }
+  // }
+// }
 </style>

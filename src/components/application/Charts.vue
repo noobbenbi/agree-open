@@ -2,7 +2,7 @@
   <!-- 消息中心 -->
   <div class="charts">
     <h1 class="title1">API调用统计</h1>
-    <span class="line"></span>
+    <span class="lines"></span>
     <Row :gutter="32">
       <i-col  class="demo-tabs-style2">
         <Tabs type="card">
@@ -300,7 +300,7 @@ export default {
   margin-top: 6.3%;
   margin-left: 3%;
 }
-.line {
+.lines {
   margin-top: 19px;
   margin-bottom: 40px;
   margin-left: 40px;
