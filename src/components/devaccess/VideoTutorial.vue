@@ -13,7 +13,7 @@
           <p class="video-time"></p>
         </div> -->
       </div>
-      <router-link to="/devaccess/videotutorialall"><button>查看更多</button></router-link>
+      <router-link to="/videotutorialall"><button>查看更多</button></router-link>
   </div>
 </template>
 

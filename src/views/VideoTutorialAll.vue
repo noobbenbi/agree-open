@@ -17,13 +17,15 @@
             </div>
         </div>
         <div class="video-box2">
-            <video src="@/assets/video/创建应用.mp4" controls="controls" onMouseOver="this.play()" onMouseOut="this.pause()"></video>
+            <video controls="controls" onMouseOver="this.play()" onMouseOut="this.pause()">
+                <source src=" http://localhost:8080/api/video/鼠标移入图标显示.mp4">
+            </video>
              <div class="icon">
                 <Icon class="video-icon" type="ios-videocam" size="35"/>
                 <p class="video-time"></p>
             </div>
         </div>
-        <div class="video-box3">
+        <!-- <div class="video-box3">
             <video src="@/assets/video/创建应用.mp4" controls="controls" onMouseOver="this.play()" onMouseOut="this.pause()"></video>
              <div class="icon">
                 <Icon class="video-icon" type="ios-videocam" size="35"/>
@@ -71,7 +73,7 @@
                 <Icon class="video-icon" type="ios-videocam" size="35"/>
                 <p class="video-time"></p>
             </div>
-        </div>
+        </div> -->
     </div>
     <Footer></Footer>
 </div>
@@ -82,6 +84,24 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 export default {
     name:'VideoTutorialAll',
+    data() {
+        return {
+            videoSrc:''
+        }
+    },
+    mounted(){
+        this.$ajax({
+            method:'get',
+            url:'/api/videos?page=&pageSize=9'
+        })
+        .then(res => {
+            let add = res.data;
+            console.log(add);
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    },
     components: {
         Header,
         Footer

@@ -51,7 +51,7 @@ export default {
   methods:{
       goDetail(id){
           this.$router.push({
-              path:'/devaccess/accessguidedetail',
+              path:'/accessguidedetail',
               query: {
                   nameId: id
               }

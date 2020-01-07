@@ -8,7 +8,9 @@ import iviewArea from 'iview-area'
 import i18n from './language'
 import VueClipboard from 'vue-clipboard2'
 import Echarts from 'echarts'
+import axios from 'axios' 
 
+Vue.prototype.$ajax=axios;
 Vue.use(VueClipboard);
 Vue.use(Echarts);
 Vue.use(iviewArea);

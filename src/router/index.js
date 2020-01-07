@@ -85,8 +85,8 @@ const routes = [
     component: () => import('../views/devAccess.vue')
   },
   {
-    path: '/devaccess/videotutorialall',
-    name: 'devaccess',
+    path: '/videotutorialall',
+    name: 'videotutorialall',
     component: () => import('../views/VideoTutorialAll.vue')
   },
   {
@@ -105,8 +105,8 @@ const routes = [
     ]
   },
   {
-    path: '/devaccess/accessguidedetail',
-    name: 'devaccess',
+    path: '/accessguidedetail',
+    name: 'accessguidedetail',
     component: () => import('../views/AccessGuideDetail.vue')
   },
   {
