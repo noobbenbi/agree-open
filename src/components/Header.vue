@@ -2,8 +2,10 @@
   <div class="header">
     <div class="header-logo">
       <img src="@/assets/images/head-logo.png" >
-      <a href="/">API开放平台</a>
+      <div class="logo-text">
+        <a href="/">API开放平台</a>
       <span>Open.com</span>
+      </div>
     </div>
     <div class="header-nav">
             <Menu class="header-menu" mode="horizontal" :theme="theme1" @on-select="selected" :active-name="menuId">
@@ -122,22 +124,31 @@ export default {
 .header-logo img {
   width: 180px;
 }
-.header-logo a {
+.logo-text {
+  width: 90px;
+  height: 40px;
   position: absolute;
-  top: 8px;
-  left: 188px;
-  font-size:0.7em;
+  top: 12px;
+  left:180px ;
+  border-style:solid;
+  border-width:0 0 0 1px;
+  border-right-color:#000;
   font-family:PingFangSC-Regular,PingFang SC;
+  
+}
+.logo-text a {
+  position: absolute;
+  left: 8px;
+  font-size:1em;
   font-weight:400;
   color:rgba(29,31,49,1);
   text-decoration:none;
 }
-.header-logo span {
+.logo-text span {
   position: absolute;
-  top: 30px;
-  left: 188px;
+  top: 20px;
+  left: 8px;
   font-size:0.7em;
-  font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:rgba(29,31,49,1);
 }
@@ -145,7 +156,6 @@ export default {
   height: 90px;
   width: 52%;
   position: relative;
-  /* left: 420px; */
   left: 28%;
   top: 15px; 
   font-size:1.175em;
