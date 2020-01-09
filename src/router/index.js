@@ -16,6 +16,11 @@ const routes = [
     component: () => import('../views/Register.vue')
   },
   {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/Login.vue')
+  },
+  {
     path: '/accountcenter',
     name: 'accountcenter',
     component: () => import('../views/AccountCenter.vue'),
@@ -35,6 +40,11 @@ const routes = [
     ]
   },
   {
+    path: '/applicationlist',
+    name: 'applicationlist',
+    component: () => import('../views/ApplicationList.vue')
+  },
+  {
     path: '/accountcenter/acc',
     name: 'accountcentersub',
     component: () => import('../views/accountCenterSub.vue')
@@ -43,11 +53,6 @@ const routes = [
     path: '/accountcenter/acc/accf',
     name: 'accountconfirm',
     component: () => import('../views/accouConfirm.vue')
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/Login.vue')
   },
   {
     path: '/devhelp',
@@ -118,6 +123,11 @@ const routes = [
     path: '/documentcenter',
     name: 'documentcenter',
     component: () => import('../views/DocumentCenter.vue')
+  },
+  {
+    path: '/createnewapp',
+    name: 'createnewapp',
+    component: () => import('../views/CreateNewApp.vue')
   },
   {
     path: '/appcenter',

@@ -2,13 +2,7 @@
 <div>
     <Header></Header>
     <div class="accountcenter">
-        <div class="toppart">
-            <img src="@/assets/images/accountcenter-background.png">
-            <img src="@/assets/images/UserAvatar.png">
-            <span class="center-title">{{userName}}</span>
-            <span class="center-line"></span>
-            <button class="btn-createapp">创建应用</button>
-        </div>
+        <AccountHeader></AccountHeader>
         <div class="menu">
             <Menu mode="horizontal" :theme="theme3" active-name="1" >
                 <MenuItem name="1" class="mydata"  to="/accountcenter/userinfo">
@@ -29,6 +23,7 @@
 </template>
 
 <script>
+import AccountHeader from '../components/AccountHeader';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Agreement from '../components/accountcenter/Agreement';
@@ -53,7 +48,8 @@ export default {
         Footer,
         Agreement,
         Application,
-        UserInfo
+        UserInfo,
+        AccountHeader
     }
 }
 </script>
@@ -71,56 +67,8 @@ export default {
     background:rgba(255,255,255,1);
     text-align: center;
 }
-.toppart {
-    height: 356px;
-}
-.accountcenter img:nth-of-type(1) {
-    width:100%;
-    height:356px;
-}
-.accountcenter img:nth-of-type(2) {
-    width:112px;
-    height:112px;
-    margin: 0 auto;
-    position: relative;
-    top: -300px;
-    
-}
-.center-title {
-  font-size:1.2em;
-  font-family:PingFangSC-Medium,PingFang SC;
-  font-weight:500;
-  color:rgba(255,255,255,1);
-  display: table;
-  margin: 0 auto;
-  position: relative;
-  top: -280px;
-}
-.center-line {
-  width:2.3%;
-  height:2px;
-  background:rgba(2,164,175,1);
-  position: relative;
-  display: table;
-  margin: 0 auto;
-  top: -270px;
-}
-.btn-createapp {
-    width:7.3%;
-    height:30px;
-    background:rgba(2,164,175,1);
-    position: relative;
-    display: table;
-    margin: 0 auto;
-    top: -240px;
-    border: none;
-    font-family:PingFangSC-Medium,PingFang SC;
-    font-weight:500;
-    color:rgba(255,255,255,1);
-}
 .menu {
     position:  relative;
-    /* top: 43.7%; */
     width: 100%;
 }
 .menu-title {

@@ -18,7 +18,7 @@
         </div>
         <div class="video-box2">
             <video controls="controls" onMouseOver="this.play()" onMouseOut="this.pause()">
-                <source src=" http://192.168.180.154:33333/video/鼠标移入图标显示.mp4">
+                <source src=" http://192.168.180.154:33333/webResources/videos/鼠标移入图标显示.mp4">
             </video>
              <div class="icon">
                 <Icon class="video-icon" type="ios-videocam" size="35"/>
@@ -86,7 +86,7 @@ export default {
     name:'VideoTutorialAll',
     data() {
         return {
-            videoInfo:''
+            videoInfo:[],
         }
     },
     mounted(){
@@ -95,7 +95,7 @@ export default {
             url:'/api/videos?page=&pageSize=5'
         })
         .then(res => {
-            this.videoInfo = res.data;
+            this.videoInfo = res.data.data;
             console.log(this.videoInfo);
         })
         .catch(function(err){

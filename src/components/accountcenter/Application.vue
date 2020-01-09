@@ -10,7 +10,7 @@
     <!-- 有应用 -->
     <div class="hasapplication" v-if="!state">
         <span class="app-name">{{appInfo.appName}}</span>
-        <router-link to="/accountcenter/acc"><button class="btn-look">查看</button></router-link>
+        <router-link to="/appcenter"><button class="btn-look">查看</button></router-link>
         <p class="appid-title">APPID:</p>
         <p class="appid">{{appInfo.appId}}</p>
         <p class="rsa2-title">RSA2密钥:</p>

@@ -177,6 +177,7 @@ export default {
 .documentCenter{
   padding-left: 3%;
   min-width: 1280px;
+  margin-top: 20px;
 }
 .documents{
   display: flex;

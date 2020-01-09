@@ -37,7 +37,7 @@
           <DropdownMenu slot="list">
             <DropdownItem disabled>测试帐号</DropdownItem>
             <DropdownItem @click.native="goPush('/accountcenter/userinfo')">账户中心</DropdownItem>
-            <DropdownItem @click.native="goPush('/appcenter')">应用中心</DropdownItem>
+            <DropdownItem @click.native="goPush('/applicationlist')">应用中心</DropdownItem>
             <DropdownItem >退出</DropdownItem>
         </DropdownMenu>
         </Dropdown>
