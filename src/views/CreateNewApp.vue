@@ -4,7 +4,7 @@
         <div class="createnewapp">
         <div class="bread">
             <Breadcrumb>
-                <BreadcrumbItem to="/appcenter" class="breadcrumbitem">应用中心</BreadcrumbItem>
+                <BreadcrumbItem to="/applicationlist" class="breadcrumbitem">应用中心</BreadcrumbItem>
                 <BreadcrumbItem class="breadcrumbitem">创建应用</BreadcrumbItem>
             </Breadcrumb>
             <span class="bread-title">创建应用</span>
@@ -178,6 +178,5 @@ export default {
 .section /deep/ .ivu-form-item-content {
     position: relative;
     left: 50px;
-    /* font-size: 1.35em; */
 }
 </style>
