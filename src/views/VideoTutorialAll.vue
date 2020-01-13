@@ -10,15 +10,15 @@
             </Breadcrumb>
         </div>
         <div class="video-box1">
-            <video src="@/assets/video/创建应用.mp4" controls="controls" onMouseOver="this.play()" onMouseOut="this.pause()"></video>
+            <video src="@/assets/video/创建应用.mp4" controls="controls" ></video>
             <div class="icon">
                 <Icon class="video-icon" type="ios-videocam" size="35"/>
                 <p class="video-time"></p>
             </div>
         </div>
         <div class="video-box2">
-            <video controls="controls" onMouseOver="this.play()" onMouseOut="this.pause()">
-                <source src=" http://192.168.180.154:33333/webResources/videos/4709d6fcf97745419218876470a3b153.mp4">
+            <video controls="controls" >
+                <source src=" http://http://192.168.180.154:33333/common/video/a6543a1ad8e14a21844b94324437cdd3.">
             </video>
              <div class="icon">
                 <Icon class="video-icon" type="ios-videocam" size="35"/>
@@ -92,7 +92,8 @@ export default {
     mounted(){
         this.$ajax({
             method:'get',
-            url:'/api/videos?page=&pageSize=5'
+            // url:'/api/videos?page=&pageSize='
+            url:'/api/service/h5/list?keyword=&page=1&pageSize=10'
         })
         .then(res => {
             this.videoInfo = res.data.data;
@@ -100,7 +101,8 @@ export default {
         })
         .catch(function(err){
             console.log(err)
-        })
+        });
+        
     },
     components: {
         Header,

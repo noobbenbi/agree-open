@@ -14,6 +14,14 @@
         <div class="summary">
             <Tabs class="tab-pane" type="card">
                 <TabPane label="API调用情况">
+                  <div class="select-box">
+                    <Select v-model="model3" style="width:200px" placeholder="API列表">
+                      <Option v-for="(item,index) in apiList" :key="index" :value="item">{{ item }}</Option>
+                    </Select>
+                    <Select v-model="model3" style="width:120px; padding-left:10px" placeholder="调用时间">
+                      <Option v-for="(item,index) in periodList" :key="index" :value="item">{{ item }}</Option>
+                    </Select>
+                  </div>
                     <div class="line-chart" id="linechart"></div>
                 </TabPane>
                 <TabPane label="交易统计"></TabPane>
@@ -33,6 +41,16 @@ export default {
     data() {
         return {
             appInfo:'',
+            model3:'',
+            apiList: [
+              "生活缴费",
+              "沙箱测试"
+            ],
+            periodList:[
+              "最近24小时",
+              "最近30天",
+              "最近12个月"
+            ],
             dataOfApiX: ["2017-2-30","2017-2-30","2017-2-30","2017-2-30","2017-2-30","2017-2-30","2017-2-30","2017-2-30","2017-2-30"],
             dataOfApiY: [20,110,270,170,140,210,250,180,300],
         }
@@ -147,15 +165,24 @@ export default {
     position: relative;
     top: -32px;
 }
+.select-box {
+  position: relative;
+  top: 3%;
+  left: 50%;
+}
+.select-box /deep/ .ivu-select-placeholder,
+.select-box /deep/ .ivu-select-selection{
+  color:rgba(2,164,175,1);
+}
 .summary /deep/ .ivu-tabs-bar {
     border-bottom: 0px;
 }
 .line-chart {
-    width: 70%;
+    width: 80%;
     height: 400px;
     padding-bottom: 40px;
     position: relative;
-    left: 8%;
-    top: 30px;
+    display: table;
+    margin: 0 auto;
 }
 </style>
