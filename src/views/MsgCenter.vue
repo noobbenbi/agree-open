@@ -1,25 +1,14 @@
 <template>
 <!-- 消息中心 -->
-<div class="body-body">
-    <Header class="header"></Header>
+<div>
+    <Header></Header>
     <div class="msgcenter">
         <div class="bread">
             <Breadcrumb>
                 <BreadcrumbItem to="/" class="breadcrumbitem">首页</BreadcrumbItem>
                 <BreadcrumbItem class="breadcrumbitem">消息中心</BreadcrumbItem>
-            </Breadcrumb>
-        </div>
-        <span class="text-title">通知</span>
-        <Table  class="msg-table"  
-        :columns="msgColumns" 
-        :data="showmsgData" 
-        :show-header="showHeader"
-        :width="tableWidth"
-        :height="tableHeight"
-        :size="tableSize">
-        </Table>
-        <div class="select-lab">
-             <Menu :theme="theme3" active-name="1"  class="menu">
+            </Breadcrumb>       
+             <Menu :theme="theme3" active-name="1"  class="menu" width="240px">
                 <MenuItem name="1" class="menuitem">
                     <p>管理员消息</p>
                 </MenuItem>
@@ -28,15 +17,23 @@
                 </MenuItem>
             </Menu>
         </div>
-        <Page class="msg-page" 
-        :total="msgDatalength" 
-        :page-size="pageSize"
-        @on-change="changepage"/>
+        <div class="msg-content">
+            <span class="text-title">通知</span>
+            <Table  class="msg-table"  
+            :columns="msgColumns" 
+            :data="showmsgData" 
+            :show-header="showHeader"
+            :width="tableWidth"
+            :height="tableHeight"
+            :size="tableSize">
+            </Table>
+            <Page class="msg-page" 
+            :total="msgDatalength" 
+            :page-size="pageSize"
+            @on-change="changepage"/>
+        </div>
     </div>
-    <div class="footer-test">
-
-    </div>
-    <Footer class="footer"></Footer>
+    <Footer></Footer>
 </div>
 </template>
 
@@ -193,18 +190,18 @@ export default {
     },
     methods: {
         do() {
-            console.log('数据',this.msgData);
+            // console.log('数据',this.msgData);
             let lenn = this.msgData.length;
             this.msgDatalength = Number(lenn);
             for(var i =0 ;i < this.msgData.length;i++){
                 this.msgDatanow[i] = this.msgData[i];
             }
-            console.log('now',this.msgDatanow);
+            // console.log('now',this.msgDatanow);
             this.showmsgData = this.msgDatanow.slice(0, 5);
             console.log('show', this.showmsgData);
         },
         show (params) {
-            console.log('传入',params.row);
+            // console.log('传入',params.row);
             sessionStorage.setItem('code',params.row.admincode);
             sessionStorage.setItem('title',params.row.msgtitle);
             sessionStorage.setItem('content',params.row.look);
@@ -215,7 +212,7 @@ export default {
             this.currentPage = index;
             let _start = (index - 1) * this.pageSize;
             let _end = index * this.pageSize;
-            console.log(_start,_end);
+            // console.log(_start,_end);
             this.showmsgData = this.msgDatanow.slice(_start, _end);
         },
     },
@@ -226,30 +223,28 @@ export default {
 }
 </script>
 
-<style  scoped>
-@import url("../assets/styles/font/font.css");
+<style lang="less" scoped>
+@import url("../assets/styles/menu.less");
 .msgcenter {
-    position: relative;
     width: 100%;
     min-width: 1200px;
-    height: 0px; 
-    padding-bottom: 37%;
-    margin-bottom: 100px;
+    height: 1700px;
+    height: auto;
+    min-height:580px; 
+    position: relative; 
+    top: 30px;
+    display: flex;
+    flex-direction: row;
 }
 .bread {
-    position: absolute;
-    top: 5.6%;
-    left: 8.3%;
+    position: relative;
+    left: 10%;
 }
 .breadcrumbitem{
     font-size: 1.25em;
     font-family:PingFangSC-Regular,PingFang SC;
-    /* line-height:28px; */
 }
 .text-title {
-    position: absolute;
-    top: 16%;
-    left: 29.1%;
     font-size:2em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
@@ -257,34 +252,34 @@ export default {
     line-height:50px;
 }
 .msg-table {
-    position: absolute;
-    top: 32.7%;
-    left: 29.1%;
+    position: relative;
 }   
 .menu {
-    position: absolute;
-    top: 16%;
-    left: 8.3%;
-    height: 28.7%;
+    position: relative;
+    top: 30px;
 }
 .menuitem {
-    height: 50%;
+    width: 100%;
+    height: 75px;
+    position: relative;
+    display: table;
+    margin: 0 auto;
 }
 .menuitem p{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 34.3%;
-    left: 34.7%;
+    display: table;
+    margin: 0 auto;
     font-size:1.625em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(74,74,74,1);
-    line-height:37px;
+}
+.msg-content {
+    position: relative;
+    left: 15%;
+    top: 50px;
 }
 .msg-page {
-    position: absolute;
-    margin-top: 35%;
-    left: 26%;
+    position: relative;
+    top: 20px;
 }
 </style>

@@ -171,7 +171,6 @@ export default {
     width: 60%;
     height: 1700px;
     position: relative;
-    /* left: 3%; */
     top: 120px;
 }
 .title {

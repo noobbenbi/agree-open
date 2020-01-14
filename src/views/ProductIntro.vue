@@ -158,8 +158,8 @@ export default {
 </script>
 
 
-<style  scoped>
-@import url("../assets/styles/font/font.css");
+<style lang="less" scoped>
+@import url("../assets/styles/menu.less");
 .productintro {
     width: 100%;
     min-width: 1200px;
@@ -227,4 +227,5 @@ export default {
     top: 90px;
     left: 30px;
 }
+
 </style>

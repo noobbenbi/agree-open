@@ -61,6 +61,7 @@ export default {
         '$route':'getParams'
     },
     methods:{
+        // 菜单栏对应参数
         getParams(){
             this.menuId = this.$route.query.nameId;
             this.breadId  = this.$route.query.nameId -1;
@@ -77,8 +78,8 @@ export default {
 }
 </script>
 
-<style scoped>
-@import url("../assets/styles/font/font.css");
+<style lang="less" scoped>
+@import url("../assets/styles/menu.less");
 .body {
     display: flex;
     flex-direction: column;

@@ -5,7 +5,7 @@
                 <BreadcrumbItem class="breadcrumbitem" to="/productintro">产品介绍</BreadcrumbItem>
                 <BreadcrumbItem class="breadcrumbitem" >产品详情</BreadcrumbItem>
             </Breadcrumb>
-             <Menu class="menu-box"  :open-names="['1']" :active-name="'1-1'" width="240px" @on-open-change="selected" @on-select="choosed">
+             <Menu class="menu-box"  :open-names="['1']" :active-name="'1-1'" width="240px"  @on-select="choosed">
                 <Submenu class="select-box" name="1" >
                     <template slot="title">
                         <Icon class="title-icon" type="ios-folder-outline" size="25"/>
@@ -56,18 +56,12 @@ export default {
                 '账户管理',
                 '贷款融资'
             ],
-            breadId:'0',
             showDoc: true,
             docMenuId:'1',
             faId:''
         }
     },
     methods:{
-        selected(name){
-            this.breadId = name - 1;
-            // console.log(name);
-        },
-        //给文档管理组件传菜单栏参数来切换页面
         choosed(name) {
             this.docMenuId = name.charAt(2);
             this.faId = name.charAt(0);
@@ -80,7 +74,8 @@ export default {
     },
 }
 </script>
-<style  scoped>
+<style lang="less" scoped>
+@import url("../../assets/styles/menu.less");
 .detail-menu {
     width: 240px;
     position: relative;
@@ -125,4 +120,5 @@ export default {
     position: relative;
     left: 13px;
 }
+
 </style>

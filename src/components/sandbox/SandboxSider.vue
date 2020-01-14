@@ -79,7 +79,8 @@ export default {
     },
 }
 </script>
-<style  scoped>
+<style lang="less" scoped>
+@import url("../../assets/styles/menu.less");
 .detail-menu {
     width: 240px;
     position: relative;
