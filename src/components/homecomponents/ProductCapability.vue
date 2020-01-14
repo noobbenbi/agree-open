@@ -20,7 +20,7 @@
       <span></span>
       <div class="mouseenter">
       <a href="" class="detail-title">投资理财</a>
-      <a href="" class="detail-content">支付结算支付结算支付结算支付结算支付结算支付结算支付结算</a>
+      <a href="" class="detail-content">线上实时转账，赋能本地中小微企业</a>
       </div>
     </div>
     <div class="account-management">
@@ -29,7 +29,7 @@
       <span></span>
       <div class="mouseenter">
       <a href="" class="detail-title">账户管理</a>
-      <a href="" class="detail-content">支付结算支付结算支付结算支付结算支付结算支付结算支付结算</a>
+      <a href="" class="detail-content">线上实时转账，赋能本地中小微企业</a>
       </div>
     </div>
     <div class="loan-financing">
@@ -38,7 +38,7 @@
       <span></span>
       <div class="mouseenter">
       <a href="" class="detail-title">贷款融资</a>
-      <a href="" class="detail-content">支付结算支付结算支付结算支付结算支付结算支付结算支付结算</a>
+      <a href="" class="detail-content">线上实时转账，赋能本地中小微企业</a>
       </div>
     </div>
 </div>
@@ -69,7 +69,6 @@ export default {
 .productcapability {
   width:100%;
   min-width: 1200px;
-  /* height:736px; */
   height: 0px;
   padding-bottom: 54%;
   background:rgba(46,47,63,1);
@@ -179,6 +178,10 @@ export default {
   background-image: url(../../assets/images/productCapability1-mohu.png);
   background-size: 100% 100%;
   display: block;
+   z-index: 3;
+          -webkit-transition: bottom 0.4s ease, opacity 0.4s ease;
+          -moz-transition: bottom 0.4s ease, opacity 0.4s ease;
+          transition: bottom 0.4s ease, opacity 0.4s ease;
 }
 .investment:hover .mouseenter {
   background-image: url(../../assets/images//productCapability2-mohu.png);
@@ -207,10 +210,8 @@ export default {
   line-height:42px;
 }
 .detail-content {
-  position: absolute;
-  top: 39%;
-  left: 20.77%;
-  right: 20.77%;
+  display: table;
+  margin: 50% 20%;
   font-size:1.25em;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;

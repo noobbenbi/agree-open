@@ -4,12 +4,30 @@
     <div class="applicationlist">
         <AccountHeader></AccountHeader>
         <div class="formal-app">
-            <span>正式应用列表</span>
+            <span class="box-title">正式应用列表</span>
             <Divider class="c-line"/>
+            <div class="applist">
+              <div class="appdetail" v-for="(item,index) in appList" :key="index">
+                <img src="@/assets/images/apptubiao.png" alt="">
+                <a href="">{{item.appName}}</a>
+                <p class="appid">{{item.appId}}</p>
+                <p class="appstate">{{item.appState}}</p>
+                <p class="apptype">{{item.appType}}</p>
+                <p class="d-line"></p>
+              </div>
+            </div>
         </div>
         <div class="sandbox-app">
-            <span>沙箱测试应用</span>
+            <span class="box-title">沙箱测试应用</span>
             <Divider class="c-line"/>
+            <div class="applist">
+              <div class="appdetail" v-for="(item,index) in sandBoxAppList" :key="index">
+                <img src="@/assets/images/apptubiao.png" alt="">
+                <a href="">{{item.appName}}</a>
+                <p class="appid">{{item.appId}}</p>
+                <p class="" style="display:table; margin:0 auto; color:rgba(255,179,0,1);">{{item.appState}}</p>
+              </div>
+            </div>
         </div>
         <div class="summary">
             <Tabs class="tab-pane" type="card">
@@ -40,7 +58,44 @@ export default {
     name:'ApplicationList',
     data() {
         return {
-            appInfo:'',
+            appList:[
+              {
+                appName:'生活缴费',
+                appId:'4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
+                appState:'开发中',
+                appType:'web'
+              },
+              {
+                appName:'生活缴费',
+                appId:'4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
+                appState:'开发中',
+                appType:'web'
+              },
+              {
+                appName:'生活缴费',
+                appId:'4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
+                appState:'开发中',
+                appType:'web'
+              },
+              {
+                appName:'生活缴费',
+                appId:'4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
+                appState:'开发中',
+                appType:'web'
+              },
+            ],
+            sandBoxAppList:[
+              {
+                appName:'沙箱测试APP',
+                appId:'4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
+                appState:'测试中',
+              },
+              {
+                appName:'沙箱测试APP',
+                appId:'4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
+                appState:'测试中',
+              },
+            ],
             model3:'',
             apiList: [
               "生活缴费",
@@ -150,11 +205,70 @@ export default {
 .sandbox-app,
 .summary {
     width: 70%;
-    height: 300px;
+    height: 350px;
     margin: 30px 0;
     position: relative;
     left: 15%;
     box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
+}
+.box-title {
+  position: relative;
+  left: 7%;
+  top: 30px;
+  font-size:1.4em;
+  font-family:PingFangSC-Medium,PingFang SC;
+}
+.c-line {
+  position: relative;
+  top: 30px;
+}
+.applist {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  font-family:PingFangSC-Regular,PingFang SC;
+}
+.appdetail {
+  position: relative;
+  width: 25%;
+  top: 30px;
+}
+.appdetail img{
+  width: 80px;
+  height: 90px;
+  display: table;
+  margin: 3% auto;
+}
+.appdetail a{
+  display: table;
+  margin: 0 auto;
+  color:rgba(29,31,49,1);
+  font-size:1.7em;
+  font-family:PingFangSC-Medium,PingFang SC;
+}
+.appid {
+  font-size:0.5em;
+  display: table;
+  margin: 2% auto;
+  text-align: center;
+}
+.appstate {
+  color:rgba(255,179,0,1);
+  position: absolute;
+  left: 30%;
+}
+.apptype {
+  position: absolute;
+  right: 35%;
+}
+.d-line {
+  width:1px;
+  height:20px;
+  background:rgba(213,213,213,1);
+  position: relative;
+  display: table;
+  margin: 0 auto;
 }
 .summary {
     height: 530px;

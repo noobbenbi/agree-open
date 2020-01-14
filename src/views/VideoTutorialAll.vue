@@ -18,7 +18,7 @@
         </div>
         <div class="video-box2">
             <video controls="controls" >
-                <source src=" http://http://192.168.180.154:33333/common/video/a6543a1ad8e14a21844b94324437cdd3.">
+                <source src="http://192.168.180.154:33333/common/video/a6543a1ad8e14a21844b94324437cdd3.">
             </video>
              <div class="icon">
                 <Icon class="video-icon" type="ios-videocam" size="35"/>
