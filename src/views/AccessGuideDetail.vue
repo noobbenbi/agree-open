@@ -30,7 +30,7 @@
             <BeforeDevRead></BeforeDevRead>
         </div>
     </div>
-    <Footer class="footer"></Footer>
+    <Footer></Footer>
 </div>
 </template>
 

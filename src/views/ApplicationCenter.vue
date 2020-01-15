@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header></Header>
     <div class="document" >
       <Breadcrumb class="bread" separator="/">
         <BreadcrumbItem to="/">应用中心</BreadcrumbItem>

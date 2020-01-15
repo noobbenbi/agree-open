@@ -150,7 +150,6 @@ const routes = [
     component: () => import('../views/HelpQuestion.vue')
   },
 ]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,

@@ -9,6 +9,7 @@
 <style lang="scss">
 *button {
   cursor: pointer;
+  border: none;
 }
 
 </style>

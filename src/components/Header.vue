@@ -3,8 +3,8 @@
     <div class="header-logo">
       <img src="@/assets/images/head-logo.png" >
       <div class="logo-text">
-        <a href="/">API开放平台</a>
-      <span>Open.com</span>
+        <a href="/">开放银行</a>
+      <span>Open Banking</span>
       </div>
     </div>
     <div class="header-nav">
@@ -208,17 +208,16 @@ export default {
 }
 .login-register-item,
 .register-register-item {
+  position: relative;
+  top: 5px;
   font-size:1em;
-  font-weight: 600;
   font-family:PingFangSC-Medium,PingFang SC;
   font-weight:500;
   color:rgba(29,31,49,1);
   line-height:30px;
-  text-decoration:none;
 }
 .register-register-item {
-  position: relative;
-  left: 10px;
+  left: 20px;
 }
 .search-icon {
   position: absolute;
