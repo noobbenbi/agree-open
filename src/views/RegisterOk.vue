@@ -15,7 +15,7 @@ export default {
     name:"RegisterOk",
     methods: {
         goLogin() {
-            this.$router.push("/");
+            this.$router.push("/login");
         }
     }
 }

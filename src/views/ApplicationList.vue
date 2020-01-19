@@ -6,7 +6,13 @@
         <div class="formal-app">
             <span class="box-title">正式应用列表</span>
             <Divider class="c-line"/>
-            <div class="applist">
+            <!-- 用户未创建 -->
+            <div class="noapp" v-if="!listState">
+              <img src="@/assets/images/havenothing.png">
+              <p>还没有创建任何应用</p>
+            </div>
+            <!-- 用户已创建 -->
+            <div class="applist" v-if="listState">
               <div class="appdetail" v-for="(item,index) in appList" :key="index">
                 <img src="@/assets/images/apptubiao.png" alt="">
                 <a href="">{{item.appName}}</a>
@@ -20,9 +26,15 @@
         <div class="sandbox-app">
             <span class="box-title">沙箱测试应用</span>
             <Divider class="c-line"/>
-            <div class="applist">
+            <!-- 用户未创建 -->
+            <div class="noapp" v-if="!listState">
+              <img src="@/assets/images/havenothing.png">
+              <p>还没有创建任何应用</p>
+            </div>
+            <!-- 用户已创建 -->
+            <div class="applist" v-if="listState">
               <div class="appdetail" v-for="(item,index) in sandBoxAppList" :key="index">
-                <img src="@/assets/images/apptubiao.png" alt="">
+                <img src="@/assets/images/apptubiao.png">
                 <a href="">{{item.appName}}</a>
                 <p class="appid">{{item.appId}}</p>
                 <p class="" style="display:table; margin:0 auto; color:rgba(255,179,0,1);">{{item.appState}}</p>
@@ -58,7 +70,14 @@ export default {
     name:'ApplicationList',
     data() {
         return {
+          listState:true,
             appList:[
+              {
+                appName:'生活缴费',
+                appId:'4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
+                appState:'开发中',
+                appType:'web'
+              },
               {
                 appName:'生活缴费',
                 appId:'4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
@@ -205,7 +224,10 @@ export default {
 .sandbox-app,
 .summary {
     width: 70%;
-    height: 350px;
+    /* height: 350px; */
+    height: 2000px;
+    height:auto;
+    min-height:350px;
     margin: 30px 0;
     position: relative;
     left: 15%;
@@ -222,17 +244,29 @@ export default {
   position: relative;
   top: 30px;
 }
+.noapp img {
+  display: table;
+  margin: 5% auto;
+}
+.noapp p {
+  display: table;
+  margin: 0 auto;
+  font-family:PingFangSC-Regular,PingFang SC;
+}
 .applist {
   width: 100%;
+  height: auto;
   position: relative;
   display: flex;
   flex-direction: row;
+  flex-wrap:wrap;
   font-family:PingFangSC-Regular,PingFang SC;
 }
 .appdetail {
   position: relative;
   width: 25%;
   top: 30px;
+  margin-bottom: 5%;
 }
 .appdetail img{
   width: 80px;

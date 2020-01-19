@@ -43,7 +43,8 @@ export default {
     position: relative;
     width: 100%;
     min-width: 1200px;
-    height: 615px;
+    height: 0px;
+    padding-bottom: 45%;
 }
 .center-title {
     font-size:1.56em;
@@ -67,9 +68,9 @@ export default {
 }
 .news-img {
     position: absolute;
-    width: 526px;
-    height: 356px;
-    left: 8.9%;
+    width: 38%;
+    height: 58%;
+    right: 52%;
     bottom: 11.57%;
 }
 .news-content-top {

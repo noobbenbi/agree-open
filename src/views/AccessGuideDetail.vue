@@ -2,7 +2,6 @@
 <div class="body">
     <Header></Header>
     <div class="accessguidedetail">
-        <div class="cutline"></div>
         <div class="productintro-title">
             <Breadcrumb>
                 <BreadcrumbItem class="breadcrumbitem">开发接入</BreadcrumbItem>

@@ -267,7 +267,7 @@ export default {
 }
 .menuitem p{
     display: table;
-    margin: 0 auto;
+    margin: 5% auto;
     font-size:1.625em;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;

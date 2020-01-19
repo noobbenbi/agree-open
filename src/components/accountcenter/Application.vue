@@ -8,18 +8,18 @@
         <p>还没有创建任何应用</p>
     </div>
     <!-- 有应用 -->
-    <div class="hasapplication" v-if="!state">
-        <span class="app-name">{{appInfo.appName}}</span>
-        <router-link to="/appcenter"><button class="btn-look">查看</button></router-link>
-        <p class="appid-title">APPID:</p>
-        <p class="appid">{{appInfo.appId}}</p>
-        <p class="rsa2-title">RSA2密钥:</p>
-        <p class="rsa2">{{appInfo.RSA2}}</p>
-        <p class="aes-title">AES加密:</p>
-        <p class="aes">{{appInfo.AES}}</p>
-        <p class="authorization-callback-title">授权回调地址:</p>
-        <p class="authorization-callback">{{appInfo.callbackAddr    }}</p>
-    </div>
+        <div class="hasapplication" v-if="!state" v-for="(item,index) in appInfo" :key="index">
+            <span class="app-name">{{item.appName}}</span>
+            <button class="btn-look">查看</button>
+            <p class="appid-title">APPID:</p>
+            <p class="appid">{{item.appId}}</p>
+            <p class="rsa2-title">RSA2密钥:</p>
+            <p class="rsa2">{{item.RSA2}}</p>
+            <p class="aes-title">AES加密:</p>
+            <p class="aes">{{item.AES}}</p>
+            <p class="authorization-callback-title">授权回调地址:</p>
+            <p class="authorization-callback">{{item.callbackAddr    }}</p>
+        </div>
 </div>
 </div>
 </template>
@@ -29,13 +29,22 @@ export default {
     name:'Application',
     data() {
         return {
-            appInfo: {
+            appInfo: [
+                {
                 appName:'生活服务TEST',
                 appId: '4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
                 RSA2: '应用公钥 平台公钥',
                 AES: 'AES密钥',
                 callbackAddr: '*********'
-            },
+                },
+                {
+                appName:'生活服务TEST',
+                appId: '4077d5a6-c813-4ed6-a2e7-ef2054bf2564',
+                RSA2: '应用公钥 平台公钥',
+                AES: 'AES密钥',
+                callbackAddr: '*********'
+                },
+            ],
             state:false
         }
     }
@@ -75,6 +84,12 @@ export default {
     display: table;
     margin: 0 auto;
 }
+.hasapplication {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+}
 .app-name {
     font-size: 1.25em;
     font-family:PingFangSC-Medium,PingFang SC;
@@ -92,7 +107,6 @@ export default {
     position: absolute;
     top: 32px;
     right: 5%;
-    border: none;
     font-family:PingFangSC-Medium,PingFang SC;
     font-weight:500;
     color:rgba(255,255,255,1);

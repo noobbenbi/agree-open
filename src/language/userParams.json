@@ -1,22 +1,22 @@
 [
     {
-        "name": "John Brown",
+        "name": "John Brow",
         "paramvalue": 18,
-        "paramtype": "New York No. 1 Lake Park"
+        "paramtype": "NaN"
     },
     {
         "name": "Jim Green",
         "paramvalue": 24,
-        "paramtype": "London No. 1 Lake Park"
+        "paramtype": "String"
     },
     {
         "name": "Joe Black",
         "paramvalue": 30,
-        "paramtype": "Sydney No. 1 Lake Park"
+        "paramtype": "Number"
     },
     {
         "name": "Jon Snow",
         "paramvalue": 26,
-        "paramtype": "Ottawa No. 2 Lake Park"
+        "paramtype": "int"
     }
 ]
