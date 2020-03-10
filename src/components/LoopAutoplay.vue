@@ -30,7 +30,6 @@ export default {
   width:100%;
   min-width: 1200px;
   height: 541px;
-  /* padding-bottom: 40%; */
   position: relative;
 }
 .demo-carousel img {

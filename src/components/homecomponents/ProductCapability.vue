@@ -8,37 +8,61 @@
     <div class="payment-settlement" >
       <img  src="@/assets/images/productCapability_icon1.png" />
       <p class="itemTitie" href="#">支付结算</p>
-      <span></span>
+      <span class="center-line-out"></span>
       <div class="mouseenter">
-      <a href="" class="detail-title">支付结算</a>
-      <a href="" class="detail-content">线上实时转账，赋能本地中小微企业</a>
+      <div class="content-enter">
+        <a href="#" class="detail-title">支付结算</a>
+        <span class="center-line-enter"></span>
+        <p class="detail-content">{{enterText}}</p>
+        <div class="btn-box">
+            <button class="btn-enter">查看更多</button>
+          </div>
+      </div>
       </div>
     </div>
     <div class="investment">
       <img  src="@/assets/images/productCapability_icon2.png" />
       <p  class="itemTitie" href="#">投资理财</p>
-      <span></span>
+      <span class="center-line-out"></span>
       <div class="mouseenter">
-      <a href="" class="detail-title">投资理财</a>
-      <a href="" class="detail-content">线上实时转账，赋能本地中小微企业</a>
+        <div class="content-enter">
+          <a href="#" class="detail-title">投资理财</a>
+          <span class="center-line-enter"></span>
+          <p class="detail-content">{{enterText}}</p>
+          <div class="btn-box">
+            <button class="btn-enter">查看更多</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="account-management">
       <img src="@/assets/images/productCapability_icon3.png" />
       <p class="itemTitie" href="#">账户管理</p>
-      <span></span>
+      <span class="center-line-out"></span>
       <div class="mouseenter">
-      <a href="" class="detail-title">账户管理</a>
-      <a href="" class="detail-content">线上实时转账，赋能本地中小微企业</a>
+        <div class="content-enter">
+          <a href="#" class="detail-title">账户管理</a>
+          <span class="center-line-enter"></span>
+          <p class="detail-content">{{enterText}}</p>
+          <div class="btn-box">
+            <button class="btn-enter">查看更多</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="loan-financing">
       <img src="@/assets/images/productCapability_icon4.png" />
       <p class="itemTitie" href="#">贷款融资</p>
-      <span></span>
+      <span class="center-line-out"></span>
       <div class="mouseenter">
-      <a href="" class="detail-title">贷款融资</a>
-      <a href="" class="detail-content">线上实时转账，赋能本地中小微企业</a>
+        <div class="content-enter">
+          <a href="#" class="detail-title">贷款融资</a>
+          <span class="center-line-enter"></span>
+          <p class="detail-content">{{enterText}}</p>
+          <div class="btn-box">
+            <button class="btn-enter">查看更多</button>
+          </div>
+        </div>
       </div>
     </div>
 </div>
@@ -48,7 +72,8 @@ export default {
   name: "ProductCapability",
   data() {
     return {
-      visible:false
+      visible:false,
+      enterText:'赞同科技API开放平台是一款基于OpenAPI的服务管控、运行和开放平台'
     }
   },
   methods:{
@@ -125,12 +150,11 @@ export default {
   opacity:1;
   width: 121px;
   height: 121px;
-  margin: 30% auto;
+  margin: 40% auto 30%;
 }
-.payment-settlement p,
-.investment p,
-.account-management p,
-.loan-financing p{
+
+.itemTitie
+{
   margin: -20% auto;
   font-size:1.3em;
   font-family:PingFangSC-Medium,PingFang SC;
@@ -138,10 +162,9 @@ export default {
   color:rgba(255,255,255,1);
   line-height:42px;
 }
-.payment-settlement span,
-.investment span,
-.account-management span,
-.loan-financing span {
+
+.center-line-out
+{
   width:15%;
   height:4px;
   background:rgba(2,164,175,1);
@@ -157,6 +180,7 @@ export default {
   height: 100%;
   opacity: 1;
   display: none;
+  /* cursor: pointer; */
 }
 .payment-settlement {
   background-image: url(../../assets/images/productCapability1.png);
@@ -178,10 +202,7 @@ export default {
   background-image: url(../../assets/images/productCapability1-mohu.png);
   background-size: 100% 100%;
   display: block;
-   z-index: 3;
-          -webkit-transition: bottom 0.4s ease, opacity 0.4s ease;
-          -moz-transition: bottom 0.4s ease, opacity 0.4s ease;
-          transition: bottom 0.4s ease, opacity 0.4s ease;
+  top: 0px;
 }
 .investment:hover .mouseenter {
   background-image: url(../../assets/images//productCapability2-mohu.png);
@@ -198,10 +219,21 @@ export default {
   background-size: 100% 100%;
   display: block;
 }
+.content-enter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25%;
+  transition:all 0.2s  ease-in-out;
+}
+.mouseenter:hover .content-enter {
+  position: absolute;
+  top: 0px;
+}
 .detail-title {
   position: relative;
-  top: 40px;
-  margin: 0 auto;
+  margin: 45% auto 0%;
+  display: table;
   height:42px;
   font-size:1.64em;
   font-family:PingFangSC-Medium,PingFang SC;
@@ -209,12 +241,38 @@ export default {
   color:rgba(255,255,255,1);
   line-height:42px;
 }
+.center-line-enter{
+  width: 15%;
+  height: 4px;
+  background:rgba(255,255,255,1);
+  display: table;
+  margin: 5% auto;
+  position: relative;
+}
 .detail-content {
   display: table;
-  margin: 50% 20%;
+  margin: 10% 10% 0%;
   font-size:1.25em;
+  text-indent: 1em;
   font-family:PingFangSC-Regular,PingFang SC;
   font-weight:400;
   color:rgba(255,255,255,1);
+}
+.btn-box {
+  position: relative;
+  width: 90px;
+  height: 30px;
+  border:solid 1px white;
+  border-radius: 3px;
+  margin: 10% auto;
+}
+.btn-enter {
+  width: 90px;
+  height: 30px;
+  background-color: transparent;
+  border-width: 3px;
+  border: white;
+  color:#FFFFFFFF;
+  font-family:PingFangSC-Regular,PingFang SC;
 }
 </style>

@@ -1,44 +1,54 @@
 <template>
   <div class="breadcrumb">
-    <Breadcrumb separator="<">
-      <span>当前位置：</span>
-      <BreadcrumbItem class="toDocument" to="/doc/toDocument">文档中心</BreadcrumbItem>
-      <BreadcrumbItem v-for="(item,index) in BreadcrumbList" :key="index">
-        {{item}}
-      </BreadcrumbItem>
+    <Breadcrumb>
+      <BreadcrumbItem class="to-doc-link" to="/doc/toDocument">文档中心</BreadcrumbItem>
+      <BreadcrumbItem
+        v-for="(item,index) in breadCrumbList"
+        :key="index"
+        :class="index === breadCrumbList.length-1 ? 'last-breadcrumb-item' : 'item'"
+      >{{item}}</BreadcrumbItem>
     </Breadcrumb>
   </div>
 </template>
 
 <script>
 export default {
-  name:'DocBreadcrumb',
+  name: 'DocBreadcrumb',
   props: {
-    BreadcrumbList: {
-      type:Array
+    breadCrumbList: {
+      type: Array
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-@import "../../assets/styles/variables.less";
+@import '../../assets/styles/variables.less';
+@deep: ~'>>>';
 .breadcrumb {
+  // position: sticky;
+  // top: 0px;
+  // z-index: 2;
   box-sizing: border-box;
-  min-width: auto;
-  background: white;
-  border-bottom: 0.25px solid @bgColor;
- 
-  /deep/ .ivu-breadcrumb {
-    height: 50px;
-    line-height: 50px;
+  padding: 29px 0 40px 0;
+  background: #fff;
+  @{deep} .ivu-breadcrumb {
+    height: 21px;
+    line-height: 21px;
     font-size: 14px;
-    color: @aColor;
+    .ivu-breadcrumb-item-link,
     .ivu-breadcrumb-item-separator {
-      color: @borderColor;
+      color: @thirdTextColor;
     }
-    a {
-      color: @themeColor;
+    .to-doc-link {
+      @{deep} .ivu-breadcrumb-item-link {
+        color: @thirdTextColor;
+      }
+    }
+    .last-breadcrumb-item {
+      .ivu-breadcrumb-item-link {
+        color: @firstTextColor !important;
+      }
     }
   }
 }

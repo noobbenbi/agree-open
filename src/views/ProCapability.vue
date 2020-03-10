@@ -4,7 +4,7 @@
   <Loopautoplay></Loopautoplay>
   <div class="procapability">
   <div class="center">
-    <span class="center-title">能力介绍</span>
+    <span class="center-title" @click="$router.push({path: '/documentcenter',query: { docName: '文档2-1' },})">能力介绍</span>
     <span class="center-line"></span>
   </div>
     <div class="payment-settlement">

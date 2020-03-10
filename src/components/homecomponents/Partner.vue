@@ -28,9 +28,9 @@ export default {
     padding-bottom:54%;
 }
 .partner Button {
-    position: absolute;
-    top: 80.66%;
-    left: 44.8%;
+    position: relative;
+    display: table;
+    margin: 40% auto 0;
     width:180px;
     height:70px;
     font-size:30px;
@@ -58,5 +58,8 @@ export default {
     top: 75px;
     display: table;
     margin: 0 auto;
+}
+.ivu-btn  {
+    background:rgba(2,164,175,1);
 }
 </style>

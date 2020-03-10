@@ -9,17 +9,17 @@
     <img class="img-two" src="@/assets/images/abstract-art-blur-bright-373543备份 2.png">
     <img class="img-three" src="@/assets/images/abstract-art-blur-bright-373543备份.png">
     <div class="text-one">
-        <a href="/devaccess/accessguidedetail">接入指南</a>
+        <a class="text-title" href="/devaccess/accessguidedetail">接入指南</a>
         <span></span>
         <p>{{msg}}</p>
     </div>
     <div class="text-two">
-        <a href="/documentcenter">文档中心</a>
+        <a class="text-title" href="/documentcenter">文档中心</a>
         <span></span>
         <p>{{msg}}</p>
     </div>
     <div class="text-three">
-        <a href="/devhelp">帮助与支持</a>
+        <a class="text-title" href="/devhelp">帮助与支持</a>
         <span></span>
         <p>{{msg}}</p>
     </div>
@@ -108,9 +108,7 @@ export default {
     top: 58%;
     left: 64.8%;
 }
-.text-one a,
-.text-two a,
-.text-three a {
+.text-title {
     position: absolute;
     top: 15.4%;
     left: 11.54%;
@@ -119,6 +117,10 @@ export default {
     font-weight:500;
     color:rgba(29,31,49,1);
     line-height:45px;
+    transition:0.2s;
+}
+.text-title:hover {
+    color: rgba(2,164,175,1);
 }
 .text-one span,
 .text-two span,

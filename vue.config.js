@@ -1,10 +1,10 @@
 module.exports = {
     // 选项...
-    publicPath: '/',
-  
+    publicPath: './',
+    outputDir:'dist',
     //是否开启eslint校验
     lintOnSave: false,
-  
+    assetsDir: 'static',
     devServer: {
       disableHostCheck: true,
       host: '0.0.0.0',
@@ -24,6 +24,15 @@ module.exports = {
       'style-resources-loader': {
         preProcessor: 'stylus',
         patterns: []
+      }
+    },
+    pwa: {
+      iconPaths: {
+        favicon32: 'favicon.ico',
+        favicon16: 'favicon.ico',
+        appleTouchIcon: 'favicon.ico',
+        maskIcon: 'favicon.ico',
+        msTileImage: 'favicon.ico'
       }
     },
   }

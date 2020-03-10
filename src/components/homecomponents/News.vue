@@ -77,15 +77,24 @@ export default {
     width: 43.5%;
     height: 26.6%;
     position: absolute;
-    left: 48.17%;
+    left: 50%;
     bottom: 42.82%;
+    box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
+    transition: all 0.2s ease-in 0.1s;
 }
 .news-content-bottom {
     width: 43.5%;
     height: 26.6%;
     position: absolute;
-    left: 48.17%;
+    left: 50%;
     bottom: 11.57%;
+    box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
+    transition: all 0.2s ease-in 0.1s;
+}
+.news-content-top:hover,
+.news-content-bottom:hover {
+    width: 48%;
+    height: 30%;
 }
 .day-of-time {
     font-size: 1.875em;

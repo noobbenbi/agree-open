@@ -110,16 +110,18 @@ export default {
 <style  scoped>
 .header {
   width: 100%;
-  min-width: 1200px;
-  height: 90px;
+  min-width: 1280px;
+  height: 80px;
+  position: relative;
   background:rgba(255,255,255,1);
   box-shadow: 0 0 20px 15px rgba(241, 235, 235, 0.3);
 }
 .header-logo {
   width: 280px;
+  height: 60px;
   position: absolute;
   left: 8%;
-  top: 15px;
+  top: 10px;
 }
 .header-logo img {
   width: 180px;
@@ -153,11 +155,11 @@ export default {
   color:rgba(29,31,49,1);
 }
 .header-nav {
-  height: 90px;
+  height: 80px;
   width: 52%;
   position: relative;
   left: 28%;
-  top: 15px; 
+  top: 0px; 
   font-size:1.175em;
   font-weight: 600;
   font-family:PingFangSC-Medium,PingFang SC;
@@ -188,7 +190,8 @@ export default {
   left: 60%;
 }
 .header-nav ul {
-  height: 75px;
+  height: 80px;
+  line-height: 80px;
 }
 .ivu-menu a {
   width: 110px;

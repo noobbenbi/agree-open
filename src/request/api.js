@@ -103,3 +103,9 @@ export const TestSign = p => post('/SM2key/sign/verification', p);
 
 //查找功能接口
 export const Search = p => get('/search', p);
+
+//文档中心
+//获取文档列表
+export const GetDocList = p => get('/doc/list', p)
+//获取文档详情
+export const GetDocDetail = (p,info) => get('/doc/', p,info)

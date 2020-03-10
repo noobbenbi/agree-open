@@ -229,6 +229,10 @@ export default {
   background: rgba(240, 240, 240, 1);
   text-align: center;
   height: 900px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
 }
 .head-title {
   width: 711.5px;
